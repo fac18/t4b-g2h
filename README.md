@@ -1,3 +1,6 @@
+[![codecov](https://codecov.io/gh/fac18/t4b-g2h/branch/master/graph/badge.svg)](https://codecov.io/gh/fac18/t4b-g2h)
+[![Build Status](https://travis-ci.com/fac18/t4b-g2h.svg?branch=master)](https://travis-ci.com/fac18/t4b-g2h)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
