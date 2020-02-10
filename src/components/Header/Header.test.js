@@ -4,6 +4,11 @@ import Header from "./Header";
 
 it("renders the page header", () => {
   const { getByText } = render(<Header />);
-  const linkElement = getByText(/Gateway2Heritage/i);
-  expect(linkElement).toBeInTheDocument();
+  const pageTitle = getByText(/Gateway2Heritage/i);
+  expect(pageTitle).toBeInTheDocument();
+});
+
+it("renders the search bar", () => {
+  const { getByText } = render(<Header />);
+  expect.stringContaining("Search");
 });
