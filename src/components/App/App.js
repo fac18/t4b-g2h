@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 // import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
+// import SearchPage from "../Search/Search";
 
 const App = () => {
   return (

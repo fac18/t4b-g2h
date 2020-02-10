@@ -16,27 +16,13 @@ const LandingPage = () => {
         <article>
           <Style.MuseumContainer>
             <Style.ImgContainer>
-              <Img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
+              <Img src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg" />
             </Style.ImgContainer>
             <p>Collection name</p>
           </Style.MuseumContainer>
           <Style.MuseumContainer>
             <Style.ImgContainer>
-              <Img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
-            </Style.ImgContainer>
-            <p>Collection name</p>
-          </Style.MuseumContainer>
-        </article>
-        <article>
-          <Style.MuseumContainer>
-            <Style.ImgContainer>
-              <Img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
-            </Style.ImgContainer>
-            <p>Collection name</p>
-          </Style.MuseumContainer>
-          <Style.MuseumContainer>
-            <Style.ImgContainer>
-              <Img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
+              <Img src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg" />
             </Style.ImgContainer>
             <p>Collection name</p>
           </Style.MuseumContainer>
@@ -44,13 +30,27 @@ const LandingPage = () => {
         <article>
           <Style.MuseumContainer>
             <Style.ImgContainer>
-              <Img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
+              <Img src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg" />
             </Style.ImgContainer>
             <p>Collection name</p>
           </Style.MuseumContainer>
           <Style.MuseumContainer>
             <Style.ImgContainer>
-              <Img src="https://images.unsplash.com/photo-1547472529-f9765c78845c?ixlib=rb-1.2.1&auto=format&fit=crop&w=361&q=80" />
+              <Img src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg" />
+            </Style.ImgContainer>
+            <p>Collection name</p>
+          </Style.MuseumContainer>
+        </article>
+        <article>
+          <Style.MuseumContainer>
+            <Style.ImgContainer>
+              <Img src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg" />
+            </Style.ImgContainer>
+            <p>Collection name</p>
+          </Style.MuseumContainer>
+          <Style.MuseumContainer>
+            <Style.ImgContainer>
+              <Img src="https://cdn.getyourguide.com/img/tour_img-2462135-146.jpg" />
             </Style.ImgContainer>
             <p>Collection name</p>
           </Style.MuseumContainer>
