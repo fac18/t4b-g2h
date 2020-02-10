@@ -1,13 +1,14 @@
 import React from "react";
-import "./App.css";
 // import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import Header from "../Header/Header";
 
 const App = () => {
   return (
     // <BrowserRouter>
     //   <Switch>
     <>
-      <h1>Gateway 2 Heritage</h1>
+      <Header />
+      
       {/* <Route path="/" component={*component*} exact*/}
       {/* <Route path="/" render=(() => <Component/>) */}
     </>
