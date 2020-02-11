@@ -3,6 +3,7 @@ import React from "react";
 // import SearchPage from "../Search/Search";
 import LandingPage from "../LandingPage/LandingPage";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const App = () => {
   return (
@@ -11,6 +12,8 @@ const App = () => {
     <>
       <Header />
       <LandingPage />
+      <Footer />
+
       {/* <Route path="/" component={*component*} exact*/}
       {/* <Route path="/" render=(() => <Component/>) */}
     </>
