@@ -8,7 +8,7 @@ it("renders the page header", () => {
   expect(pageTitle).toBeInTheDocument();
 });
 
-it("renders the search bar", () => {
-  const { getByText } = render(<Header />);
-  expect.stringContaining("Search");
-});
+// it("renders the search bar", () => {
+//   const { getByText } = render(<Header />);
+//   expect.stringContaining("Search");
+// });
