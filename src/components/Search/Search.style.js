@@ -4,14 +4,15 @@ const Search = styled.div`
   section {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
   }
-
+  p {
+    text-align: center;
+  }
   article {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    // align-items: center;
   }
 
   @media only screen and (max-width: 800px) {
@@ -19,7 +20,7 @@ const Search = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0;
+      padding: 0px;
     }
   }
 `;
@@ -27,15 +28,25 @@ const Search = styled.div`
 const MuseumContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 35%;
+  // width: 35%;
 `;
 
 const ImgContainer = styled.div`
-  width: 400px;
-  height: 400px;
+  // border: 2px;
+  // border-style: solid;
+  width: 500px;
+  height: 300px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  @media only screen and (max-width: 800px) {
+    width: 250px;
+    height: 200px;
+  }
+  @media only screen and (max-width: 1000px) {
+    width: 400px;
+    height: 200px;
+  }
 `;
 
 export { Search, MuseumContainer, ImgContainer };
