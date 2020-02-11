@@ -28,17 +28,25 @@ const Landing = styled.div`
 const MuseumContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 35%;
+  // width: 35%;
 `;
 
 const ImgContainer = styled.div`
-  border: 2px;
-  border-style: solid;
+  // border: 2px;
+  // border-style: solid;
   width: 500px;
   height: 300px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  @media only screen and (max-width: 800px) {
+    width: 250px;
+    height: 200px;
+  }
+  @media only screen and (max-width: 1000px) {
+    width: 400px;
+    height: 200px;
+  }
 `;
 
 export { Landing, MuseumContainer, ImgContainer };
