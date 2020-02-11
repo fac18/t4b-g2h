@@ -5,7 +5,6 @@ import * as SC from "./LandingPage.style.js";
 const LandingPage = () => {
   return (
     <SC.Landing>
-      {/* navbar */}
       <h2>
         “Gateway 2 Heritage dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -56,7 +55,6 @@ const LandingPage = () => {
           </SC.MuseumContainer>
         </article>
       </section>
-      {/* footer */}
     </SC.Landing>
   );
 };
