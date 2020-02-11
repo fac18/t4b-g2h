@@ -6,11 +6,20 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 const App = () => {
+  const dataCall = async () => {
+    await (await fetch("/.netlify/functions/getData/getData.js"))
+      .json()
+      // .then(data => JSON.stringify(data))
+      .then(data => console.log(data))
+      .catch(console.error);
+  };
+
   return (
     // <BrowserRouter>
     //   <Switch>
     <>
       <Header />
+      <button onClick={dataCall}>Test</button>
       <LandingPage />
       <Footer />
 
