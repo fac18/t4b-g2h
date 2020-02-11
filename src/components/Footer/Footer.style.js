@@ -8,9 +8,6 @@ const FooterBox = styled.header`
   justify-content: space-evenly;
   align-items: start;
   background-color: #4e535f;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   padding: 1rem;
 
   p {
