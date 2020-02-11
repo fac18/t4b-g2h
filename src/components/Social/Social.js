@@ -9,10 +9,10 @@ import Instagram from "../../assets/social-media-logos/instagram.svg";
 const Social = () => {
   return (
     <SC.SocialBox>
-      <img src={Twitter} alt="Follow us on Twitter" />
-      <img src={LinkedIn} alt="Follow us on LinkedIn" />
-      <img src={Facebook} alt="Follow us on Facebook" />
-      <img src={Instagram} alt="Follow us on Instagram" />
+      <img src={Twitter} title="Twitter" alt="Follow us on Twitter" />
+      <img src={LinkedIn} title="LinkedIn" alt="Follow us on LinkedIn" />
+      <img src={Facebook} title="Facebook" alt="Follow us on Facebook" />
+      <img src={Instagram} title="Instagram" alt="Follow us on Instagram" />
     </SC.SocialBox>
   );
 };
