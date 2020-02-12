@@ -7,7 +7,9 @@ import Footer from "../Footer/Footer";
 
 const App = () => {
   const dataCall = async () => {
-    await (await fetch("/.netlify/functions/getKeyword/getKeyword.js"))
+    await (
+      await fetch("/.netlify/functions/getKeyword/getKeyword.js?keywords=farm")
+    )
       .json()
       // .then(data => JSON.stringify(data))
       .then(data => console.log(data))

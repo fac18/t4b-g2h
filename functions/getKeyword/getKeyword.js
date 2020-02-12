@@ -3,7 +3,7 @@ const Airtable = require("airtable");
 
 exports.handler = (event, context, callback) => {
   console.log("inside function getKeyword");
-  console.log(event.queryStringParameters);
+  const keyword = event.queryStringParameters.keywords;
   const { API_URL, API_TEST_CLIENT_ID, API_KEY } = process.env;
 
   // const send = body => {
@@ -26,7 +26,7 @@ exports.handler = (event, context, callback) => {
       // Selecting the first 3 records in Grid view:
       // filterByFormula: `SEARCH("${myFilter}", Column) >= 0`
 
-      filterByFormula: "SEARCH(' farm', {keywords})",
+      filterByFormula: `SEARCH(' ${keyword}', {keywords})`,
       maxRecords: 3,
       view: "Grid view"
     })
