@@ -7,19 +7,23 @@ import About from "../About/About";
 import Search from "../Search/Search";
 import TermsConditions from "../TermsConditions/TermsConditions";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
+import MemberLogin from "../MemberLogin/MemberLogin";
 import "../../index.css";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        <Route path="/" component={LandingPage} exact />
-        <Route path="/about" component={About} />
-        <Route path="/termsandconditions" component={TermsConditions} />
-        <Route path="/privacypolicy" component={PrivacyPolicy} />
-        <Route path="/search" render={() => <Search />} />
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={LandingPage} exact />
+          <Route path="/about" component={About} />
+          <Route path="/termsandconditions" component={TermsConditions} />
+          <Route path="/privacypolicy" component={PrivacyPolicy} />
+          <Route path="/search" render={() => <Search />} />
+          <Route path="/memberlogin" render={() => <MemberLogin />} />
+        </Switch>
+      </BrowserRouter>
       <Footer />
     </BrowserRouter>
   );
