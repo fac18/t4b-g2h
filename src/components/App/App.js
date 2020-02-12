@@ -7,6 +7,7 @@ import About from "../About/About";
 import Search from "../Search/Search";
 import TermsConditions from "../TermsConditions/TermsConditions";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
+import "../../index.css";
 
 const App = () => {
   return (

@@ -12,12 +12,10 @@ const HeaderBox = styled.header`
   top: -10vh;
 
   h1 {
-    font-family: "Playfair Display", serif;
     color: #2b2b31;
   }
 
   a {
-    font-family: "Karla", sans-serif;
     color: #2b2b31;
     text-decoration: none;
   }
