@@ -11,13 +11,11 @@ const FooterBox = styled.header`
   padding: 1rem;
 
   p {
-    font-family: "Karla", sans-serif;
     color: #ffffff;
     text-decoration: none;
   }
 
   a {
-    font-family: "Karla", sans-serif;
     color: #ffffff;
     text-decoration: none;
   }
@@ -25,13 +23,11 @@ const FooterBox = styled.header`
 
 const FooterTextBox = styled.div`
   p {
-    font-family: "Karla", sans-serif;
     color: #ffffff;
     text-decoration: none;
   }
 
   a {
-    font-family: "Karla", sans-serif;
     color: #ffffff;
     text-decoration: none;
   }
@@ -43,7 +39,6 @@ const FooterTextBox = styled.div`
   }
 
   li {
-    font-family: "Karla", sans-serif;
     color: #ffffff;
     text-decoration: none;
   }
