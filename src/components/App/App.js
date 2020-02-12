@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 import Search from "../Search/Search";
+import TermsConditions from "../TermsConditions/TermsConditions";
 
 const App = () => {
   const dataCall = async () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Switch>
           <Route path="/" component={LandingPage} exact />
           <Route path="/about" component={About} />
+          <Route path="/termsandconditions" component={TermsConditions} />
           <Route path="/search" render={() => <Search />} />
         </Switch>
       </BrowserRouter>
