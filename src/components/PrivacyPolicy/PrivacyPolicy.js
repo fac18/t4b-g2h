@@ -4,8 +4,8 @@ import * as SC from "./PrivacyPolicy.style";
 const PrivacyPolicy = () => {
   return (
     <SC.PrivacyBox>
-      <h1>Privacy Policy</h1>
-      <h2>Privacy Notice, Cookie Policy and Copyright</h2>
+      <h2>Privacy Policy</h2>
+      <h3>Privacy Notice, Cookie Policy and Copyright</h3>
       <p>
         All materials on this website are subject to the laws of copyright. You
         may not reproduce or distribute the images or any part of the images for
@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
         the collections it represents. By entering the website, you are
         indicating that you have read and accepted the above conditions.
       </p>
-      <h2>If you are registering an account on the G2H website</h2>
+      <h3>If you are registering an account on the G2H website</h3>
       <p>
         We will process your personal data because we are entering into a
         contract with you or because we need to take steps to enter into a
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
         contact the Museums Data Protection Officer at info@g2h.com, telephone
         020 0000 0000.
       </p>
-      <h2>Use of Cookies</h2>
+      <h3>Use of Cookies</h3>
       <p>
         Our website uses local storage (such as cookies) in order to provide you
         with the best possible experience and to allow you to make use of
