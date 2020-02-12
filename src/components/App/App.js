@@ -7,21 +7,17 @@ import About from "../About/About";
 import Search from "../Search/Search";
 import TermsConditions from "../TermsConditions/TermsConditions";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
+<<<<<<< HEAD
 import MemberLogin from "../MemberLogin/MemberLogin";
+||||||| merged common ancestors
+=======
+import "../../index.css";
+>>>>>>> master
 
 const App = () => {
-  const dataCall = async () => {
-    await (await fetch("/.netlify/functions/getData/getData.js"))
-      .json()
-      // .then(data => JSON.stringify(data))
-      .then(data => console.log(data))
-      .catch(console.error);
-  };
-
   return (
     <>
       <Header />
-      <button onClick={dataCall}>Test</button>
       <BrowserRouter>
         <Switch>
           <Route path="/" component={LandingPage} exact />
