@@ -3,7 +3,7 @@ import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
 
 const Header = () => {
-  let keyword = "";
+  const [keyword, setKeyword] = useState(null);
 
   const dataCall = async () => {
     await (
@@ -12,7 +12,6 @@ const Header = () => {
       )
     )
       .json()
-      // .then(data => JSON.stringify(data))
       .then(data => console.log(data))
       .catch(console.error);
   };
@@ -29,7 +28,7 @@ const Header = () => {
         <SC.SearchBox>
           <SC.SearchBar
             placeholder="Search"
-            onChange={event => (keyword = event.target.value)}
+            onChange={event => setKeyword(event.target.value)}
           />
           <button onClick={dataCall}>SEARCH</button>
         </SC.SearchBox>
