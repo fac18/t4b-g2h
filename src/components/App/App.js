@@ -12,8 +12,8 @@ import "../../index.css";
 const App = () => {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route path="/" component={LandingPage} exact />
           <Route path="/about" component={About} />
@@ -21,8 +21,8 @@ const App = () => {
           <Route path="/privacypolicy" component={PrivacyPolicy} />
           <Route path="/search" render={() => <Search />} />
         </Switch>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   );
 };

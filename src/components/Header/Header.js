@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [keyword, setKeyword] = useState(null);
@@ -30,7 +31,9 @@ const Header = () => {
             placeholder="Search"
             onChange={event => setKeyword(event.target.value)}
           />
-          <button onClick={dataCall}>SEARCH</button>
+          <NavLink to="/search">
+            <button onClick={dataCall}>SEARCH</button>
+          </NavLink>
         </SC.SearchBox>
       </SC.Middle>
       <SC.MenuArea>
