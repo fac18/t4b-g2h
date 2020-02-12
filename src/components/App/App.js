@@ -1,9 +1,10 @@
 import React from "react";
-// import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-// import SearchPage from "../Search/Search";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import About from "../About/About";
+import Search from "../Search/Search";
 
 const App = () => {
   const dataCall = async () => {
@@ -15,19 +16,18 @@ const App = () => {
   };
 
   return (
-    // <BrowserRouter>
-    //   <Switch>
     <>
       <Header />
       <button onClick={dataCall}>Test</button>
-      <LandingPage />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={LandingPage} exact />
+          <Route path="/about" component={About} />
+          <Route path="/search" render={() => <Search />} />
+        </Switch>
+      </BrowserRouter>
       <Footer />
-
-      {/* <Route path="/" component={*component*} exact*/}
-      {/* <Route path="/" render=(() => <Component/>) */}
     </>
-    //  </Switch>
-    // </BrowserRouter>
   );
 };
 
