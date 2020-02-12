@@ -10,18 +10,9 @@ import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 import "../../index.css";
 
 const App = () => {
-  const dataCall = async () => {
-    await (await fetch("/.netlify/functions/getData/getData.js"))
-      .json()
-      // .then(data => JSON.stringify(data))
-      .then(data => console.log(data))
-      .catch(console.error);
-  };
-
   return (
     <>
       <Header />
-      <button onClick={dataCall}>Test</button>
       <BrowserRouter>
         <Switch>
           <Route path="/" component={LandingPage} exact />
