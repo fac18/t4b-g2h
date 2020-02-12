@@ -11,19 +11,17 @@ import "../../index.css";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={LandingPage} exact />
-          <Route path="/about" component={About} />
-          <Route path="/termsandconditions" component={TermsConditions} />
-          <Route path="/privacypolicy" component={PrivacyPolicy} />
-          <Route path="/search" render={() => <Search />} />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <Route path="/" component={LandingPage} exact />
+        <Route path="/about" component={About} />
+        <Route path="/termsandconditions" component={TermsConditions} />
+        <Route path="/privacypolicy" component={PrivacyPolicy} />
+        <Route path="/search" render={() => <Search />} />
+      </Switch>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 
