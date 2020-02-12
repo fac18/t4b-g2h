@@ -7,12 +7,8 @@ import About from "../About/About";
 import Search from "../Search/Search";
 import TermsConditions from "../TermsConditions/TermsConditions";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-<<<<<<< HEAD
 import MemberLogin from "../MemberLogin/MemberLogin";
-||||||| merged common ancestors
-=======
 import "../../index.css";
->>>>>>> master
 
 const App = () => {
   return (
