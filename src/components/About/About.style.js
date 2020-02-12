@@ -5,4 +5,9 @@ const AboutBox = styled.section`
   margin: 4.236rem;
 `;
 
-export { AboutBox };
+const AboutLogo = styled.img`
+  width: 20rem;
+  height: auto;
+`;
+
+export { AboutBox, AboutLogo };

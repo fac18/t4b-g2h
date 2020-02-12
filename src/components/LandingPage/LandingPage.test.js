@@ -1,7 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "../App/App";
+import LandingPage from "./LandingPage";
 
-test("renders Gateway 2 Heritage", () => {
-  render(<App />);
+it("renders image title", () => {
+  const { getAllByText } = render(<LandingPage />);
+  const imgText = getAllByText(/Collection name/i);
+  expect(imgText[0]).toBeInTheDocument();
 });
