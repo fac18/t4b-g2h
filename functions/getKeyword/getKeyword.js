@@ -3,8 +3,9 @@ const Airtable = require("airtable");
 
 exports.handler = (event, context, callback) => {
   console.log("inside function getKeyword");
+  console.log(event.queryStringParameters);
   const { API_URL, API_TEST_CLIENT_ID, API_KEY } = process.env;
-  // console.log(API_TEST_CLIENT_ID);
+
   // const send = body => {
   //   callback(null, {
   //     statusCode: 200,
@@ -23,8 +24,9 @@ exports.handler = (event, context, callback) => {
   base("images")
     .select({
       // Selecting the first 3 records in Grid view:
-      filterByFormula:
-        "{keywords} = 'sport, hunting, animals, sitting, pub, inn, women, men, friendly, chatting, bar, community, 20th century, 1954, group, evening'",
+      // filterByFormula: `SEARCH("${myFilter}", Column) >= 0`
+
+      filterByFormula: "SEARCH(' farm', {keywords})",
       maxRecords: 3,
       view: "Grid view"
     })
