@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import LandingPage from "./LandingPage";
 
-test("renders image title", () => {
+it("renders image title", () => {
   const { getAllByText } = render(<LandingPage />);
   const imgText = getAllByText(/Collection name/i);
   expect(imgText[0]).toBeInTheDocument();
