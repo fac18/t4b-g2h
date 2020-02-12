@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
 import Header from "../Header/Header";
@@ -10,10 +10,22 @@ import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 import "../../index.css";
 
 const App = () => {
+  const [keyword, setKeyword] = useState(null);
+
+  const dataCall = async () => {
+    await (
+      await fetch(
+        `/.netlify/functions/getKeyword/getKeyword.js?keywords=${keyword}`
+      )
+    )
+      .json()
+      .then(data => console.log(data))
+      .catch(console.error);
+  };
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header dataCall={dataCall} setKeyword={setKeyword} />
         <Switch>
           <Route path="/" component={LandingPage} exact />
           <Route path="/about" component={About} />

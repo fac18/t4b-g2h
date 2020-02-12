@@ -1,22 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
-  const [keyword, setKeyword] = useState(null);
-
-  const dataCall = async () => {
-    await (
-      await fetch(
-        `/.netlify/functions/getKeyword/getKeyword.js?keywords=${keyword}`
-      )
-    )
-      .json()
-      .then(data => console.log(data))
-      .catch(console.error);
-  };
-
+const Header = ({ dataCall, setKeyword }) => {
   return (
     <SC.HeaderBox>
       <SC.LogoBox>
