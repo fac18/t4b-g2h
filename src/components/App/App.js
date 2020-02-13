@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PropTypes from "prop-types";
 import LandingPage from "../LandingPage/LandingPage";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -54,12 +53,6 @@ const App = () => {
       <Footer />
     </BrowserRouter>
   );
-};
-
-App.propTypes = {
-  props: PropTypes.object,
-  dataCall: PropTypes.object,
-  setKeyword: PropTypes.object,
 };
 
 export default App;
