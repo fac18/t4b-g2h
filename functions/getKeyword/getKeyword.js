@@ -19,88 +19,39 @@ exports.handler = (event, context, callback) => {
       filterByFormula: `
         IF(
           (FIND('${searchTerm}',{keywords}))!=0,
-          IF(OR(
-            (MID(
-              {keywords},
-              (FIND('${searchTerm}',{keywords}))-1,
-              1)
-              =' '),
-              (MID(
-                {keywords},
-                (FIND('${searchTerm}',{keywords}))-1,
-                1)
-                =','),
-                (MID(
-                  {keywords},
-                  (FIND('${searchTerm}',{keywords}))-1,
-                  1)
-                  ='')
-                  ),
-            TRUE(),
-            FALSE()
+          IF(
+            OR(
+              (
+                MID
+                  (
+                    {keywords},
+                    (FIND('${searchTerm}',{keywords}))-1,
+                    1
+                  )=' '
+              ),
+              (
+                MID
+                  (
+                    {keywords},
+                    (FIND('${searchTerm}',{keywords}))-1,
+                    1
+                  )=','
+              ),
+              (
+                MID
+                  (
+                    {keywords},
+                    (FIND('${searchTerm}',{keywords}))-1,
+                    1
+                  )=''
+              )
+              ),
+              TRUE(),
+              FALSE()
             ),
           FALSE()
         )
       `,
-
-      // filterByFormula: `
-      //    AND(
-      //      IF(
-      //        (FIND('${searchTerm}',{keywords}))!=0,
-      //        TRUE(),
-      //        FALSE()
-      //      ),
-      //      IF(
-      //        (MID(
-      //          {keywords},
-      //          (FIND('${searchTerm}',{keywords}))-1,
-      //          1
-      //        )=' '),
-      //        TRUE(),
-      //        FALSE()
-      //      )
-      //    )
-      // `,
-
-      //
-      // filterByFormula: `AND(IF(FIND('${searchTerm}',{keywords})!=0,TRUE(),FALSE()),IF((MID({keywords},FIND('${searchTerm}',{keywords})-1,1)=OR(' ',',')),TRUE(),FALSE()))`,
-      //
-      //
-      // filterByFormula: `
-      //    AND(
-      //      IF(
-      //        FIND('${searchTerm}',{keywords})!=0,
-      //        TRUE(),
-      //        FALSE()
-      //      ),
-      //      IF(
-      //        MID(
-      //          {keywords},
-      //          FIND(('${searchTerm}',{keywords})-1,1)=OR(' ',',')
-      //        ),
-      //        TRUE(),
-      //        FALSE()
-      //      )
-      //    )
-      // `,
-      //
-      //
-      // `AND((FIND('${searchTerm}', {keywords})),(((FIND('${searchTerm}', {keywords}))-1)=OR(' ',',')))`,
-
-      // filterByFormula: `FIND(' ${searchTerm}', {keywords})`,
-
-      // filterByFormula: `FIND(' ${searchTerm}', {keywords})`,
-      //
-      // `
-      // IF(
-      //   AND(
-      //     (FIND('${searchTerm}', {keywords})),
-      //     ((FIND('${searchTerm}', {keywords}))-1)=OR(' ',',')
-      //   ),
-      //     IFTRUE,
-      //     IFFALSE
-      // )
-      // `,
       maxRecords: 3,
       view: "Grid view"
     })
