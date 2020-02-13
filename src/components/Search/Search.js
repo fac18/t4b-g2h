@@ -3,11 +3,10 @@ import Img from "../styles/Img.style";
 import * as SC from "./Search.style.js";
 
 const SearchPage = ({ searchResult }) => {
-  console.log("this is odd", searchResult);
   if (!searchResult) return <h1>No data yet</h1>;
-  console.log(searchResult.records[0].fields.caption);
   const searchRecords = searchResult.records;
 
+  //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
   return (
     <SC.SearchStyle>
       {searchRecords.map(record => (
