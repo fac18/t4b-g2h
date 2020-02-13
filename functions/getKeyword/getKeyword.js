@@ -16,42 +16,35 @@ exports.handler = (event, context, callback) => {
     .select({
       // Selecting the first 3 records in Grid view:
 
-      filterByFormula: `
-        IF(
-          (FIND('${searchTerm}',{keywords}))!=0,
-          IF(
-            OR(
-              (
-                MID
-                  (
-                    {keywords},
-                    (FIND('${searchTerm}',{keywords}))-1,
-                    1
-                  )=' '
-              ),
-              (
-                MID
-                  (
-                    {keywords},
-                    (FIND('${searchTerm}',{keywords}))-1,
-                    1
-                  )=','
-              ),
-              (
-                MID
-                  (
-                    {keywords},
-                    (FIND('${searchTerm}',{keywords}))-1,
-                    1
-                  )=''
-              )
-              ),
-              TRUE(),
-              FALSE()
-            ),
-          FALSE()
-        )
-      `,
+      filterByFormula: `IF((FIND('${searchTerm}',{keywords}))!=0,IF(OR((MID({keywords},(FIND('${searchTerm}',{keywords}))-1,1)=' '),(MID({keywords},(FIND('${searchTerm}',{keywords}))-1,1)=','),(MID({keywords},(FIND('${searchTerm}',{keywords}))-1,1)='')),TRUE(),FALSE()),FALSE())`,
+
+      // filterByFormula: `
+      //   IF(
+      //     (FIND('${searchTerm}',{keywords}))!=0,
+      //     IF(OR(
+      //       (MID(
+      //         {keywords},
+      //         (FIND('${searchTerm}',{keywords}))-1,
+      //         1)
+      //         =' '),
+      //         (MID(
+      //           {keywords},
+      //           (FIND('${searchTerm}',{keywords}))-1,
+      //           1)
+      //           =','),
+      //           (MID(
+      //             {keywords},
+      //             (FIND('${searchTerm}',{keywords}))-1,
+      //             1)
+      //             ='')
+      //             ),
+      //       TRUE(),
+      //       FALSE()
+      //       ),
+      //     FALSE()
+      //   )
+      // `,
+
       maxRecords: 3,
       view: "Grid view"
     })
