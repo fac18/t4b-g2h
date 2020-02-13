@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SearchStyle = styled.section`
   display: grid;
-  justify-content: center;
+  justify-items: center;
   grid-template-columns: repeat(3, 1fr);
 `;
 const Search = styled.div`
@@ -29,6 +29,7 @@ const ContentContainer = styled.div`
   width: 250px;
   height: 300px;
   text-align: center;
+  padding: 1rem 0 1rem 0;
 `;
 
 const ImgContainer = styled.div`
