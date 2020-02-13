@@ -17,7 +17,7 @@ exports.handler = (event, context, callback) => {
       // Selecting the first 3 records in Grid view:
 
       filterByFormula: `SEARCH(' ${searchTerm}', {keywords})`,
-      maxRecords: 3,
+      maxRecords: 100,
       view: "Grid view"
     })
     .eachPage(

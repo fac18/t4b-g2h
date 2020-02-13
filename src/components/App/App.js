@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
 import Header from "../Header/Header";
@@ -17,15 +17,31 @@ import MuseumProfile from "../MuseumProfile/MuseumProfile";
 import "../../index.css";
 
 const App = () => {
+  const [keyword, setKeyword] = useState(null);
+  const [searchResult, setSearchResult] = useState(null);
+
+  const dataCall = async () => {
+    await (
+      await fetch(
+        `/.netlify/functions/getKeyword/getKeyword.js?keywords=${keyword}`
+      )
+    )
+      .json()
+      .then(data => setSearchResult(data))
+      .catch(console.error);
+  };
   return (
     <BrowserRouter>
-      <Header />
+      <Header dataCall={dataCall} setKeyword={setKeyword} />
       <Switch>
         <Route path="/" component={LandingPage} exact />
         <Route path="/about" component={About} />
         <Route path="/termsandconditions" component={TermsConditions} />
         <Route path="/privacypolicy" component={PrivacyPolicy} />
-        <Route path="/search" render={() => <Search />} />
+        <Route
+          path="/search"
+          render={() => <Search searchResult={searchResult} />}
+        />
         <Route path="/memberlogin" render={() => <MemberLogin />} />
         <Route path="/membersignup" render={() => <MemberSignUp />} />
         <Route path="/museumlogin" render={() => <MuseumLogin />} />

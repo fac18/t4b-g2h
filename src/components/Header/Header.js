@@ -1,22 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, NavLink, Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Header = () => {
-  const [keyword, setKeyword] = useState(null);
-
-  const dataCall = async () => {
-    await (
-      await fetch(
-        `/.netlify/functions/getKeyword/getKeyword.js?keywords=${keyword}`
-      )
-    )
-      .json()
-      .then(data => console.log(data))
-      .catch(console.error);
-  };
-
+const Header = ({ dataCall, setKeyword }) => {
   return (
     <SC.HeaderBox>
       <BrowserRouter>
@@ -36,7 +24,9 @@ const Header = () => {
               placeholder="Search"
               onChange={event => setKeyword(event.target.value)}
             />
-            <button onClick={dataCall}>SEARCH</button>
+            <NavLink to="/search">
+              <button onClick={dataCall}>SEARCH</button>
+            </NavLink>
           </SC.SearchBox>
         </SC.Middle>
         <SC.MenuArea>
@@ -45,6 +35,11 @@ const Header = () => {
       </BrowserRouter>
     </SC.HeaderBox>
   );
+};
+
+Header.propTypes = {
+  dataCall: PropTypes.object,
+  setKeyword: PropTypes.object
 };
 
 export default Header;
