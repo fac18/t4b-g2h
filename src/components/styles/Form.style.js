@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const EditContentForm = styled.form`
+const FormBox = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,4 +11,4 @@ const EditContentForm = styled.form`
   }
 `;
 
-export { EditContentForm };
+export { FormBox };

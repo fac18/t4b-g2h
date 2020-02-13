@@ -1,11 +1,11 @@
 import React from "react";
-import * as SC from "./MemberSignUp.style";
+import * as SC from "../styles/Form.style";
 
 const MemberSignUp = () => {
   return (
     <>
       <h2>Member Sign-up</h2>
-      <SC.MemberSignUpForm action="/" method="POST">
+      <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
         <input
           name="username"
@@ -39,7 +39,7 @@ const MemberSignUp = () => {
           required
         ></input>
         <button>Submit</button>
-      </SC.MemberSignUpForm>
+      </SC.FormBox>
     </>
   );
 };

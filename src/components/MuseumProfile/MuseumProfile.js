@@ -1,14 +1,15 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
+import { Link } from "react-router-dom";
 
-const MuseumLogin = () => {
+const MuseumProfile = () => {
   return (
     <>
-      <h2>Museum Login</h2>
+      <h2>Your profile:</h2>
       <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
         <input aria-label="Enter username" id="username" required />
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="username">Password:</label>
         <input
           id="password"
           type="password"
@@ -16,11 +17,15 @@ const MuseumLogin = () => {
           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
           required
         />
-        <button>Login</button>
-        <button>Sign-up</button>
+        <button>Change Password</button>
       </SC.FormBox>
+      <h3>Your content history:</h3>
+      <Link to="/addnewcontent">
+        <button>Add new content</button>
+      </Link>
+      {/* Display content history/uploads from db */}
     </>
   );
 };
 
-export default MuseumLogin;
+export default MuseumProfile;

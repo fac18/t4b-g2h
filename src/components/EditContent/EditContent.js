@@ -1,12 +1,12 @@
 import React from "react";
-import * as SC from "./EditContent.style";
+import * as SC from "../styles/Form.style";
 
 const EditContent = () => {
   return (
     <>
       <h2>Edit Content</h2>
       {/* <p>{museum.id here from db}</p> */}
-      <SC.EditContentForm action="/" method="POST">
+      <SC.FormBox action="/" method="POST">
         <label htmlFor="title">Title:</label>
         <input
           name="title"
@@ -66,7 +66,7 @@ const EditContent = () => {
         />
 
         <button>Submit</button>
-      </SC.EditContentForm>
+      </SC.FormBox>
     </>
   );
 };

@@ -1,12 +1,12 @@
 import React from "react";
-import * as SC from "./AddNewContent.style";
+import * as SC from "../styles/Form.style";
 
 const AddNewContent = () => {
   return (
     <>
       <h2>Add New Content</h2>
       {/* <p>{museum.id here from db}</p> */}
-      <SC.NewContentForm action="/" method="POST">
+      <SC.FormBox action="/" method="POST">
         <label htmlFor="title">Title:</label>
         <input
           name="title"
@@ -66,7 +66,7 @@ const AddNewContent = () => {
         />
 
         <button>Submit</button>
-      </SC.NewContentForm>
+      </SC.FormBox>
     </>
   );
 };

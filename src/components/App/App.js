@@ -13,6 +13,7 @@ import MuseumLogin from "../MuseumLogin/MuseumLogin";
 import AddNewContent from "../AddNewContent/AddNewContent";
 import EditContent from "../EditContent/EditContent";
 import MemberProfile from "../MemberProfile/MemberProfile";
+import MuseumProfile from "../MuseumProfile/MuseumProfile";
 import "../../index.css";
 
 const App = () => {
@@ -27,8 +28,9 @@ const App = () => {
         <Route path="/search" render={() => <Search />} />
         <Route path="/memberlogin" render={() => <MemberLogin />} />
         <Route path="/membersignup" render={() => <MemberSignUp />} />
-        <Route path="/museumlogin" render={() => <MuseumLogin />} />{" "}
+        <Route path="/museumlogin" render={() => <MuseumLogin />} />
         <Route path="/profile" render={() => <MemberProfile />} />
+        <Route path="/museumprofile" render={() => <MuseumProfile />} />
         <Route path="/addnewcontent" render={() => <AddNewContent />} />
         <Route path="/editcontent" render={() => <EditContent />} />
       </Switch>
