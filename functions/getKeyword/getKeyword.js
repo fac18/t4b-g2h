@@ -21,7 +21,7 @@ exports.handler = (event, context, callback) => {
       // filterByFormula: `IF((FIND('${searchTerm}',LOWER({keywords})))!=0,IF(OR((MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=' '),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=','),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)='')),TRUE(),FALSE()),FALSE())`,
 
       // Selecting the first 3 records in Grid view:
-      maxRecords: 3,
+      maxRecords: 100,
       view: "Grid view"
     })
     .eachPage(
