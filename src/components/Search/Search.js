@@ -1,6 +1,6 @@
 import React from "react";
-import Img from "../styles/Img.style";
 import * as SC from "./Search.style.js";
+import PropTypes from "prop-types";
 
 const SearchPage = ({ searchResult }) => {
   if (!searchResult) return <h1>No data yet</h1>;
@@ -19,6 +19,7 @@ const SearchPage = ({ searchResult }) => {
       ))}
     </SC.SearchStyle>
   );
+
   //   return (
   //     <SC.Search>
   //       {/* navbar */}
@@ -72,4 +73,7 @@ const SearchPage = ({ searchResult }) => {
   //   );
 };
 
+SearchPage.propTypes = {
+  searchResult: PropTypes.array
+};
 export default SearchPage;
