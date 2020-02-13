@@ -1,6 +1,6 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 
 const MuseumProfile = () => {
   return (
@@ -20,9 +20,11 @@ const MuseumProfile = () => {
         <button>Change Password</button>
       </SC.FormBox>
       <h3>Your content history:</h3>
-      <Link to="/addnewcontent">
-        <button>Add new content</button>
-      </Link>
+      <BrowserRouter>
+        <Link to="/addnewcontent">
+          <button>Add new content</button>
+        </Link>
+      </BrowserRouter>
       {/* Display content history/uploads from db */}
     </>
   );
