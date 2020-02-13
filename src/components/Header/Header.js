@@ -2,6 +2,7 @@ import React from "react";
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
 import { BrowserRouter, NavLink, Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Header = ({ dataCall, setKeyword }) => {
   return (
@@ -34,6 +35,11 @@ const Header = ({ dataCall, setKeyword }) => {
       </BrowserRouter>
     </SC.HeaderBox>
   );
+};
+
+Header.propTypes = {
+  dataCall: PropTypes.object,
+  setKeyword: PropTypes.object
 };
 
 export default Header;
