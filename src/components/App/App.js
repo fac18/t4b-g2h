@@ -11,6 +11,7 @@ import "../../index.css";
 
 const App = () => {
   const [keyword, setKeyword] = useState(null);
+  const [searchResult, setSearchResult] = useState(null);
 
   const dataCall = async () => {
     await (
@@ -19,7 +20,7 @@ const App = () => {
       )
     )
       .json()
-      .then(data => console.log(data))
+      .then(data => setSearchResult(data))
       .catch(console.error);
   };
   return (
@@ -31,7 +32,10 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route path="/termsandconditions" component={TermsConditions} />
           <Route path="/privacypolicy" component={PrivacyPolicy} />
-          <Route path="/search" render={() => <Search />} />
+          <Route
+            path="/search"
+            render={() => <Search searchResult={searchResult} />}
+          />
         </Switch>
         <Footer />
       </BrowserRouter>
