@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom"
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
 import { Link } from "react-router-dom";
@@ -18,6 +19,7 @@ const Header = () => {
   };
 
   return (
+    <BrowserRouter>
     <SC.HeaderBox>
       <SC.LogoBox>
         <Link to="/">
@@ -42,6 +44,7 @@ const Header = () => {
         <a href="/">&#9776; MENU</a>
       </SC.MenuArea>
     </SC.HeaderBox>
+    </BrowserRouter>
   );
 };
 

@@ -1,10 +1,12 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom"
 import Social from "../Social/Social";
 import * as SC from "./Footer.style";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
+    <BrowserRouter>
     <SC.FooterBox>
       <Social />
       <SC.FooterTextBox>
@@ -32,6 +34,7 @@ const Footer = () => {
         </ul>
       </SC.FooterTextBox>
     </SC.FooterBox>
+    </BrowserRouter>
   );
 };
 
