@@ -1,13 +1,12 @@
 import React from "react";
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
-import { BrowserRouter, NavLink, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Header = ({ dataCall, setKeyword }) => {
   return (
     <SC.HeaderBox>
-      <BrowserRouter>
         <SC.LogoBox>
           <Link to="/">
             <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
@@ -32,14 +31,14 @@ const Header = ({ dataCall, setKeyword }) => {
         <SC.MenuArea>
           <a href="/">&#9776; MENU</a>
         </SC.MenuArea>
-      </BrowserRouter>
     </SC.HeaderBox>
   );
 };
 
 Header.propTypes = {
+  props: PropTypes.object,
   dataCall: PropTypes.object,
-  setKeyword: PropTypes.object
+  setKeyword: PropTypes.object,
 };
 
 export default Header;
