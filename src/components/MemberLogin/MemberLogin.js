@@ -6,9 +6,12 @@ const MemberLogin = () => {
     <>
       <h2>Member Login</h2>
       <SC.MemberLoginForm action="/" method="POST">
-        <input placeholder="username" aria-label="Enter username" required />
+        <label htmlFor="username">Username:</label>
+        <input aria-label="Enter username" id="username" required />
+        <label htmlFor="username">Password:</label>
         <input
           placeholder="password"
+          id="password"
           type="password"
           aria-label="Enter password"
           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"

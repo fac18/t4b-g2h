@@ -10,6 +10,7 @@ import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 import MemberLogin from "../MemberLogin/MemberLogin";
 import MemberSignUp from "../MemberSignUp/MemberSignUp";
 import MuseumLogin from "../MuseumLogin/MuseumLogin";
+import AddNewContent from "../AddNewContent/AddNewContent";
 import "../../index.css";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/memberlogin" render={() => <MemberLogin />} />
         <Route path="/membersignup" render={() => <MemberSignUp />} />
         <Route path="/museumlogin" render={() => <MuseumLogin />} />
+        <Route path="/addnewcontent" render={() => <AddNewContent />} />
       </Switch>
       <Footer />
     </BrowserRouter>

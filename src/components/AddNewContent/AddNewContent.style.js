@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MuseumLoginForm = styled.form`
+const NewContentForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,4 +11,4 @@ const MuseumLoginForm = styled.form`
   }
 `;
 
-export { MuseumLoginForm };
+export { NewContentForm };
