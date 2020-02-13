@@ -1,10 +1,10 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
 
-const MemberLogin = () => {
+const MemberProfile = () => {
   return (
     <>
-      <h2>Member Login</h2>
+      <h2>Your profile:</h2>
       <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
         <input aria-label="Enter username" id="username" required />
@@ -16,11 +16,12 @@ const MemberLogin = () => {
           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
           required
         />
-        <button>Login</button>
-        <button>Sign-up</button>
+        <button>Change Password</button>
       </SC.FormBox>
+      <h3>Your purchases:</h3>
+      {/* Display purchases content from db */}
     </>
   );
 };
 
-export default MemberLogin;
+export default MemberProfile;

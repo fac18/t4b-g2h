@@ -1,7 +1,7 @@
 import React from "react";
 import Social from "../Social/Social";
 import * as SC from "./Footer.style";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,15 +20,17 @@ const Footer = () => {
       </SC.FooterTextBox>
       <SC.FooterTextBox>
         <ul>
-          <Link to="/about">
-            <li>About Us</li>
-          </Link>
-          <Link to="/termsandconditions">
-            <li>Terms and Conditions</li>
-          </Link>
-          <Link to="/privacypolicy">
-            <li>Privacy Policy</li>
-          </Link>
+          <BrowserRouter>
+            <Link to="/about">
+              <li>About Us</li>
+            </Link>
+            <Link to="/termsandconditions">
+              <li>Terms and Conditions</li>
+            </Link>
+            <Link to="/privacypolicy">
+              <li>Privacy Policy</li>
+            </Link>
+          </BrowserRouter>
         </ul>
       </SC.FooterTextBox>
     </SC.FooterBox>

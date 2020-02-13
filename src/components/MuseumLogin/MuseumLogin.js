@@ -1,14 +1,14 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
 
-const MemberLogin = () => {
+const MuseumLogin = () => {
   return (
     <>
-      <h2>Member Login</h2>
+      <h2>Museum Login</h2>
       <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
         <input aria-label="Enter username" id="username" required />
-        <label htmlFor="username">Password:</label>
+        <label htmlFor="password">Password:</label>
         <input
           id="password"
           type="password"
@@ -23,4 +23,4 @@ const MemberLogin = () => {
   );
 };
 
-export default MemberLogin;
+export default MuseumLogin;
