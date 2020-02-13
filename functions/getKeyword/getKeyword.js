@@ -1,7 +1,7 @@
 const Airtable = require("airtable");
 
 exports.handler = (event, context, callback) => {
-  const searchTerm = event.queryStringParameters.keywords;
+  const searchTerm = event.queryStringParameters.keywords.toLowerCase();
   const { API_URL, API_TEST_CLIENT_ID, API_KEY } = process.env;
 
   Airtable.configure({
@@ -16,7 +16,7 @@ exports.handler = (event, context, callback) => {
     .select({
       // Selecting the first 3 records in Grid view:
 
-      filterByFormula: `IF((FIND('${searchTerm}',{keywords}))!=0,IF(OR((MID({keywords},(FIND('${searchTerm}',{keywords}))-1,1)=' '),(MID({keywords},(FIND('${searchTerm}',{keywords}))-1,1)=','),(MID({keywords},(FIND('${searchTerm}',{keywords}))-1,1)='')),TRUE(),FALSE()),FALSE())`,
+      filterByFormula: `IF((FIND('${searchTerm}',LOWER(LOWER({keywords}))))!=0,IF(OR((MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=' '),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=','),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)='')),TRUE(),FALSE()),FALSE())`,
 
       // filterByFormula: `
       //   IF(
