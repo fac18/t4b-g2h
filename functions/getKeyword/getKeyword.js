@@ -1,7 +1,7 @@
 const Airtable = require("airtable");
 
 exports.handler = (event, context, callback) => {
-  const searchTerm = event.queryStringParameters.keywords;
+  const searchTerm = event.queryStringParameters.keywords.toLowerCase();
   const { API_URL, API_TEST_CLIENT_ID, API_KEY } = process.env;
 
   Airtable.configure({
@@ -14,9 +14,13 @@ exports.handler = (event, context, callback) => {
 
   base("images")
     .select({
-      // Selecting the first 3 records in Grid view:
+      // Below filterByFormula query uses AND statement
+      filterByFormula: `AND((FIND('${searchTerm}',LOWER({keywords})))!=0,IF(OR((MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=' '),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=','),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)='')),TRUE(),FALSE()))`,
 
-      filterByFormula: `SEARCH(' ${searchTerm}', {keywords})`,
+      // Below filterByFormula query uses nested IF statement
+      // filterByFormula: `IF((FIND('${searchTerm}',LOWER({keywords})))!=0,IF(OR((MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=' '),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=','),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)='')),TRUE(),FALSE()),FALSE())`,
+
+      // Selecting the first 3 records in Grid view:
       maxRecords: 100,
       view: "Grid view"
     })
@@ -25,7 +29,7 @@ exports.handler = (event, context, callback) => {
         // This function (`page`) will get called for each page of records.
 
         records.forEach(function(record) {
-          console.log("Retrieved", record.get("image_id"));
+          // console.log("Retrieved", record.get("image_id"));
           data.push(record);
         });
 
