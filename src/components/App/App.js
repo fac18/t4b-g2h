@@ -14,6 +14,10 @@ import AddNewContent from "../AddNewContent/AddNewContent";
 import EditContent from "../EditContent/EditContent";
 import MemberProfile from "../MemberProfile/MemberProfile";
 import MuseumProfile from "../MuseumProfile/MuseumProfile";
+import Basket from "../Basket/Basket";
+import Partners from "../Partners/Partners";
+import MuseumInfo from "../MuseumInfo/MuseumInfo";
+import Payment from "../Payment/Payment";
 import "../../index.css";
 
 const App = () => {
@@ -33,6 +37,10 @@ const App = () => {
         <Route path="/museumprofile" render={() => <MuseumProfile />} />
         <Route path="/addnewcontent" render={() => <AddNewContent />} />
         <Route path="/editcontent" render={() => <EditContent />} />
+        <Route path="/basket" render={() => <Basket />} />
+        <Route path="/partners" render={() => <Partners />} />
+        <Route path="/museuminfo" render={() => <MuseumInfo />} />
+        <Route path="/payment" render={() => <Payment />} />
       </Switch>
       <Footer />
     </BrowserRouter>
