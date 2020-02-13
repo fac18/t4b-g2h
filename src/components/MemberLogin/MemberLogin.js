@@ -10,7 +10,6 @@ const MemberLogin = () => {
         <input aria-label="Enter username" id="username" required />
         <label htmlFor="username">Password:</label>
         <input
-          placeholder="password"
           id="password"
           type="password"
           aria-label="Enter password"
