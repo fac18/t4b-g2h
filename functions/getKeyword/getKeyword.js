@@ -14,37 +14,13 @@ exports.handler = (event, context, callback) => {
 
   base("images")
     .select({
+      // Below filterByFormula query uses AND statement
+      filterByFormula: `AND((FIND('${searchTerm}',LOWER({keywords})))!=0,IF(OR((MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=' '),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=','),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)='')),TRUE(),FALSE()))`,
+
+      // Below filterByFormula query uses nested IF statement
+      // filterByFormula: `IF((FIND('${searchTerm}',LOWER({keywords})))!=0,IF(OR((MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=' '),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=','),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)='')),TRUE(),FALSE()),FALSE())`,
+
       // Selecting the first 3 records in Grid view:
-
-      filterByFormula: `IF((FIND('${searchTerm}',LOWER({keywords})))!=0,IF(OR((MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=' '),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)=','),(MID(LOWER({keywords}),(FIND('${searchTerm}',LOWER({keywords})))-1,1)='')),TRUE(),FALSE()),FALSE())`,
-
-      // filterByFormula: `
-      //   IF(
-      //     (FIND('${searchTerm}',{keywords}))!=0,
-      //     IF(OR(
-      //       (MID(
-      //         {keywords},
-      //         (FIND('${searchTerm}',{keywords}))-1,
-      //         1)
-      //         =' '),
-      //         (MID(
-      //           {keywords},
-      //           (FIND('${searchTerm}',{keywords}))-1,
-      //           1)
-      //           =','),
-      //           (MID(
-      //             {keywords},
-      //             (FIND('${searchTerm}',{keywords}))-1,
-      //             1)
-      //             ='')
-      //             ),
-      //       TRUE(),
-      //       FALSE()
-      //       ),
-      //     FALSE()
-      //   )
-      // `,
-
       maxRecords: 3,
       view: "Grid view"
     })
@@ -53,7 +29,7 @@ exports.handler = (event, context, callback) => {
         // This function (`page`) will get called for each page of records.
 
         records.forEach(function(record) {
-          console.log("Retrieved", record.get("image_id"));
+          // console.log("Retrieved", record.get("image_id"));
           data.push(record);
         });
 
