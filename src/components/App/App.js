@@ -8,6 +8,7 @@ import Search from "../Search/Search";
 import TermsConditions from "../TermsConditions/TermsConditions";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 import MemberLogin from "../MemberLogin/MemberLogin";
+import MemberSignUp from "../MemberSignUp/MemberSignUp";
 import "../../index.css";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/privacypolicy" component={PrivacyPolicy} />
         <Route path="/search" render={() => <Search />} />
         <Route path="/memberlogin" render={() => <MemberLogin />} />
+        <Route path="/membersignup" render={() => <MemberSignUp />} />
       </Switch>
       <Footer />
     </BrowserRouter>
