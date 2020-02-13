@@ -19,12 +19,23 @@ exports.handler = (event, context, callback) => {
       filterByFormula: `
         IF(
           (FIND('${searchTerm}',{keywords}))!=0,
-          IF(
+          IF(OR(
             (MID(
               {keywords},
               (FIND('${searchTerm}',{keywords}))-1,
               1)
-              )=' ',
+              =' '),
+              (MID(
+                {keywords},
+                (FIND('${searchTerm}',{keywords}))-1,
+                1)
+                =','),
+                (MID(
+                  {keywords},
+                  (FIND('${searchTerm}',{keywords}))-1,
+                  1)
+                  ='')
+                  ),
             TRUE(),
             FALSE()
             ),
