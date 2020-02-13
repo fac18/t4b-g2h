@@ -1,11 +1,11 @@
 import React from "react";
-import * as SC from "./MemberLogin.style";
+import * as SC from "./MuseumLogin.style";
 
-const MemberLogin = () => {
+const MuseumLogin = () => {
   return (
     <>
-      <h2>Member Login</h2>
-      <SC.MemberLoginForm action="/" method="POST">
+      <h2>Museum Login</h2>
+      <SC.MuseumLoginForm action="/" method="POST">
         <input placeholder="username" aria-label="Enter username" required />
         <input
           placeholder="password"
@@ -16,9 +16,9 @@ const MemberLogin = () => {
         />
         <button>Login</button>
         <button>Sign-up</button>
-      </SC.MemberLoginForm>
+      </SC.MuseumLoginForm>
     </>
   );
 };
 
-export default MemberLogin;
+export default MuseumLogin;
