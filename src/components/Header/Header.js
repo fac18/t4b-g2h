@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
 import { NavLink, Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import NavMenu from "../NavMenu/NavMenu";
+import basket from "../../assets/basket.svg";
 
-const Header = ({ dataCall, setKeyword }) => {
+const Header = props => {
+  const [navMenu, setNavMenu] = useState(false);
+
+  const toggleNav = () => {
+    setNavMenu(!navMenu);
+  };
+
   return (
-    <SC.HeaderBox>
+    <>
+      <SC.HeaderBox>
         <SC.LogoBox>
           <Link to="/">
             <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
@@ -21,17 +30,23 @@ const Header = ({ dataCall, setKeyword }) => {
           <SC.SearchBox>
             <SC.SearchBar
               placeholder="Search"
-              onChange={event => setKeyword(event.target.value)}
+              onChange={event => props.setKeyword(event.target.value)}
             />
             <NavLink to="/search">
-              <button onClick={dataCall}>SEARCH</button>
+              <button onClick={props.dataCall}>SEARCH</button>
             </NavLink>
           </SC.SearchBox>
         </SC.Middle>
         <SC.MenuArea>
-          <a href="/">&#9776; MENU</a>
+          <SC.Basket>
+            <p>View basket</p>
+            <img src={basket} alt="checkout basket" />
+          </SC.Basket>
+          <SC.MenuButton onClick={toggleNav}>MENU &#9776;</SC.MenuButton>
         </SC.MenuArea>
-    </SC.HeaderBox>
+      </SC.HeaderBox>
+      {navMenu && <NavMenu navMenu={navMenu} setnavMenu={setNavMenu} />}
+    </>
   );
 };
 
@@ -39,6 +54,8 @@ Header.propTypes = {
   props: PropTypes.object,
   dataCall: PropTypes.object,
   setKeyword: PropTypes.object,
+  navMenu: PropTypes.bool,
+  setNavMenu: PropTypes.object
 };
 
 export default Header;

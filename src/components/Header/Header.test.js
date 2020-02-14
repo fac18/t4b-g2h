@@ -4,8 +4,6 @@ import {
   render,
   cleanup,
   fireEvent,
-  waitForElement,
-  findByTestId
 } from "@testing-library/react";
 import Header from "./Header";
 import App from "../App/App";
@@ -31,7 +29,7 @@ global.fetch = jest.fn().mockImplementation(() =>
 );
 
 it("mocks a returns of expected data", () => {
-  const { getByPlaceholderText, getByText, getByTestId } = render(
+  const { getByPlaceholderText, getByText } = render(
       <Router history={history}><App /></Router>
   );
  render(<Router history={history}><Search /></Router>);

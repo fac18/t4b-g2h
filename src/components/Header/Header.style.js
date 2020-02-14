@@ -5,11 +5,12 @@ const HeaderBox = styled.header`
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #eb5a61;
   align-items: end;
   position: sticky;
   top: -10vh;
+  overflow: auto;
 
   h1 {
     color: #2b2b31;
@@ -29,7 +30,7 @@ const TitleBox = styled.div`
 
 const SearchBox = styled.div`
   width: 80wv;
-  height: 10vh;
+  height: 20vh;
   background-color: #eb5a61;
   position: sticky;
   top: 0;
@@ -38,13 +39,15 @@ const SearchBox = styled.div`
 `;
 
 const LogoBox = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0.618rem;
+  left: 0.618rem;
 `;
 
 const MenuArea = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0.618rem;
+  right: 0.618rem;
   box-sizing: border-box;
   max-height: 10vh;
   margin: 0.618rem;
@@ -74,6 +77,16 @@ const G2hLogo = styled.img`
   margin: 0.618rem;
 `;
 
+const MenuButton = styled.p`
+  cursor: pointer;
+`;
+
+const Basket = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+`;
+
 export {
   HeaderBox,
   SearchBox,
@@ -82,5 +95,7 @@ export {
   MenuArea,
   TitleBox,
   SearchBar,
-  G2hLogo
+  G2hLogo,
+  MenuButton,
+  Basket
 };
