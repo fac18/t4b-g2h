@@ -30,6 +30,7 @@ const App = () => {
         `/.netlify/functions/getKeyword/getKeyword.js?keywords=${keyword}`
       )
     )
+
       .json()
       .then(data => setSearchResult(data))
       .catch(console.error);
@@ -49,7 +50,10 @@ const App = () => {
   }, []);
   return (
     <BrowserRouter>
-      <Header dataCall={dataCall} setKeyword={setKeyword} />
+      <Header
+        dataCall={dataCall}
+        setKeyword={setKeyword}
+      />
       <Switch>
         <Route path="/" component={LandingPage} exact />
         <Route path="/about" component={About} />

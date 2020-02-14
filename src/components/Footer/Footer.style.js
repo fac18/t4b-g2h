@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-const FooterBox = styled.header`
+const FooterBox = styled.footer`
+box-sizing: border-box;
   width: 100vw;
   height: 20vh;
   display: flex;
