@@ -39,8 +39,13 @@ const Header = props => {
         </SC.Middle>
         <SC.MenuArea>
           <SC.Basket>
-            <p>View basket</p>
-            <img src={basket} alt="checkout basket" />
+            <Link to="/basket">
+              <p>View basket</p>
+            </Link>
+            <Link to="/basket">
+              {" "}
+              <img src={basket} alt="checkout basket" />
+            </Link>
           </SC.Basket>
           <SC.MenuButton onClick={toggleNav}>MENU &#9776;</SC.MenuButton>
         </SC.MenuArea>
