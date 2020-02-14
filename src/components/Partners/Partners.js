@@ -2,6 +2,7 @@ import React from "react";
 import * as SC from "../Search/Search.style";
 import * as Style from "../styles/Text.style";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Partners = ({ museumData }) => {
   if (!museumData) return <h1>Loading...</h1>;
@@ -27,7 +28,10 @@ const Partners = ({ museumData }) => {
               }}
             >
               <SC.ImgContainer>
-                <SC.ImgInContainer src={record.fields.museum_image} />
+                <SC.ImgInContainer
+                  alt={record.fields.name}
+                  src={record.fields.museum_image}
+                />
               </SC.ImgContainer>
               <p>{record.fields.name}</p>
             </Link>
@@ -36,6 +40,10 @@ const Partners = ({ museumData }) => {
       </SC.SearchStyle>
     </>
   );
+};
+
+Partners.propTypes = {
+  museumData: PropTypes.object
 };
 
 export default Partners;
