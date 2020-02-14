@@ -9,10 +9,13 @@ const MuseumInfo = props => {
   if (!museumInfo) return <h1>Loading...</h1>;
   console.log(props.location.partnerProps);
   return (
-    <SC.CenteredText>
-      <p>Museum Name</p>
-      <p>Description</p>
-      {/* <p>Website: <a href={}>link</a></p> */}
+    <SC.CenteredText key={museumInfo.museum_id}>
+      <h2>{museumInfo.name}</h2>
+      <img src={museumInfo.image} />
+      <p>Description: {museumInfo.description}</p>
+      <p>
+        Website: <a href={museumInfo.website}>{museumInfo.website}</a>
+      </p>
     </SC.CenteredText>
   );
 };
