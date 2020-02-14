@@ -6,7 +6,8 @@ const SearchStyle = styled.section`
   grid-template-columns: repeat(3, 1fr);
 `;
 const Search = styled.div`
-  p {
+  p,
+  h2 {
     text-align: center;
   }
   article {
