@@ -34,6 +34,19 @@ const App = () => {
       .then(data => setSearchResult(data))
       .catch(console.error);
   };
+
+  const [museumData, setMuseumData] = useState(null);
+
+  const museumDataCall = async () => {
+    await (await fetch("/.netlify/functions/getMuseumData/getMuseumData.js"))
+      .json()
+      .then(data => setMuseumData(data))
+      .catch(console.error);
+  };
+
+  React.useEffect(() => {
+    museumDataCall();
+  }, []);
   return (
     <BrowserRouter>
       <Header dataCall={dataCall} setKeyword={setKeyword} />
@@ -54,8 +67,11 @@ const App = () => {
         <Route path="/addnewcontent" render={() => <AddNewContent />} />
         <Route path="/editcontent" render={() => <EditContent />} />
         <Route path="/basket" render={() => <Basket />} />
-        <Route path="/partners" render={() => <Partners />} />
-        <Route path="/museuminfo" render={() => <MuseumInfo />} />
+        <Route
+          path="/partners"
+          render={() => <Partners museumData={museumData} />}
+        />
+        <Route path="/museuminfo" component={MuseumInfo} />
         <Route path="/payment" render={() => <Payment />} />
       </Switch>
       <Footer />
