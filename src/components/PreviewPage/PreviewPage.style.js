@@ -12,13 +12,18 @@ const PreviewContainer = styled.section`
   align-items: center;
 
   button {
-      margin-right: 1rem;
+    margin-right: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #2b2b31;
   }
 `;
 
 const ButtonContainer = styled.div`
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `;
 
 const LeftPreviewColumn = styled.div`
@@ -59,13 +64,18 @@ const PreviewImage = styled.img`
   }
 `;
 
-const Keywords = styled.p`
+const KeywordsContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
   width: 30vw;
-  text-align: right;
-  line-height: 1.5;
   @media (max-width: 1024px) {
     width: auto;
   }
+`;
+
+const Keywords = styled.a`
+  line-height: 1.5;
 `;
 
 export {
@@ -74,5 +84,6 @@ export {
   LeftPreviewColumn,
   RightPreviewColumn,
   PreviewImage,
-  Keywords
+  Keywords,
+  KeywordsContainer
 };

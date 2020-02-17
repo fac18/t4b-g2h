@@ -2,16 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as SC from "./PreviewPage.style";
 import { BoldText } from "../styles/Text.style";
+import { Link } from "react-router-dom";
+import dataCall from "../App/App";
 
 const PreviewPage = searchResult => {
   if (!searchResult) return <h1>Loading Preview</h1>;
   const imageData = searchResult.location.searchImageProps;
-  const slashedKeywords = imageData.keywords.replace(/, /gi, " / ");
+  const keywords = imageData.keywords.split(", ");
+
   return (
     <SC.PreviewContainer>
       <SC.LeftPreviewColumn>
         <SC.PreviewImage src={imageData.imageUrl} alt={imageData.caption} />
-        <SC.Keywords>{slashedKeywords}</SC.Keywords>
+        <SC.KeywordsContainer>
+          {keywords.map(keyword => (
+            <Link to="/search" key={keyword}>
+              <SC.Keywords onclick={dataCall}>{keyword}/ </SC.Keywords>
+            </Link>
+          ))}
+        </SC.KeywordsContainer>
       </SC.LeftPreviewColumn>
       <SC.RightPreviewColumn>
         <p>
