@@ -11,7 +11,7 @@ const SearchPage = ({ searchResult }) => {
   return (
     <SC.SearchStyle>
       {searchRecords.map(record => (
-        <Link to={{ pathname: "/previewimage", 
+        <Link to={{ pathname: "/previewpage", 
         searchImageProps: {
           image_id: record.fields.image_id,
           caption: record.fields.caption,
