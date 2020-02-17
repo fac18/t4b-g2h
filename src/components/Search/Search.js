@@ -13,7 +13,7 @@ const SearchPage = ({ searchResult }) => {
       {searchRecords.map(record => (
         <Link to={{ pathname: "/previewpage", 
         searchImageProps: {
-          image_id: record.fields.image_id,
+          imageId: record.fields.gh_id,
           caption: record.fields.caption,
           description: record.fields.description,
           collection: record.fields.collection,
