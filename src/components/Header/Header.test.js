@@ -1,10 +1,6 @@
 import React from "react";
 
-import {
-  render,
-  cleanup,
-  fireEvent,
-} from "@testing-library/react";
+import { render, cleanup, fireEvent } from "@testing-library/react";
 import Header from "./Header";
 import App from "../App/App";
 import Search from "../Search/Search";
@@ -15,8 +11,11 @@ afterEach(cleanup);
 
 const history = createMemoryHistory();
 it("renders the page header", () => {
-  
-  const { getByText } = render(<Router history={history}><Header /></Router>);
+  const { getByText } = render(
+    <Router history={history}>
+      <Header />
+    </Router>
+  );
   const pageTitle = getByText(/Gateway2Heritage/i);
   expect(pageTitle).toBeInTheDocument();
 });
@@ -29,10 +28,16 @@ global.fetch = jest.fn().mockImplementation(() =>
 );
 
 it("mocks a returns of expected data", () => {
-  const { getByPlaceholderText, getByText } = render(
-      <Router history={history}><App /></Router>
+  const { getByPlaceholderText, getByText, getByTestId } = render(
+    <Router history={history}>
+      <App />
+    </Router>
   );
- render(<Router history={history}><Search /></Router>);
+  render(
+    <Router history={history}>
+      <Search />
+    </Router>
+  );
 
   const input = getByPlaceholderText("Search");
   fireEvent.change(input, { target: { value: "Collection name" } });
@@ -40,7 +45,7 @@ it("mocks a returns of expected data", () => {
   const searchButton = getByText("SEARCH");
   fireEvent.click(searchButton);
 
-  expect(global.fetch).toHaveBeenCalledTimes(1);
+  expect(global.fetch).toHaveBeenCalledTimes(2);
 
   // return waitForElement(() => findByTestId("first")).then(para =>
   //   expect(para.innerHTML).toEqual(mockResponse)

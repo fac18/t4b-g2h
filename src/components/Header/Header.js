@@ -56,9 +56,8 @@ const Header = props => {
 };
 
 Header.propTypes = {
-  props: PropTypes.object,
-  dataCall: PropTypes.object,
-  setKeyword: PropTypes.object,
+  dataCall: PropTypes.func,
+  setKeyword: PropTypes.func,
   navMenu: PropTypes.bool,
   setNavMenu: PropTypes.object
 };
