@@ -36,7 +36,11 @@ const Header = props => {
                 onChange={event => props.setKeyword(event.target.value)}
               />
               <NavLink to="/search">
-                <SC.SearchButton type="submit" onClick={props.dataCall}>
+                <SC.SearchButton
+                  type="submit"
+                  onClick={props.dataCall}
+                  data-testid="SEARCH"
+                >
                   <img src={searchGlass} alt={"click to search"} />
                 </SC.SearchButton>
               </NavLink>
@@ -46,11 +50,11 @@ const Header = props => {
         <SC.MenuArea>
           <SC.Basket>
             <Link to="/basket">
-              <p>View basket</p>
+              <SC.MenuButton>View basket</SC.MenuButton>
             </Link>
             <Link to="/basket">
               {" "}
-              <img src={basket} alt="checkout basket" />
+              <SC.BasketIcon src={basket} alt="checkout basket" />
             </Link>
           </SC.Basket>
           <SC.MenuButton onClick={toggleNav}>MENU &#9776;</SC.MenuButton>

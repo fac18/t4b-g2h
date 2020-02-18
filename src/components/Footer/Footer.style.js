@@ -11,6 +11,10 @@ box-sizing: border-box;
   background-color: #4e535f;
   padding: 1rem;
 
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+  }
+
   p {
     color: #ffffff;
     text-decoration: none;
@@ -42,6 +46,10 @@ const FooterTextBox = styled.div`
   li {
     color: #ffffff;
     text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    margin: 1rem;
   }
 `;
 
