@@ -9,7 +9,7 @@ const PreviewContainer = styled.section`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   button {
     margin-right: 1rem;
@@ -58,6 +58,7 @@ const RightPreviewColumn = styled.div`
 
 const PreviewImage = styled.img`
   width: 30vw;
+  margin-top: 16px;
   @media (max-width: 1024px) {
     width: 80vw;
     height: auto;

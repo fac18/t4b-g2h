@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import dataCall from "../App/App";
 
 const PreviewPage = searchResult => {
-  if (!searchResult) return <h1>Loading Preview</h1>;
   const imageData = searchResult.location.searchImageProps;
+  if (!imageData) return <h1>Loading Preview...</h1>
   const keywords = imageData.keywords.split(", ");
 
   return (
