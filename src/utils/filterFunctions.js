@@ -1,22 +1,27 @@
-const filterAll = (searchResults, collectionValue) => {
-  // console.log(collectionValue);
-  // console.log(searchResults.records);
-  // console.log("fields = ", searchResults.records[0].fields.collection);
-  console.log(byCollection(searchResults, collectionValue));
+const filterAll = (searchResults, collectionValue, artistValue) => {
+  let filteredObj = {};
+  let filterResult = byCollection(searchResults, collectionValue);
+  filteredObj.records = filterResult;
+  return filteredObj;
+  // byArtist(searchResults, artistValue);
 };
 
 const byCollection = (searchResults, collectionValue) => {
-  // if (collectionValue) {
-  // const searchRecords = searchResults.records;
-  return searchResults.records.filter(result => {
-    console.log("collection = ", result.fields.collection);
-    console.log("collectionvalue = ", collectionValue);
-    // console.log(typeof result.fields.collection);
-    // console.log(typeof collectionValue);
-    return result.fields.collection === collectionValue;
-    // return result.fields.collection;
-  });
-  // }
+  if (collectionValue) {
+    return searchResults.records.filter(result => {
+      return result.fields.collection === collectionValue;
+    });
+  }
+  return;
 };
+
+// const byArtist = (searchResults, artistValue) => {
+//   if (artistValue) {
+//     return searchResults.records.filter(result => {
+//       return result.fields.creator === artistValue;
+//     });
+//   }
+//   return;
+// };
 
 export default filterAll;

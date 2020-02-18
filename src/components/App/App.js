@@ -23,7 +23,10 @@ import "../../index.css";
 const App = () => {
   const [keyword, setKeyword] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
+  const [museumData, setMuseumData] = useState(null);
+  const [filteredResult, setFilteredResult] = useState(null);
 
+  //Fetching keywords data
   const dataCall = async () => {
     await (
       await fetch(
@@ -36,8 +39,7 @@ const App = () => {
       .catch(console.error);
   };
 
-  const [museumData, setMuseumData] = useState(null);
-
+  //Fetching museum data
   const museumDataCall = async () => {
     await (await fetch("/.netlify/functions/getMuseumData/getMuseumData.js"))
       .json()
@@ -48,6 +50,7 @@ const App = () => {
   React.useEffect(() => {
     museumDataCall();
   }, []);
+
   return (
     <BrowserRouter>
       <Header dataCall={dataCall} setKeyword={setKeyword} />
@@ -58,7 +61,14 @@ const App = () => {
         <Route path="/privacypolicy" component={PrivacyPolicy} />
         <Route
           path="/search"
-          render={() => <Search searchResult={searchResult} />}
+          render={() => (
+            <Search
+              searchResult={searchResult}
+              setSearchResult={setSearchResult}
+              filteredResult={filteredResult}
+              setFilteredResult={setFilteredResult}
+            />
+          )}
         />
         <Route path="/memberlogin" render={() => <MemberLogin />} />
         <Route path="/membersignup" render={() => <MemberSignUp />} />
