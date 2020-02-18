@@ -12,4 +12,8 @@ const JustifiedText = styled.div`
   text-align: right;
 `;
 
-export { Margin, CenteredText, JustifiedText };
+const BoldText = styled.span`
+  font-weight: 700;
+`;
+
+export { Margin, CenteredText, JustifiedText, BoldText };

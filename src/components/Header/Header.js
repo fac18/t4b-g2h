@@ -28,13 +28,18 @@ const Header = props => {
             </Link>
           </SC.TitleBox>
           <SC.SearchBox>
-            <SC.SearchBar
-              placeholder="Search"
-              onChange={event => props.setKeyword(event.target.value)}
-            />
-            <NavLink to="/search">
-              <button onClick={props.dataCall}>SEARCH</button>
-            </NavLink>
+            <form>
+              <SC.SearchBar
+                type="text"
+                placeholder="Search"
+                onChange={event => props.setKeyword(event.target.value)}
+              />
+              <NavLink to="/search">
+                <button type="submit" onClick={props.dataCall}>
+                  SEARCH
+                </button>
+              </NavLink>
+            </form>
           </SC.SearchBox>
         </SC.Middle>
         <SC.MenuArea>

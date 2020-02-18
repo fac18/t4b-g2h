@@ -7,6 +7,7 @@ const MuseumInfo = props => {
   useEffect(() => {
     setMuseumInfo(props.location.partnerProps);
   }, [props.location.partnerProps]);
+  console.log(props.location.partnerProps)
   return (
     <>
       {!museumInfo ? (
