@@ -4,7 +4,9 @@ import * as Style from "../styles/Text.style";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Partners = ({ museumData }) => {
+const Partners = ({ museumData, setChosenMuseum }) => {
+  console.log("this is museumData", museumData);
+
   if (!museumData) return <h1>Loading...</h1>;
   const museumRecord = museumData.records;
   return (
@@ -16,15 +18,15 @@ const Partners = ({ museumData }) => {
         {museumRecord.map(record => (
           <SC.ContentContainer key={record.fields.museum_id}>
             <Link
-              to={{
-                pathname: "/museuminfo",
-                partnerProps: {
+              to={`/museuminfo/${record.fields.museum_id}`}
+              onClick={() => {
+                setChosenMuseum({
                   museum_id: record.fields.museum_id,
                   name: record.fields.name,
                   image: record.fields.museum_image,
                   description: record.fields.description,
                   website: record.fields.website
-                }
+                });
               }}
             >
               <SC.ImgContainer>

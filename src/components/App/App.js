@@ -45,16 +45,14 @@ const App = () => {
       .then(data => setMuseumData(data))
       .catch(console.error);
   };
+  const [chosenMuseum, setChosenMuseum] = useState(null);
 
   React.useEffect(() => {
     museumDataCall();
   }, []);
   return (
     <BrowserRouter>
-      <Header
-        dataCall={dataCall}
-        setKeyword={setKeyword}
-      />
+      <Header dataCall={dataCall} setKeyword={setKeyword} />
       <Switch>
         <Route path="/" component={LandingPage} exact />
         <Route path="/about" component={About} />
@@ -74,9 +72,17 @@ const App = () => {
         <Route path="/basket" render={() => <Basket />} />
         <Route
           path="/partners"
-          render={() => <Partners museumData={museumData} />}
+          render={() => (
+            <Partners
+              museumData={museumData}
+              setChosenMuseum={setChosenMuseum}
+            />
+          )}
         />
-        <Route path="/museuminfo" component={MuseumInfo} />
+        <Route
+          path="/museuminfo/:id"
+          render={props => <MuseumInfo {...props} museumData={museumData} />}
+        />
         <Route path="/payment" render={() => <Payment />} />
         <Route path="/previewpage" component={PreviewPage} />
       </Switch>
