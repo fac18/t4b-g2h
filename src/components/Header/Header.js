@@ -5,6 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import NavMenu from "../NavMenu/NavMenu";
 import basket from "../../assets/basket.svg";
+import searchGlass from "../../assets/magnifying-glass.svg";
 
 const Header = props => {
   const [navMenu, setNavMenu] = useState(false);
@@ -28,18 +29,18 @@ const Header = props => {
             </Link>
           </SC.TitleBox>
           <SC.SearchBox>
-            <form>
+            <SC.SearchBarForm>
               <SC.SearchBar
                 type="text"
                 placeholder="Search"
                 onChange={event => props.setKeyword(event.target.value)}
               />
               <NavLink to="/search">
-                <button type="submit" onClick={props.dataCall}>
-                  SEARCH
-                </button>
+                <SC.SearchButton type="submit" onClick={props.dataCall}>
+                  <img src={searchGlass} alt={"click to search"} />
+                </SC.SearchButton>
               </NavLink>
-            </form>
+            </SC.SearchBarForm>
           </SC.SearchBox>
         </SC.Middle>
         <SC.MenuArea>

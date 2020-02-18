@@ -60,15 +60,15 @@ const Middle = styled.div`
 `;
 
 const SearchBar = styled.input`
-  width: 60vw;
+  width: 55vw;
   height: 2rem;
-  border-radius: 10px;
   border: none;
   background-color: white;
-  padding-left: 1rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #4e535f;
+  font-size: 1rem;
 
   ::placeholder {
+    font-size: 1rem;
     color: #4e535f;
   }
 `;
@@ -82,9 +82,34 @@ const MenuButton = styled.p`
 `;
 
 const Basket = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const SearchBarForm = styled.form`
+  width: 60vw;
+  height: 3rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+const SearchButton = styled.button`
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+  border: 0;
+  margin: 0;
+  padding: 0;
 `;
 
 export {
@@ -94,7 +119,9 @@ export {
   Middle,
   MenuArea,
   TitleBox,
+  SearchBarForm,
   SearchBar,
+  SearchButton,
   G2hLogo,
   MenuButton,
   Basket
