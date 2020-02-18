@@ -7,11 +7,12 @@ const filterAll = (searchResults, collectionValue) => {
 
 const byCollection = (searchResults, collectionValue) => {
   // if (collectionValue) {
-  searchResults.records.filter(result => {
-    // console.log("collection = ", result.fields.collection);
-    // console.log("collectionvalue = ", collectionValue);
-    console.log(typeof result.fields.collection);
-    console.log(typeof collectionValue);
+  // const searchRecords = searchResults.records;
+  return searchResults.records.filter(result => {
+    console.log("collection = ", result.fields.collection);
+    console.log("collectionvalue = ", collectionValue);
+    // console.log(typeof result.fields.collection);
+    // console.log(typeof collectionValue);
     return result.fields.collection === collectionValue;
     // return result.fields.collection;
   });
