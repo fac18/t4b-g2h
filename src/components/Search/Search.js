@@ -1,33 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as SC from "./Search.style.js";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const SearchPage = ({ searchResult }) => {
+const SearchPage = ({ searchResult, setKeyword, location }) => {
   if (!searchResult) return <h1>No data yet</h1>;
-  const searchRecords = searchResult.records;
+  setKeyword(location.search.split("=")[1]);
+  const searchRecords = searchResult.records; //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
 
-  //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
+  console.log("is this you", searchResult);
   return (
     <SC.SearchStyle>
       {searchRecords.map(record => (
-        <Link to={{ pathname: "/previewpage", 
-        searchImageProps: {
-          imageId: record.fields.gh_id,
-          caption: record.fields.caption,
-          description: record.fields.description,
-          collection: record.fields.collection,
-          medium: record.fields.medium,
-          creator: record.fields.creator,
-          dateOfCreation: record.fields.create_date,
-          period: record.fields.period,
-          copyrightStatus: record.fields.copyright_status,
-          copyrightHolder: record.fields.copyright_holder,
-          credit: record.fields.credit,
-          keywords: record.fields.keywords,
-          imageUrl: record.fields.url
-        }
-        }} key={record.fields.image_id}>
+        <Link
+          to={`/previewpage/${record.fields.image_id}`}
+          key={record.fields.image_id}
+        >
           <SC.ContentContainer key={record.fields.image_id}>
             <SC.ImgContainer>
               <SC.ImgInContainer src={record.fields.url} />

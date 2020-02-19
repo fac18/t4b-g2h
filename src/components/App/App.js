@@ -25,7 +25,7 @@ const App = () => {
   const [keyword, setKeyword] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
 
-  const dataCall = async () => {
+  const dataCall = async keyword => {
     await (
       await fetch(
         `/.netlify/functions/getKeyword/getKeyword.js?keywords=${keyword}`
@@ -50,9 +50,15 @@ const App = () => {
   React.useEffect(() => {
     museumDataCall();
   }, []);
+
+  React.useEffect(() => {
+    dataCall(keyword);
+  }, [keyword]);
+
+  console.log("why are you there", searchResult);
   return (
     <BrowserRouter>
-      <Header dataCall={dataCall} setKeyword={setKeyword} />
+      <Header dataCall={dataCall} setKeyword={setKeyword} keyword={keyword} />
       <Switch>
         <Route path="/" component={LandingPage} exact />
         <Route path="/about" component={About} />
@@ -60,7 +66,21 @@ const App = () => {
         <Route path="/privacypolicy" component={PrivacyPolicy} />
         <Route
           path="/search"
-          render={() => <Search searchResult={searchResult} />}
+          render={props => (
+            <Search
+              {...props}
+              searchResult={searchResult}
+              setSearchResult={setSearchResult}
+              setKeyword={setKeyword}
+              dataCall={dataCall}
+            />
+          )}
+        />
+        <Route
+          path="/previewpage/:id"
+          render={props => (
+            <PreviewPage {...props} searchResult={searchResult} />
+          )}
         />
         <Route path="/memberlogin" render={() => <MemberLogin />} />
         <Route path="/membersignup" render={() => <MemberSignUp />} />
@@ -72,19 +92,13 @@ const App = () => {
         <Route path="/basket" render={() => <Basket />} />
         <Route
           path="/partners"
-          render={() => (
-            <Partners
-              museumData={museumData}
-              setChosenMuseum={setChosenMuseum}
-            />
-          )}
+          render={() => <Partners museumData={museumData} />}
         />
         <Route
           path="/museuminfo/:id"
           render={props => <MuseumInfo {...props} museumData={museumData} />}
         />
         <Route path="/payment" render={() => <Payment />} />
-        <Route path="/previewpage" component={PreviewPage} />
       </Switch>
       <Footer />
     </BrowserRouter>

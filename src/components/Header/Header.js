@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import NavMenu from "../NavMenu/NavMenu";
 import basket from "../../assets/basket.svg";
 
-const Header = props => {
+const Header = ({ dataCall, keyword, setKeyword }) => {
   const [navMenu, setNavMenu] = useState(false);
 
   const toggleNav = () => {
@@ -32,12 +32,10 @@ const Header = props => {
               <SC.SearchBar
                 type="text"
                 placeholder="Search"
-                onChange={event => props.setKeyword(event.target.value)}
+                onChange={event => setKeyword(event.target.value)}
               />
-              <NavLink to="/search">
-                <button type="submit" onClick={props.dataCall}>
-                  SEARCH
-                </button>
+              <NavLink to={`/search?keyword=${keyword}`}>
+                <button>SEARCH</button>
               </NavLink>
             </form>
           </SC.SearchBox>

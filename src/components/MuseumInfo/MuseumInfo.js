@@ -3,14 +3,12 @@ import * as SC from "../styles/Text.style";
 import PropTypes from "prop-types";
 
 const MuseumInfo = ({ match, museumData }) => {
-  // console.log(museumData);
-  let id = match.params.id;
+  const id = match.params.id;
   if (!museumData) return <h1>Loading...</h1>;
-  let filteredMuseumData = museumData.records.filter(museum => {
+  const filteredMuseumData = museumData.records.filter(museum => {
     return museum.fields.museum_id === Number(id);
   });
 
-  console.log(filteredMuseumData);
   return (
     <>
       {!id ? (

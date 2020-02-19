@@ -5,9 +5,12 @@ import { BoldText } from "../styles/Text.style";
 import { Link } from "react-router-dom";
 import dataCall from "../App/App";
 
-const PreviewPage = searchResult => {
+const PreviewPage = ({ match, searchResult }) => {
+  const id = match.params.id;
+  if (!searchResult) return <h1>Loading Preview...</h1>;
+  console.log(searchResult);
   const imageData = searchResult.location.searchImageProps;
-  if (!imageData) return <h1>Loading Preview...</h1>
+  if (!imageData) return <h1>Loading Preview...</h1>;
   const keywords = imageData.keywords.split(", ");
 
   return (
