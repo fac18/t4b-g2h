@@ -147,9 +147,12 @@ const SearchBarForm = styled.form`
   border: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin: 0;
-  border-radius: 10px;
+  margin-left: 10rem;
+  /* border-radius: 10px; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 
 const SearchButton = styled.button`
