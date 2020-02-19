@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const FooterBox = styled.footer`
+  left: 0;
+  bottom: 0;
   box-sizing: border-box;
   width: 100vw;
   height: 20vh;
