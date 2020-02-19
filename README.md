@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.com/fac18/t4b-g2h.svg?branch=master)](https://travis-ci.com/fac18/t4b-g2h)
 
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+
 An image licensing platform for small heritage and cultural museums in the UK. Made as part of the Tech for Better programme at Founders and Coders.
 
 ## Readme Contents:
