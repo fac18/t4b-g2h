@@ -70,16 +70,19 @@ const App = () => {
             <Search
               {...props}
               searchResult={searchResult}
-              setSearchResult={setSearchResult}
+              keyword={keyword}
               setKeyword={setKeyword}
-              dataCall={dataCall}
             />
           )}
         />
         <Route
-          path="/previewpage/:id"
+          path="/previewpage"
           render={props => (
-            <PreviewPage {...props} searchResult={searchResult} />
+            <PreviewPage
+              {...props}
+              searchResult={searchResult}
+              setKeyword={setKeyword}
+            />
           )}
         />
         <Route path="/memberlogin" render={() => <MemberLogin />} />

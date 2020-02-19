@@ -1,67 +1,102 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import * as SC from "./PreviewPage.style";
 import { BoldText } from "../styles/Text.style";
 import { Link } from "react-router-dom";
 import dataCall from "../App/App";
 
-const PreviewPage = ({ match, searchResult }) => {
-  const id = match.params.id;
-  if (!searchResult) return <h1>Loading Preview...</h1>;
-  console.log(searchResult);
-  const imageData = searchResult.location.searchImageProps;
-  if (!imageData) return <h1>Loading Preview...</h1>;
-  const keywords = imageData.keywords.split(", ");
+const PreviewPage = ({ location }) => {
+  const id = location.search.split("=")[1];
+  const [previewData, setPreviewData] = useState(null);
+  const imageCall = async id => {
+    await (
+      await fetch(`/.netlify/functions/getImage/getImage.js?keywords=${id}`)
+    )
 
+      .json()
+      .then(data => setPreviewData(data))
+      .catch(console.error);
+  };
+
+  useEffect(() => imageCall(id), [id]);
+
+  if (!previewData) return <h1>Loading...</h1>;
+  console.log(previewData);
+
+  // if (!searchResult) return <h1>Loading...</h1>;
+  // const keyword = location.search.split("?")[1].split("=")[0];
+  // console.log("the keyword is", keyword);
+
+  // const id = location.search.split("=")[1];
+  // console.log(id);
+  // console.log(searchResult);
+  // const filteredSearchResult = searchResult.records.filter(image => {
+  //   return image.fields.image_id === Number(id);
+  // });
+
+  // setKeyword(keyword);
+  // console.log(filteredSearchResult[0]);
+  // if (!filteredSearchResult) return <h1>Loading...</h1>;
   return (
     <SC.PreviewContainer>
       <SC.LeftPreviewColumn>
-        <SC.PreviewImage src={imageData.imageUrl} alt={imageData.caption} />
-        <SC.KeywordsContainer>
+        <SC.PreviewImage
+          src={previewData.records[0].fields.url}
+          alt={previewData.records[0].fields.caption}
+        />
+        {/* <SC.KeywordsContainer>
           {keywords.map(keyword => (
             <Link to="/search" key={keyword}>
               <SC.Keywords onclick={dataCall}>{keyword}/ </SC.Keywords>
             </Link>
           ))}
-        </SC.KeywordsContainer>
+        </SC.KeywordsContainer> */}
       </SC.LeftPreviewColumn>
       <SC.RightPreviewColumn>
         <p>
-          <BoldText>Image ID:</BoldText> {imageData.imageId}
+          <BoldText>Image ID:</BoldText>{" "}
+          {previewData.records[0].fields.image_id}
         </p>
         <p>
-          <BoldText>Caption:</BoldText> {imageData.caption}
+          <BoldText>Caption:</BoldText> {previewData.records[0].fields.caption}
         </p>
         <p>
-          <BoldText>Description:</BoldText> {imageData.description}
+          <BoldText>Description:</BoldText>{" "}
+          {previewData.records[0].fields.description}
         </p>
         <SC.ButtonContainer>
           <button>Licence this Image</button>
           <button>Buy a Print</button>
         </SC.ButtonContainer>
         <p>
-          <BoldText>Collection:</BoldText> {imageData.collection}
+          <BoldText>Collection:</BoldText>{" "}
+          {previewData.records[0].fields.collection}
         </p>
         <p>
-          <BoldText>Medium:</BoldText> {imageData.medium}
+          <BoldText>Medium:</BoldText> {previewData.records[0].fields.medium}
         </p>
         <p>
-          <BoldText>Artist/Creator:</BoldText> {imageData.creator}
+          <BoldText>Artist/Creator:</BoldText>{" "}
+          {previewData.records[0].fields.creator}
         </p>
         <p>
-          <BoldText>Date of Creation:</BoldText> {imageData.dateOfCreation}
+          <BoldText>Date of Creation:</BoldText>{" "}
+          {previewData.records[0].fields.create_date}
         </p>
         <p>
-          <BoldText>Date of Subject:</BoldText> {imageData.period}
+          <BoldText>Date of Subject:</BoldText>{" "}
+          {previewData.records[0].fields.period}
         </p>
         <p>
-          <BoldText>Copyright Status:</BoldText> {imageData.copyrightStatus}
+          <BoldText>Copyright Status:</BoldText>{" "}
+          {previewData.records[0].fields.copyright_status}
         </p>
         <p>
-          <BoldText>Copyright Owner:</BoldText> {imageData.copyrightHolder}
+          <BoldText>Copyright Owner:</BoldText>{" "}
+          {previewData.records[0].fields.copyright_holder}
         </p>
         <p>
-          <BoldText>Credit:</BoldText> {imageData.credit}
+          <BoldText>Credit:</BoldText> {previewData.records[0].fields.credit}
         </p>
       </SC.RightPreviewColumn>
     </SC.PreviewContainer>
