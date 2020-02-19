@@ -7,13 +7,22 @@ const Filter = ({ searchResult, filteredResult, setFilteredResult }) => {
   // once working, should refactor all states to useReducer
   const [collectionValue, setCollectionValue] = useState("");
   const [artistValue, setArtistValue] = useState("");
-  const filteredAllData = filterAll(searchResult, collectionValue, artistValue);
+  const [mediumValue, setMediumValue] = useState("");
+  const filteredAllData = filterAll(
+    searchResult,
+    collectionValue,
+    artistValue,
+    mediumValue
+  );
 
   useEffect(() => {
-    console.log(searchResult);
+    // console.log(searchResult);
     setFilteredResult(filteredAllData);
-    console.log(filteredAllData);
-  }, [collectionValue]);
+    // filteredAllData.then(setFilteredResult(filteredAllData));
+    // filteredAllData;
+    console.log("filteredAllData = ", filteredAllData);
+    // console.log(filteredAllData);
+  }, [collectionValue, artistValue, mediumValue]);
 
   return (
     <form>
@@ -24,12 +33,19 @@ const Filter = ({ searchResult, filteredResult, setFilteredResult }) => {
         value={collectionValue}
         onChange={event => setCollectionValue(event.target.value)}
       ></input>
-      <label id="artistValue">ArtistValue / Creator</label>
+      <label id="artistValue">Artist/Creator</label>
       <input
         type="text"
         id="artistValue"
         value={artistValue}
         onChange={event => setArtistValue(event.target.value)}
+      ></input>
+      <label id="mediumValue">Medium</label>
+      <input
+        type="text"
+        id="mediumValue"
+        value={mediumValue}
+        onChange={event => setMediumValue(event.target.value)}
       ></input>
     </form>
   );
