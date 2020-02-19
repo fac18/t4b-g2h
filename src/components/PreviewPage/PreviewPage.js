@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import * as SC from "./PreviewPage.style";
 import { BoldText } from "../styles/Text.style";
-import { Link } from "react-router-dom";
-import dataCall from "../App/App";
+//import { Link } from "react-router-dom";
+//import dataCall from "../App/App";
 
 const PreviewPage = ({ location }) => {
   const id = location.search.split("=")[1];
@@ -40,10 +40,14 @@ const PreviewPage = ({ location }) => {
   return (
     <SC.PreviewContainer>
       <SC.LeftPreviewColumn>
+<<<<<<< HEAD
         <SC.PreviewImage
           src={previewData.records[0].fields.url}
           alt={previewData.records[0].fields.caption}
         />
+=======
+        <SC.PreviewImage src={imageData.imageUrl} alt={imageData.caption} />
+>>>>>>> master
         {/* <SC.KeywordsContainer>
           {keywords.map(keyword => (
             <Link to="/search" key={keyword}>

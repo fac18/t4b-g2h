@@ -1,19 +1,25 @@
 import styled from "styled-components";
 
 const HeaderBox = styled.header`
-  width: 100vw;
+  max-width: 100vw;
   height: auto;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
   background-color: #eb5a61;
   align-items: end;
   position: sticky;
-  top: -10vh;
+  top: -8.09rem;
   overflow: auto;
 
   h1 {
     color: #2b2b31;
+    @media (max-width: 768px) {
+      font-size: 1.618rem;
+      position: relative;
+      top: 1rem;
+      left: 1rem;
+    }
   }
 
   a {
@@ -24,13 +30,13 @@ const HeaderBox = styled.header`
 
 const TitleBox = styled.div`
   width: 80wv;
-  height: 10vh;
+  height: 8.09rem;
   background-color: #eb5a61;
 `;
 
 const SearchBox = styled.div`
   width: 80wv;
-  height: 20vh;
+  height: 8.09rem;
   background-color: #eb5a61;
   position: sticky;
   top: 0;
@@ -40,17 +46,31 @@ const SearchBox = styled.div`
 
 const LogoBox = styled.div`
   position: fixed;
-  top: 0.618rem;
-  left: 0.618rem;
+  top: 1rem;
+  left: 1rem;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 0;
+  }
 `;
 
 const MenuArea = styled.div`
   position: fixed;
-  top: 0.618rem;
-  right: 0.618rem;
+  top: 1rem;
+  right: 1rem;
   box-sizing: border-box;
-  max-height: 10vh;
+  max-height: 8.09rem;
   margin: 0.618rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    position: sticky;
+    top: 0;
+  }
 `;
 
 const Middle = styled.div`
@@ -60,15 +80,15 @@ const Middle = styled.div`
 `;
 
 const SearchBar = styled.input`
-  width: 60vw;
+  width: 55vw;
   height: 2rem;
-  border-radius: 10px;
   border: none;
   background-color: white;
-  padding-left: 1rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #4e535f;
+  font-size: 1rem;
 
   ::placeholder {
+    font-size: 1rem;
     color: #4e535f;
   }
 `;
@@ -79,12 +99,43 @@ const G2hLogo = styled.img`
 
 const MenuButton = styled.p`
   cursor: pointer;
+  margin: 0;
 `;
 
 const Basket = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const SearchBarForm = styled.form`
+  width: 60vw;
+  height: 3rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+const SearchButton = styled.button`
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border: 0;
+  margin: 0;
+  padding: 0;
+`;
+
+const BasketIcon = styled.img`
+  margin-left: 0.618rem;
 `;
 
 export {
@@ -94,8 +145,11 @@ export {
   Middle,
   MenuArea,
   TitleBox,
+  SearchBarForm,
   SearchBar,
+  SearchButton,
   G2hLogo,
   MenuButton,
-  Basket
+  Basket,
+  BasketIcon
 };
