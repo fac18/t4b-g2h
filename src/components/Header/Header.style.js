@@ -9,7 +9,7 @@ const HeaderBox = styled.header`
   background-color: #eb5a61;
   align-items: end;
   position: sticky;
-  top: -10vh;
+  top: -20vh;
   overflow: auto;
 
   @media (max-width: 768px) {
@@ -33,7 +33,7 @@ const HeaderBox = styled.header`
 
 const TitleBox = styled.div`
   width: 80vw;
-  height: 10vh;
+  height: 20vh;
   background-color: #eb5a61;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@ const TitleBox = styled.div`
 
 const SearchBox = styled.div`
   width: 80vw;
-  height: 8.09rem;
+  height: 15vh;
   background-color: #eb5a61;
   position: sticky;
   top: 0;
@@ -63,8 +63,8 @@ const SearchBox = styled.div`
 
 const LogoBox = styled.div`
   position: fixed;
-  top: 1.618rem;
-  left: 1.618rem;
+  top: 1rem;
+  left: 1rem;
 
   @media (max-width: 768px) {
     position: inherit;
@@ -75,8 +75,8 @@ const LogoBox = styled.div`
 
 const MenuArea = styled.div`
   position: fixed;
-  top: 1.618rem;
-  right: 1.618rem;
+  top: 1rem;
+  right: 1rem;
   box-sizing: border-box;
   max-height: 8.09rem;
   margin: 0.618rem;
@@ -114,7 +114,14 @@ const SearchBar = styled.input`
 `;
 
 const G2hLogo = styled.img`
-  margin: 0.618rem;
+  margin: 0;
+  @media (max-width: 768px) {
+    margin: 0.618rem;
+  }
+
+  @media (max-width: 320px) {
+    margin: 0;
+  }
 `;
 
 const MenuButton = styled.p`
@@ -164,6 +171,22 @@ const Tagline = styled.p`
   margin: 0;
 `;
 
+const LoginSignup = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10vw;
+
+  p {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 60vw;
+    align-content: space-between;
+  }
+`;
+
 export {
   HeaderBox,
   SearchBox,
@@ -178,5 +201,6 @@ export {
   MenuButton,
   Basket,
   BasketIcon,
-  Tagline
+  Tagline,
+  LoginSignup
 };

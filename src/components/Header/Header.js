@@ -28,8 +28,6 @@ const Header = props => {
               <h1>Gateway2Heritage</h1>
               <SC.Tagline>A living history of Britain</SC.Tagline>
             </Link>
-            
-
           </SC.TitleBox>
           <SC.SearchBox>
             <SC.SearchBarForm>
@@ -51,15 +49,27 @@ const Header = props => {
           </SC.SearchBox>
         </SC.Middle>
         <SC.MenuArea>
-          <SC.Basket>
-            <Link to="/basket">
-              <SC.MenuButton>View basket</SC.MenuButton>
-            </Link>
-            <Link to="/basket">
-              {" "}
-              <SC.BasketIcon src={basket} alt="checkout basket" />
-            </Link>
-          </SC.Basket>
+          {1 === 2 ? (
+            <SC.Basket>
+              <Link to="/basket">
+                <SC.MenuButton>View basket</SC.MenuButton>
+              </Link>
+              <Link to="/basket">
+                {" "}
+                <SC.BasketIcon src={basket} alt="checkout basket" />
+              </Link>
+            </SC.Basket>
+          ) : (
+            <SC.LoginSignup>
+              <Link to="/memberlogin">
+                <p>Login</p>
+              </Link>
+              <Link to="membersignup">
+                <p>Sign up</p>
+              </Link>
+            </SC.LoginSignup>
+          )}
+
           <SC.MenuButton onClick={toggleNav}>MENU &#9776;</SC.MenuButton>
         </SC.MenuArea>
       </SC.HeaderBox>
