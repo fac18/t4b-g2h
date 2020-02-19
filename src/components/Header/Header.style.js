@@ -9,16 +9,19 @@ const HeaderBox = styled.header`
   background-color: #eb5a61;
   align-items: end;
   position: sticky;
-  top: -8.09rem;
+  top: -10vh;
   overflow: auto;
+
+  @media (max-width: 768px) {
+    position: sticky;
+    top: 0;
+  }
 
   h1 {
     color: #2b2b31;
+    margin-bottom: 0;
     @media (max-width: 768px) {
       font-size: 1.618rem;
-      position: relative;
-      top: 1rem;
-      left: 1rem;
     }
   }
 
@@ -29,36 +32,51 @@ const HeaderBox = styled.header`
 `;
 
 const TitleBox = styled.div`
-  width: 80wv;
-  height: 8.09rem;
+  width: 80vw;
+  height: 10vh;
   background-color: #eb5a61;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+    height: 4.236rem;
+  }
 `;
 
 const SearchBox = styled.div`
-  width: 80wv;
+  width: 80vw;
   height: 8.09rem;
   background-color: #eb5a61;
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 4.236rem;
+    margin-top: 1rem;
+  }
 `;
 
 const LogoBox = styled.div`
   position: fixed;
-  top: 1rem;
-  left: 1rem;
+  top: 1.618rem;
+  left: 1.618rem;
 
   @media (max-width: 768px) {
-    position: absolute;
+    position: inherit;
     top: 0;
+    left: 0;
   }
 `;
 
 const MenuArea = styled.div`
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 1.618rem;
+  right: 1.618rem;
   box-sizing: border-box;
   max-height: 8.09rem;
   margin: 0.618rem;
@@ -69,7 +87,9 @@ const MenuArea = styled.div`
 
   @media (max-width: 768px) {
     position: sticky;
-    top: 0;
+    top: 8.09rem;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
@@ -138,6 +158,12 @@ const BasketIcon = styled.img`
   margin-left: 0.618rem;
 `;
 
+const Tagline = styled.p`
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+`;
+
 export {
   HeaderBox,
   SearchBox,
@@ -151,5 +177,6 @@ export {
   G2hLogo,
   MenuButton,
   Basket,
-  BasketIcon
+  BasketIcon,
+  Tagline
 };

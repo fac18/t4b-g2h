@@ -15,14 +15,6 @@ const Search = styled.div`
     justify-content: space-evenly;
   }
 
-  /* @media only screen and (max-width: 768px) {
-    article {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0px;
-    }
-  } */
 `;
 
 const ContentContainer = styled.div`

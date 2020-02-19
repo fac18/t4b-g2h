@@ -34,7 +34,7 @@ const LeftPreviewColumn = styled.div`
   padding-right: 1.618rem;
   box-sizing: border-box;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     width: 80vw;
     height: auto;
     padding: 0;
@@ -49,7 +49,7 @@ const RightPreviewColumn = styled.div`
   padding-left: 1.618rem;
   box-sizing: border-box;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     width: 80vw;
     height: auto;
     padding: 0;
@@ -59,7 +59,7 @@ const RightPreviewColumn = styled.div`
 const PreviewImage = styled.img`
   width: 30vw;
   margin-top: 16px;
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     width: 80vw;
     height: auto;
   }
@@ -70,7 +70,7 @@ const KeywordsContainer = styled.div`
   flex-flow: row wrap;
   justify-content: flex-end;
   width: 30vw;
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     width: auto;
   }
 `;

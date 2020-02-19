@@ -26,7 +26,10 @@ const Header = props => {
           <SC.TitleBox>
             <Link to="/">
               <h1>Gateway2Heritage</h1>
+              <SC.Tagline>A living history of Britain</SC.Tagline>
             </Link>
+            
+
           </SC.TitleBox>
           <SC.SearchBox>
             <SC.SearchBarForm>
