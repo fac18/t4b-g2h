@@ -19,6 +19,8 @@ import Partners from "../Partners/Partners";
 import MuseumInfo from "../MuseumInfo/MuseumInfo";
 import Payment from "../Payment/Payment";
 import PreviewPage from "../PreviewPage/PreviewPage";
+import Error from "../Error/Error";
+
 import "../../index.css";
 
 const App = () => {
@@ -79,6 +81,7 @@ const App = () => {
         <Route path="/museuminfo" component={MuseumInfo} />
         <Route path="/payment" render={() => <Payment />} />
         <Route path="/previewpage" component={PreviewPage} />
+        <Route component={Error} />
       </Switch>
       <Footer />
     </BrowserRouter>
