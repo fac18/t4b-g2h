@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, cleanup, getByRole } from "@testing-library/react";
+import { render, fireEvent, cleanup, getByRole, act } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
@@ -22,30 +22,32 @@ it("renders routes/navigation", () => {
     </Router>
   );
 
-  expect(container.innerHTML).toMatch("Collection name");
+  
+    expect(container.innerHTML).toMatch("Collection name");
+    act(() => {
+    fireEvent.click(getByText(/About Us/i));
+  });
+    expect(container.innerHTML).toMatch("The aim of The Gateway");
 
-  fireEvent.click(getByText(/About Us/i));
+    fireEvent.click(getByText(/Terms and Conditions/i));
 
-  expect(container.innerHTML).toMatch("The aim of The Gateway");
+    expect(container.innerHTML).toMatch("Terms and Conditions");
 
-  fireEvent.click(getByText(/Terms and Conditions/i));
+    fireEvent.click(getByText(/Privacy Policy/i));
 
-  expect(container.innerHTML).toMatch("Terms and Conditions");
-
-  fireEvent.click(getByText(/Privacy Policy/i));
-
-  expect(container.innerHTML).toMatch("Privacy Policy");
+    expect(container.innerHTML).toMatch("Privacy Policy");
+  
 });
 
 // it("routes to 404 page with bad endpoint", () => {
 //   const history = createMemoryHistory();
 
 //   history.push("/badroute");
-//   const { getByRole } = render (
+//   const { getByTestId } = render (
 //     <Router history={history}>
 //       <App />
 //     </Router>
-//   ) 
+//   )
 
-//   expect(getByRole("heading")).toHaveTextContent("404: Page not found")
+//   expect(getByTestId("heading")).toHaveTextContent("404: Page not found")
 // })
