@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Partners = ({ museumData }) => {
+  console.log("this is museumData", museumData);
+
   if (!museumData) return <h1>Loading...</h1>;
   const museumRecord = museumData.records;
   return (
@@ -15,18 +17,7 @@ const Partners = ({ museumData }) => {
       <SC.SearchStyle>
         {museumRecord.map(record => (
           <SC.ContentContainer key={record.fields.museum_id}>
-            <Link
-              to={{
-                pathname: "/museuminfo",
-                partnerProps: {
-                  museum_id: record.fields.museum_id,
-                  name: record.fields.name,
-                  image: record.fields.museum_image,
-                  description: record.fields.description,
-                  website: record.fields.website
-                }
-              }}
-            >
+            <Link to={`/museuminfo/${record.fields.museum_id}`}>
               <SC.ImgContainer>
                 <SC.ImgInContainer
                   alt={record.fields.name}

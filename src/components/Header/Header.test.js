@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, cleanup, fireEvent, act } from "@testing-library/react";
 import Header from "./Header";
 import App from "../App/App";
 import Search from "../Search/Search";
@@ -45,7 +45,7 @@ it("mocks a returns of expected data", () => {
   const searchButton = getByTestId("SEARCH");
   fireEvent.click(searchButton);
 
-  expect(global.fetch).toHaveBeenCalledTimes(2);
+  expect(global.fetch).toHaveBeenCalledTimes(4);
 
   // return waitForElement(() => findByTestId("first")).then(para =>
   //   expect(para.innerHTML).toEqual(mockResponse)

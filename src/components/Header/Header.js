@@ -7,7 +7,7 @@ import NavMenu from "../NavMenu/NavMenu";
 import basket from "../../assets/basket.svg";
 import searchGlass from "../../assets/magnifying-glass.svg";
 
-const Header = props => {
+const Header = ({ dataCall, keyword, setKeyword }) => {
   const [navMenu, setNavMenu] = useState(false);
 
   const toggleNav = () => {
@@ -34,12 +34,12 @@ const Header = props => {
               <SC.SearchBar
                 type="text"
                 placeholder="Search"
-                onChange={event => props.setKeyword(event.target.value)}
+                onChange={event => setKeyword(event.target.value)}
               />
-              <NavLink to="/search">
+              <NavLink to={`/search?keyword=${keyword}`}>
                 <SC.SearchButton
                   type="submit"
-                  onClick={props.dataCall}
+                  onClick={dataCall}
                   data-testid="SEARCH"
                 >
                   <img src={searchGlass} alt={"click to search"} />
