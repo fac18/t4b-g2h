@@ -9,16 +9,19 @@ const HeaderBox = styled.header`
   background-color: #eb5a61;
   align-items: end;
   position: sticky;
-  top: -8.09rem;
+  top: -20vh;
   overflow: auto;
+
+  @media (max-width: 768px) {
+    position: sticky;
+    top: 0;
+  }
 
   h1 {
     color: #2b2b31;
+    margin-bottom: 0;
     @media (max-width: 768px) {
       font-size: 1.618rem;
-      position: relative;
-      top: 1rem;
-      left: 1rem;
     }
   }
 
@@ -29,19 +32,33 @@ const HeaderBox = styled.header`
 `;
 
 const TitleBox = styled.div`
-  width: 80wv;
-  height: 8.09rem;
+  width: 80vw;
+  height: 20vh;
   background-color: #eb5a61;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+    height: 4.236rem;
+  }
 `;
 
 const SearchBox = styled.div`
-  width: 80wv;
-  height: 8.09rem;
+  width: 80vw;
+  height: 15vh;
   background-color: #eb5a61;
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 4.236rem;
+    margin-top: 1rem;
+  }
 `;
 
 const LogoBox = styled.div`
@@ -50,8 +67,9 @@ const LogoBox = styled.div`
   left: 1rem;
 
   @media (max-width: 768px) {
-    position: absolute;
+    position: inherit;
     top: 0;
+    left: 0;
   }
 `;
 
@@ -69,7 +87,9 @@ const MenuArea = styled.div`
 
   @media (max-width: 768px) {
     position: sticky;
-    top: 0;
+    top: 8.09rem;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
@@ -94,7 +114,14 @@ const SearchBar = styled.input`
 `;
 
 const G2hLogo = styled.img`
-  margin: 0.618rem;
+  margin: 0;
+  @media (max-width: 768px) {
+    margin: 0.618rem;
+  }
+
+  @media (max-width: 320px) {
+    margin: 0;
+  }
 `;
 
 const MenuButton = styled.p`
@@ -138,6 +165,28 @@ const BasketIcon = styled.img`
   margin-left: 0.618rem;
 `;
 
+const Tagline = styled.p`
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+`;
+
+const LoginSignup = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10vw;
+
+  p {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 60vw;
+    align-content: space-between;
+  }
+`;
+
 export {
   HeaderBox,
   SearchBox,
@@ -151,5 +200,7 @@ export {
   G2hLogo,
   MenuButton,
   Basket,
-  BasketIcon
+  BasketIcon,
+  Tagline,
+  LoginSignup
 };

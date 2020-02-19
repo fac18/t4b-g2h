@@ -3,10 +3,9 @@ import * as SC from "./Search.style.js";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const SearchPage = ({ searchResult, keyword, setKeyword, location }) => {
-  if (!searchResult) return <h1>No data yet</h1>;
-  setKeyword(location.search.split("=")[1]);
-  const searchRecords = searchResult.records; //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
+const SearchPage = ({ searchResult }) => {
+  if (!searchResult) return <h1>Loading images...</h1>
+  const searchRecords = searchResult.records;
 
   console.log("is this you", searchResult);
   return (
