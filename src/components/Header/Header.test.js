@@ -45,7 +45,7 @@ it("mocks a returns of expected data", () => {
   const searchButton = getByTestId("SEARCH");
   fireEvent.click(searchButton);
 
-  expect(global.fetch).toHaveBeenCalledTimes(2);
+  expect(global.fetch).toHaveBeenCalledTimes(4);
 
   // return waitForElement(() => findByTestId("first")).then(para =>
   //   expect(para.innerHTML).toEqual(mockResponse)

@@ -40,14 +40,10 @@ const PreviewPage = ({ location }) => {
   return (
     <SC.PreviewContainer>
       <SC.LeftPreviewColumn>
-<<<<<<< HEAD
         <SC.PreviewImage
           src={previewData.records[0].fields.url}
           alt={previewData.records[0].fields.caption}
         />
-=======
-        <SC.PreviewImage src={imageData.imageUrl} alt={imageData.caption} />
->>>>>>> master
         {/* <SC.KeywordsContainer>
           {keywords.map(keyword => (
             <Link to="/search" key={keyword}>

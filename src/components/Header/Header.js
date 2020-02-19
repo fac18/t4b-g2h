@@ -38,7 +38,7 @@ const Header = ({ dataCall, keyword, setKeyword }) => {
               <NavLink to={`/search?keyword=${keyword}`}>
                 <SC.SearchButton
                   type="submit"
-                  onClick={props.dataCall}
+                  onClick={dataCall}
                   data-testid="SEARCH"
                 >
                   <img src={searchGlass} alt={"click to search"} />
