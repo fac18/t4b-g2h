@@ -1,22 +1,58 @@
+// const filterAll = async (
+//   searchResults,
+//   collectionValue,
+//   artistValue,
+//   mediumValue
+// ) => {
+//   let finalResult = [];
+//   await Promise.all([
+//     byCollection(searchResults, collectionValue),
+//     byArtist(searchResults, artistValue),
+//     byMedium(searchResults, mediumValue)
+//   ])
+//     .then(wholeArr => removeEmptyArr(wholeArr))
+//     .then(reducedArr => finalArray(reducedArr))
+//     .then(finalArr => putArrInObj(finalArr))
+//     // .then(result => console.log(result))
+//     .then(res => {
+//       finalResult = res;
+//     })
+//     // .then(res => {
+//     //   return (finalResult = res);
+//     // })
+//     .catch(err => console.error(err));
+
+//   return finalResult;
+// };
+
 const filterAll = (
   searchResults,
   collectionValue,
   artistValue,
   mediumValue
 ) => {
-  Promise.all([
+  // let finalResult = [];
+  let arr = [
     byCollection(searchResults, collectionValue),
     byArtist(searchResults, artistValue),
     byMedium(searchResults, mediumValue)
-  ])
-    .then(wholeArr => removeEmptyArr(wholeArr))
-    .then(reducedArr => finalArray(reducedArr))
-    .then(finalArr => putArrInObj(finalArr))
-    .catch(err => console.error(err));
-};
+  ];
 
-const removeEmptyArr = wholeArr => {
-  return wholeArr.filter(array => {
+  return putArrInObj(finalArray(removeEmptyArr(arr)));
+};
+// .then(result => console.log(result))
+// (res => {
+//   finalResult = res;
+// })
+// .then(res => {
+//   return (finalResult = res);
+// })
+// .catch(err => console.error(err));
+
+// return finalResult;
+
+const removeEmptyArr = arr => {
+  return arr.filter(array => {
     return array !== null;
   });
 };

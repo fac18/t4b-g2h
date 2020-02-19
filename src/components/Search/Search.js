@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import * as SC from "./Search.style.js";
 import PropTypes from "prop-types";
 import Filter from "../Filter/Filter";
@@ -9,14 +9,38 @@ const SearchPage = ({
   filteredResult,
   setFilteredResult
 }) => {
+  const [filteredRecords, setFilteredRecords] = useState(null);
+
+  useEffect(() => {
+    console.log(
+      "filteredResult in search.js inside useeffect = ",
+      filteredResult
+    );
+    if (!filteredResult) {
+      setFilteredRecords(null);
+    } else {
+      setFilteredRecords(filteredResult.records);
+    }
+    console.log(
+      "filteredRecord in search.js inside useeffect= ",
+      filteredRecords
+    );
+  }, [filteredResult]);
+
+  console.log("searchResult in search.js outside = ", searchResult);
+  console.log("filteredResult in search.js outside = ", filteredResult);
+  // useEffect(() => {
+  //   if (!filteredRecords) {
+  //     setFilteredRecords(null);
+  //   } else {
+  //     setFilteredRecords(filteredResult.records);
+  //   }
+  //   console.log("filteredResult in search.js = ", filteredResult);
+  //   console.log("filteredRecord in search.js = ", filteredRecords);
+  // }, [filteredRecords]);
+
   if (!searchResult) return <h1>No data yet</h1>;
   const searchRecords = searchResult.records;
-  let filteredRecords;
-  if (filteredResult) {
-    filteredRecords = filteredResult.records;
-  } else {
-    filteredRecords = null;
-  }
 
   //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
   return (
@@ -27,11 +51,11 @@ const SearchPage = ({
         filteredResult={filteredResult}
         setFilteredResult={setFilteredResult}
       />
-      {/* {console.log(searchResult)} */}
       {filteredRecords ? (
         <SC.SearchStyle>
           {filteredRecords.map(record => (
             <SC.ContentContainer key={record.fields.image_id}>
+              {console.log("record in map function = ", record)}
               <SC.ImgContainer>
                 <SC.ImgInContainer src={record.fields.url} />
               </SC.ImgContainer>

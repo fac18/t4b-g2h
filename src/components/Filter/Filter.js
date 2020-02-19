@@ -8,6 +8,11 @@ const Filter = ({ searchResult, filteredResult, setFilteredResult }) => {
   const [collectionValue, setCollectionValue] = useState("");
   const [artistValue, setArtistValue] = useState("");
   const [mediumValue, setMediumValue] = useState("");
+
+  // const filteredAllDataPromise = new Promise((resolve, reject) => {
+
+  // });
+
   const filteredAllData = filterAll(
     searchResult,
     collectionValue,
@@ -17,10 +22,15 @@ const Filter = ({ searchResult, filteredResult, setFilteredResult }) => {
 
   useEffect(() => {
     // console.log(searchResult);
+    // setFilteredResult(searchResult);
+    // if
     setFilteredResult(filteredAllData);
+
     // filteredAllData.then(setFilteredResult(filteredAllData));
     // filteredAllData;
-    console.log("filteredAllData = ", filteredAllData);
+    console.table("searchResult in filter.js = ", searchResult);
+    console.table("filteredResult in Filter.js = ", filteredResult);
+    // console.log("filteredAllData = ", filteredAllData);
     // console.log(filteredAllData);
   }, [collectionValue, artistValue, mediumValue]);
 
