@@ -29,16 +29,6 @@ const SearchPage = ({
 
   console.log("searchResult in search.js outside = ", searchResult);
   console.log("filteredResult in search.js outside = ", filteredResult);
-  // useEffect(() => {
-  //   if (!filteredRecords) {
-  //     setFilteredRecords(null);
-  //   } else {
-  //     setFilteredRecords(filteredResult.records);
-  //   }
-  //   console.log("filteredResult in search.js = ", filteredResult);
-  //   console.log("filteredRecord in search.js = ", filteredRecords);
-  // }, [filteredRecords]);
-
   if (!searchResult) return <h1>No data yet</h1>;
   const searchRecords = searchResult.records;
 

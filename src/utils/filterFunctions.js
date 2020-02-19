@@ -1,55 +1,24 @@
-// const filterAll = async (
-//   searchResults,
-//   collectionValue,
-//   artistValue,
-//   mediumValue
-// ) => {
-//   let finalResult = [];
-//   await Promise.all([
-//     byCollection(searchResults, collectionValue),
-//     byArtist(searchResults, artistValue),
-//     byMedium(searchResults, mediumValue)
-//   ])
-//     .then(wholeArr => removeEmptyArr(wholeArr))
-//     .then(reducedArr => finalArray(reducedArr))
-//     .then(finalArr => putArrInObj(finalArr))
-//     // .then(result => console.log(result))
-//     .then(res => {
-//       finalResult = res;
-//     })
-//     // .then(res => {
-//     //   return (finalResult = res);
-//     // })
-//     .catch(err => console.error(err));
-
-//   return finalResult;
-// };
-
 const filterAll = (
   searchResults,
   collectionValue,
   artistValue,
-  mediumValue
+  periodValue,
+  mediumValue,
+  orientationValue,
+  peopleValue,
+  colourValue
 ) => {
-  // let finalResult = [];
   let arr = [
     byCollection(searchResults, collectionValue),
     byArtist(searchResults, artistValue),
-    byMedium(searchResults, mediumValue)
+    byPeriod(searchResults, periodValue),
+    byMedium(searchResults, mediumValue),
+    byOrientation(searchResults, orientationValue),
+    byPeople(searchResults, peopleValue),
+    byColour(searchResults, colourValue)
   ];
-
   return putArrInObj(finalArray(removeEmptyArr(arr)));
 };
-// .then(result => console.log(result))
-// (res => {
-//   finalResult = res;
-// })
-// .then(res => {
-//   return (finalResult = res);
-// })
-// .catch(err => console.error(err));
-
-// return finalResult;
 
 const removeEmptyArr = arr => {
   return arr.filter(array => {
@@ -106,12 +75,56 @@ const byArtist = (searchResults, artistValue) => {
   return null;
 };
 
+const byPeriod = (searchResults, periodValue) => {
+  if (periodValue) {
+    return searchResults.records.filter(result => {
+      return result.fields.period
+        .toLowerCase()
+        .includes(periodValue.toLowerCase());
+    });
+  }
+  return null;
+};
+
 const byMedium = (searchResults, mediumValue) => {
   if (mediumValue) {
     return searchResults.records.filter(result => {
       return result.fields.medium
         .toLowerCase()
         .includes(mediumValue.toLowerCase());
+    });
+  }
+  return null;
+};
+
+const byOrientation = (searchResults, orientationValue) => {
+  if (orientationValue) {
+    return searchResults.records.filter(result => {
+      return result.fields.orientation
+        .toLowerCase()
+        .includes(orientationValue.toLowerCase());
+    });
+  }
+  return null;
+};
+
+const byPeople = (searchResults, peopleValue) => {
+  if (peopleValue) {
+    return searchResults.records.filter(result => {
+      return result.fields.people
+        .toLowerCase()
+        .includes(peopleValue.toLowerCase());
+    });
+  }
+  return null;
+};
+
+const byColour = (searchResults, colourValue) => {
+  if (colourValue) {
+    return searchResults.records.filter(result => {
+      return result.fields.colour
+        .toLowerCase()
+        .includes(colourValue.toLowerCase());
     });
   }
   return null;

@@ -1,38 +1,39 @@
 import React, { useState, useEffect } from "react";
 import filterAll from "../../utils/filterFunctions";
 import PropTypes from "prop-types";
-// import * as SC from "./Filter.style";
 
-const Filter = ({ searchResult, filteredResult, setFilteredResult }) => {
-  // once working, should refactor all states to useReducer
+const Filter = ({ searchResult, setFilteredResult }) => {
+  // could refactor all states to useReducer
   const [collectionValue, setCollectionValue] = useState("");
   const [artistValue, setArtistValue] = useState("");
+  const [periodValue, setPeriodValue] = useState("");
   const [mediumValue, setMediumValue] = useState("");
-
-  // const filteredAllDataPromise = new Promise((resolve, reject) => {
-
-  // });
+  const [orientationValue, setOrientationValue] = useState("");
+  const [colourValue, setColourValue] = useState("");
+  const [peopleValue, setPeopleValue] = useState("");
 
   const filteredAllData = filterAll(
     searchResult,
     collectionValue,
     artistValue,
-    mediumValue
+    periodValue,
+    mediumValue,
+    orientationValue,
+    peopleValue,
+    colourValue
   );
 
   useEffect(() => {
-    // console.log(searchResult);
-    // setFilteredResult(searchResult);
-    // if
     setFilteredResult(filteredAllData);
-
-    // filteredAllData.then(setFilteredResult(filteredAllData));
-    // filteredAllData;
-    console.table("searchResult in filter.js = ", searchResult);
-    console.table("filteredResult in Filter.js = ", filteredResult);
-    // console.log("filteredAllData = ", filteredAllData);
-    // console.log(filteredAllData);
-  }, [collectionValue, artistValue, mediumValue]);
+  }, [
+    collectionValue,
+    artistValue,
+    periodValue,
+    mediumValue,
+    orientationValue,
+    peopleValue,
+    colourValue
+  ]);
 
   return (
     <form>
@@ -50,6 +51,65 @@ const Filter = ({ searchResult, filteredResult, setFilteredResult }) => {
         value={artistValue}
         onChange={event => setArtistValue(event.target.value)}
       ></input>
+      <label id="periodValue">Period/Century</label>
+      <input
+        type="text"
+        id="periodValue"
+        value={periodValue}
+        onChange={event => setPeriodValue(event.target.value)}
+      ></input>
+      <label htmlFor="colourValue" id="colourValue">
+        Colour/B&W
+      </label>
+      <select
+        type="select"
+        id="colourValue"
+        value={colourValue}
+        onChange={event => setColourValue(event.target.value)}
+      >
+        <option value="" disabled selected>
+          Select an option
+        </option>
+        <option value="">None</option>
+        <option value="Colour">Colour</option>
+        <option value="B&W">Black & White</option>
+      </select>
+
+      <label htmlFor="orientationValue" id="orientationValue">
+        Orientation
+      </label>
+      <select
+        type="select"
+        id="orientationValue"
+        value={orientationValue}
+        onChange={event => setOrientationValue(event.target.value)}
+      >
+        <option value="" disabled selected>
+          Select an option
+        </option>
+        <option value="">None</option>
+        <option value="Landscape">Landscape</option>
+        <option value="Portrait">Portrait</option>
+        <option value="Square">Square</option>
+      </select>
+
+      <label htmlFor="peopleValue" id="peopleValue">
+        People
+      </label>
+      <select
+        type="select"
+        id="peopleValue"
+        value={peopleValue}
+        onChange={event => setPeopleValue(event.target.value)}
+      >
+        <option value="" disabled selected>
+          Select an option
+        </option>
+        <option value="">None</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+
       <label id="mediumValue">Medium</label>
       <input
         type="text"
