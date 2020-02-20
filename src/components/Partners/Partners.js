@@ -24,7 +24,7 @@ const Partners = ({ museumData }) => {
                   src={record.fields.museum_image}
                 />
               </SC.ImgContainer>
-              <p>{record.fields.name}</p>
+              <Style.TextDeco>{record.fields.name}</Style.TextDeco>
             </Link>
           </SC.ContentContainer>
         ))}

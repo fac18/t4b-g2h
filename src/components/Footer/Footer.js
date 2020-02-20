@@ -12,7 +12,7 @@ const Footer = () => {
         <ul>
           <li>Gateway 2 Heritage</li>
           <li>
-            <a href="mailto:info@g2h.com">info@g2h.com</a>
+            <a href="mailto:info@andreastern.co.uk">info@g2h.com</a>
           </li>
           <li>
             <a href="tel:0044201234567">+44 (0) 201 234 567</a>
@@ -32,7 +32,7 @@ const Footer = () => {
           </Link>
         </ul>
       </SC.FooterTextBox>
-      {1===1 ? <MuseumAreaLink /> : null}
+      {1 === 1 ? <MuseumAreaLink /> : null}
     </SC.FooterBox>
   );
 };
