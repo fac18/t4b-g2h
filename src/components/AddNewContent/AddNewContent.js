@@ -20,14 +20,33 @@ const AddNewContent = () => {
   const [period, setPeriod] = useState("");
   const [people, setPeople] = useState("");
 
+  const fullData = {
+    museumRecordId: museumRecordId,
+    url: url,
+    name: name,
+    caption: caption,
+    description: description,
+    colour: colour,
+    copyrightStatus: copyrightStatus,
+    copyrightHolder: copyrightHolder,
+    creator: creator,
+    credit: credit,
+    orientation: orientation,
+    createDate: createDate,
+    collection: collection,
+    keywords: keywords,
+    medium: medium,
+    period: period,
+    people: people
+  };
   const handleSubmit = event => {
     event.preventDefault();
     fetch("/.netlify/functions/postImage/postImage.js", {
       method: "POST",
-      body: JSON.stringify(museumRecordId)
+      body: JSON.stringify(fullData)
     });
   };
-  console.log(museumRecordId);
+  console.log(fullData);
   return (
     <>
       <h2>Add New Content</h2>
