@@ -20,6 +20,8 @@ const AddNewContent = () => {
   const [period, setPeriod] = useState("");
   const [people, setPeople] = useState("");
 
+  // console.log(colour);
+
   const fullData = {
     museumRecordId: museumRecordId,
     url: url,
@@ -46,13 +48,13 @@ const AddNewContent = () => {
       body: JSON.stringify(fullData)
     });
   };
-  console.log(fullData);
+  // console.log(fullData);
   return (
     <>
       <h2>Add New Content</h2>
       {/* <p>{museum.id here from db}</p> */}
       <SC.FormBox onSubmit={handleSubmit}>
-        <label htmlFor="museumRecordId">Museum Id:</label>
+        <label htmlFor="museumRecordId">Museum Record ID:</label>
         <input
           name="museumRecordId"
           type="text"
@@ -60,16 +62,18 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={museumRecordId}
           onChange={event => setMuseumRecordId(event.target.value)}
+          required
         />
 
-        <label htmlFor="museum_id">Url:</label>
+        <label htmlFor="url">Image URL:</label>
         <input
           name="url"
-          type="text"
+          type="url"
           id="url"
           aria-label="Add a title"
           value={url}
           onChange={event => setUrl(event.target.value)}
+          required
         />
 
         <label htmlFor="name">Name:</label>
@@ -80,6 +84,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={name}
           onChange={event => setName(event.target.value)}
+          required
         />
 
         <label htmlFor="caption">Caption:</label>
@@ -90,6 +95,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={caption}
           onChange={event => setCaption(event.target.value)}
+          required
         />
 
         <label htmlFor="description">Description:</label>
@@ -100,17 +106,39 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={description}
           onChange={event => setDescription(event.target.value)}
+          required
         />
 
-        <label htmlFor="colour">Colour:</label>
+        {/* {console.log(colour)}
+
+        <p>Select a colour type:</p>
         <input
+          type="radio"
           name="colour"
-          type="text"
-          id="colour"
-          aria-label="Add a title"
+          id="b&w"
           value={colour}
           onChange={event => setColour(event.target.value)}
         />
+        <label htmlFor="b&w" value="b&w">
+          Black and White
+        </label>
+        <input type="radio" name="colour" id="colour" value="Colour" />
+        <label htmlFor="colour">Colour</label> */}
+
+        <label htmlFor="colour">Colour:</label>
+        <select
+          htmlFor="colour"
+          aria-label="Add a title"
+          value={colour}
+          onChange={event => setColour(event.target.value)}
+          required
+        >
+          <option value="" disabled selected>
+            Select an option
+          </option>
+          <option value="B&W">Black and White</option>
+          <option value="Colour">Colour</option>
+        </select>
 
         <label htmlFor="copyrightStatus">Copyright Status:</label>
         <input
@@ -120,6 +148,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={copyrightStatus}
           onChange={event => setCopyrightStatus(event.target.value)}
+          required
         />
 
         <label htmlFor="copyrightHolder">Copyright Holder:</label>
@@ -130,6 +159,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={copyrightHolder}
           onChange={event => setCopyrightHolder(event.target.value)}
+          required
         />
 
         <label htmlFor="creator">Creator:</label>
@@ -140,6 +170,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={creator}
           onChange={event => setCreator(event.target.value)}
+          required
         />
 
         <label htmlFor="credit">Credit:</label>
@@ -150,6 +181,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={credit}
           onChange={event => setCredit(event.target.value)}
+          required
         />
 
         <label htmlFor="orientation">Orientation:</label>
@@ -160,6 +192,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={orientation}
           onChange={event => setOrientation(event.target.value)}
+          required
         />
 
         <label htmlFor="createDate">Create Date:</label>
@@ -170,6 +203,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={createDate}
           onChange={event => setCreateDate(event.target.value)}
+          required
         />
 
         <label htmlFor="collection">Collection:</label>
@@ -180,16 +214,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={collection}
           onChange={event => setCollection(event.target.value)}
-        />
-
-        <label htmlFor="museum_id">Museum Id:</label>
-        <input
-          name="museum_id"
-          type="text"
-          id="museum_id"
-          aria-label="Add a title"
-          value={museumRecordId}
-          onChange={event => setMuseumRecordId(event.target.value)}
+          required
         />
 
         <label htmlFor="keywords">Keywords:</label>
@@ -200,6 +225,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={keywords}
           onChange={event => setKeywords(event.target.value)}
+          required
         />
 
         <label htmlFor="medium">Medium:</label>
@@ -210,6 +236,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={medium}
           onChange={event => setMedium(event.target.value)}
+          required
         />
 
         <label htmlFor="period">Period:</label>
@@ -220,6 +247,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={period}
           onChange={event => setPeriod(event.target.value)}
+          required
         />
 
         <label htmlFor="people">People:</label>
@@ -230,6 +258,7 @@ const AddNewContent = () => {
           aria-label="Add a title"
           value={people}
           onChange={event => setPeople(event.target.value)}
+          required
         />
 
         <input type="submit" />
