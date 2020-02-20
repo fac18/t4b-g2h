@@ -1,10 +1,12 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
 import { BrowserRouter, Link } from "react-router-dom";
+import * as S from "../styles/Text.style";
+import * as Btn from "../styles/Buttons.style";
 
 const MuseumProfile = () => {
   return (
-    <>
+    <S.CenteredText>
       <h2>Your profile:</h2>
       <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
@@ -17,16 +19,16 @@ const MuseumProfile = () => {
           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
           required
         />
-        <button>Change Password</button>
+        <Btn.WarningBtnL>Change Password</Btn.WarningBtnL>
       </SC.FormBox>
-      <h3>Your content history:</h3>
+      <h2>Your content history:</h2>
       <BrowserRouter>
         <Link to="/addnewcontent">
-          <button>Add new content</button>
+          <Btn.PrimaryBtn>Add new content</Btn.PrimaryBtn>
         </Link>
       </BrowserRouter>
       {/* Display content history/uploads from db */}
-    </>
+    </S.CenteredText>
   );
 };
 

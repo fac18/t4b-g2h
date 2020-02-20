@@ -1,9 +1,11 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
+import * as S from "../styles/Text.style";
+import * as Btn from "../styles/Buttons.style";
 
 const MemberSignUp = () => {
   return (
-    <>
+    <S.CenteredText>
       <h2>Member Sign-up</h2>
       <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
@@ -38,9 +40,9 @@ const MemberSignUp = () => {
           aria-label="Enter email address"
           required
         ></input>
-        <button>Submit</button>
+        <Btn.PrimaryBtnS>Submit</Btn.PrimaryBtnS>
       </SC.FormBox>
-    </>
+    </S.CenteredText>
   );
 };
 

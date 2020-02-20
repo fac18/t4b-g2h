@@ -6,6 +6,7 @@ const Margin = styled.div`
 
 const CenteredText = styled.div`
   text-align: center;
+  margin: 4.236rem;
 `;
 
 const JustifiedText = styled.div`
@@ -13,7 +14,15 @@ const JustifiedText = styled.div`
 `;
 
 const BoldText = styled.span`
-  font-weight: 700;
+  font-family: "Gotham Medium";
 `;
 
-export { Margin, CenteredText, JustifiedText, BoldText };
+const TextDeco = styled.a`
+  text-decoration: none;
+  color: #eb5a61;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export { Margin, CenteredText, JustifiedText, BoldText, TextDeco };

@@ -13,6 +13,7 @@ import LockOpenIcon from "@material-ui/icons/LockOpen";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import HomeIcon from "@material-ui/icons/Home";
 import InfoIcon from "@material-ui/icons/Info";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -103,6 +104,17 @@ export default function NavMenu() {
               <ExitToAppIcon />
             </ListItemIcon>
             <ListItemText>Sign-Up</ListItemText>
+          </ListItem>
+        </Link>
+      </List>
+      <Divider />
+      <List>
+        <Link className={classes.link} to="/basket">
+          <ListItem>
+            <ListItemIcon style={{ color: "#EB5A61" }}>
+              <ShoppingBasketIcon />
+            </ListItemIcon>
+            <ListItemText>Basket</ListItemText>
           </ListItem>
         </Link>
       </List>

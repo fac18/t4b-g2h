@@ -4,17 +4,17 @@ const SearchStyle = styled.section`
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
+  a {
+    text-decoration: none;
+    color: #2b2b31;
+  }
 `;
 const Search = styled.div`
-  p {
-    text-align: center;
-  }
   article {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
-
 `;
 
 const ContentContainer = styled.div`
@@ -30,6 +30,7 @@ const ImgContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin: 1rem;
 
   @media only screen and (max-width: 800px) {
     width: 250px;

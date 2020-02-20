@@ -1,9 +1,10 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
+import * as S from "../styles/Text.style";
 
 const MemberProfile = () => {
   return (
-    <>
+    <S.CenteredText>
       <h2>Your profile:</h2>
       <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
@@ -20,7 +21,7 @@ const MemberProfile = () => {
       </SC.FormBox>
       <h3>Your purchases:</h3>
       {/* Display purchases content from db */}
-    </>
+    </S.CenteredText>
   );
 };
 

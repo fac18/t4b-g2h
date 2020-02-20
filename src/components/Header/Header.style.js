@@ -32,6 +32,7 @@ const HeaderBox = styled.header`
 `;
 
 const TitleBox = styled.div`
+  margin: 2rem 0 0 5rem;
   width: 80vw;
   height: 20vh;
   background-color: #eb5a61;
@@ -42,6 +43,7 @@ const TitleBox = styled.div`
   @media (max-width: 768px) {
     display: none;
     height: 4.236rem;
+    margin-left: 0;
   }
 `;
 

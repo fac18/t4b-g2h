@@ -20,7 +20,7 @@ const SearchPage = ({ searchResult, keyword, setKeyword, location }) => {
             <SC.ImgContainer>
               <SC.ImgInContainer src={record.fields.url} />
             </SC.ImgContainer>
-            <p data-testid="first">{record.fields.caption}</p>
+            <a data-testid="first">{record.fields.caption}</a>
           </SC.ContentContainer>
         </Link>
       ))}
