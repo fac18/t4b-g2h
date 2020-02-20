@@ -4,7 +4,7 @@ const PreviewContainer = styled.section`
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4.236rem;
+  margin-top: 12.18rem;
   margin-bottom: 4.236rem;
   display: flex;
   flex-flow: row wrap;

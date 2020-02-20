@@ -2,6 +2,7 @@ import React from "react";
 import PaymentIcons from "../../assets/PaymentMethods.svg";
 import * as SC from "../styles/Text.style";
 import * as Style from "../styles/Form.style";
+import * as Btn from "../styles/Buttons.style";
 
 const Payment = () => {
   return (
@@ -37,7 +38,7 @@ const Payment = () => {
           type="number"
           required
         />
-        <button>PAY NOW</button>
+        <Btn.PrimaryBtn>PAY NOW</Btn.PrimaryBtn>
       </Style.FormBox>
     </SC.CenteredText>
   );

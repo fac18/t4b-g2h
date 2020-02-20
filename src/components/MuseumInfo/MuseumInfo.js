@@ -23,9 +23,9 @@ const MuseumInfo = ({ match, museumData }) => {
           <p>Description: {filteredMuseumData[0].fields.description}</p>
           <p>
             Website:{" "}
-            <a href={filteredMuseumData[0].fields.website}>
+            <SC.TextDeco href={filteredMuseumData[0].fields.website}>
               {filteredMuseumData[0].fields.website}
-            </a>
+            </SC.TextDeco>
           </p>
         </SC.CenteredText>
       )}

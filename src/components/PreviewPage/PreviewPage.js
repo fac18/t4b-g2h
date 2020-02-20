@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import * as SC from "./PreviewPage.style";
+import * as Btn from "../styles/Buttons.style";
 import { BoldText } from "../styles/Text.style";
 //import { Link } from "react-router-dom";
 //import dataCall from "../App/App";
@@ -65,8 +66,8 @@ const PreviewPage = ({ location }) => {
           {previewData.records[0].fields.description}
         </p>
         <SC.ButtonContainer>
-          <button>Licence this Image</button>
-          <button>Buy a Print</button>
+          <Btn.PrimaryBtn>Licence this image</Btn.PrimaryBtn>
+          <Btn.SecondaryBtn>Buy a Print</Btn.SecondaryBtn>
         </SC.ButtonContainer>
         <p>
           <BoldText>Collection:</BoldText>{" "}

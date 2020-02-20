@@ -1,24 +1,26 @@
 import styled from "styled-components";
 
 const HeaderBox = styled.header`
-  max-width: 100vw;
-  height: auto;
+  width: 100vw;
+  height: 8.09rem;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #eb5a61;
   align-items: end;
-  position: sticky;
-  top: -20vh;
+  position: fixed;
+  top: 0vh;
   overflow: auto;
 
   @media (max-width: 768px) {
-    position: sticky;
+    position: fixed;
     top: 0;
+    height: auto;
+    justify-content: center;
   }
 
   h1 {
-    color: #2b2b31;
+    color: #ffffff;
     margin-bottom: 0;
     @media (max-width: 768px) {
       font-size: 1.618rem;
@@ -26,12 +28,13 @@ const HeaderBox = styled.header`
   }
 
   a {
-    color: #2b2b31;
+    color: #ffffff;
     text-decoration: none;
   }
 `;
 
 const TitleBox = styled.div`
+  /* margin: 2rem 0 0 5rem; */
   width: 80vw;
   height: 20vh;
   background-color: #eb5a61;
@@ -40,14 +43,15 @@ const TitleBox = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    display: none;
-    height: 4.236rem;
+    /* display: none; */
+    height: 2.236rem;
+    margin-left: 0;
   }
 `;
 
 const SearchBox = styled.div`
   width: 80vw;
-  height: 15vh;
+  height: 8.09rem;
   background-color: #eb5a61;
   position: sticky;
   top: 0;
@@ -62,19 +66,21 @@ const SearchBox = styled.div`
 `;
 
 const LogoBox = styled.div`
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
+  /* position: fixed; */
+  margin-top: 1rem;
+  margin-left: 1rem;
+  z-index: 5;
 
   @media (max-width: 768px) {
-    position: inherit;
-    top: 0;
-    left: 0;
+    /* position: inherit; */
+    /* top: 0;
+    left: 0; */
+    display: none;
   }
 `;
 
 const MenuArea = styled.div`
-  position: fixed;
+  /* position: fixed; */
   top: 1rem;
   right: 1rem;
   box-sizing: border-box;
@@ -86,17 +92,48 @@ const MenuArea = styled.div`
   justify-content: flex-start;
 
   @media (max-width: 768px) {
-    position: sticky;
-    top: 8.09rem;
+    /* position: sticky; */
+    top: 9.09rem;
     align-items: center;
     justify-content: space-between;
   }
 `;
 
-const Middle = styled.div`
+const TitleBar = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  width: 100vw;
+  height: 8.09rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #eb5a61;
+  align-items: end;
+  overflow: auto;
+  position: relative;
+  top: 8.09rem;
+  z-index: -5;
+  @media (max-width: 768px) {
+    top: 8rem;
+  }
+
+  @media (max-width: 510px) {
+    top: 10rem;
+  }
+
+  h1 {
+    color: #1c1d1f;
+    margin-bottom: 0;
+    @media (max-width: 768px) {
+      font-size: 1.618rem;
+    }
+  }
+
+  a {
+    color: #1c1d1f;
+    text-decoration: none;
+  }
 `;
 
 const SearchBar = styled.input`
@@ -147,9 +184,14 @@ const SearchBarForm = styled.form`
   border: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin: 0;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  button {
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 
 const SearchButton = styled.button`
@@ -191,7 +233,7 @@ export {
   HeaderBox,
   SearchBox,
   LogoBox,
-  Middle,
+  TitleBar,
   MenuArea,
   TitleBox,
   SearchBarForm,
