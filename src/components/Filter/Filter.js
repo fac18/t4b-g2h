@@ -23,6 +23,17 @@ const Filter = ({ searchResult, setFilteredResult }) => {
     colourValue
   );
 
+  const clearFilters = event => {
+    event.preventDefault();
+    setCollectionValue("");
+    setArtistValue("");
+    setPeriodValue("");
+    setMediumValue("");
+    setOrientationValue("");
+    setColourValue("");
+    setPeopleValue("");
+  };
+
   useEffect(() => {
     setFilteredResult(filteredAllData);
   }, [
@@ -117,6 +128,7 @@ const Filter = ({ searchResult, setFilteredResult }) => {
         value={mediumValue}
         onChange={event => setMediumValue(event.target.value)}
       ></input>
+      <button onClick={clearFilters}>Clear filters</button>
     </form>
   );
 };

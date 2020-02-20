@@ -10,37 +10,31 @@ const SearchPage = ({
   setFilteredResult
 }) => {
   const [filteredRecords, setFilteredRecords] = useState(null);
+  const [showFilter, setShowFilter] = useState(false);
 
   useEffect(() => {
-    console.log(
-      "filteredResult in search.js inside useeffect = ",
-      filteredResult
-    );
     if (!filteredResult) {
       setFilteredRecords(null);
     } else {
       setFilteredRecords(filteredResult.records);
     }
-    console.log(
-      "filteredRecord in search.js inside useeffect= ",
-      filteredRecords
-    );
   }, [filteredResult]);
 
-  console.log("searchResult in search.js outside = ", searchResult);
-  console.log("filteredResult in search.js outside = ", filteredResult);
   if (!searchResult) return <h1>No data yet</h1>;
   const searchRecords = searchResult.records;
 
   //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
   return (
     <>
-      <Filter
-        searchResult={searchResult}
-        setSearchResult={setSearchResult}
-        filteredResult={filteredResult}
-        setFilteredResult={setFilteredResult}
-      />
+      <button onClick={() => setShowFilter(!showFilter)}>Filter options</button>
+      {showFilter ? (
+        <Filter
+          searchResult={searchResult}
+          setSearchResult={setSearchResult}
+          filteredResult={filteredResult}
+          setFilteredResult={setFilteredResult}
+        />
+      ) : null}
       {filteredRecords ? (
         <SC.SearchStyle>
           {filteredRecords.map(record => (
