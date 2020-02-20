@@ -1,71 +1,63 @@
+# Gateway2Heritage 
+
 [![codecov](https://codecov.io/gh/fac18/t4b-g2h/branch/master/graph/badge.svg)](https://codecov.io/gh/fac18/t4b-g2h)
+
 [![Build Status](https://travis-ci.com/fac18/t4b-g2h.svg?branch=master)](https://travis-ci.com/fac18/t4b-g2h)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
-## Available Scripts
+An image licensing platform for small heritage and cultural museums in the UK. Made as part of the Tech for Better programme at Founders and Coders.
 
-In the project directory, you can run:
+## Readme Contents:
 
-### `npm start`
+- [Team](#team)
+- [Overview](#overview)
+- [Installation Guide](#installation-guide)
+- [User Stories & Journey](#user-journey)
+- [Design Process](#design-process)
+- [First Build Sprint](#first-build-sprint)
+- [Second Build Sprint](#second-build-sprint)
+- [Potential Future Developments](#potential-future-developments)
+- [Learning Outcomes](#learning-outcomes)
+- [Tech Stack](#tech-stack)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Team
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Scrum master: [Reggie](https://github.com/reginaldjbeili)\
+UX/UI lead: [Renata](https://github.com/renatadev) \
+DevOps lead: [Kin](https://github.com/kin-au)\
+Quality Assurance lead: [Jamie](https://github.com/jc2820)
 
-### `npm test`
+### Overview
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Gateway2Heritage is a platform that offers the heritage sector the opportunity to promote their collections to a wider audience for commercial licensing whilst providing a space for intra-sector communication.
 
-### `npm run build`
+### 💾Installation Guide
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repo `git clone https://github.com/fac18/t4b-g2h.git`
+2. Intall the dependencies by running `npm i`
+3. To check tests run `npm test`
+4. Start the server with `npm start` and go to `localhost:3000` 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### User Journey
+To see our user journey, refer to this [document](https://github.com/fac18/t4b-g2h/issues/1)
+To see the user stories, refer to our project [kanban board](https://github.com/fac18/t4b-g2h/projects/2)
 
-### `npm run eject`
+### Design Process
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Take a look at our [figma](https://www.figma.com/file/RtDCsFDAGVLn09I4nAg9ZI/gateway2heritage?node-id=321%3A2)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### First Build Sprint
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Second Build Sprint
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Potential Future Developments
 
-## Learn More
+### Learning Outcomes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Tech Stack:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+React, React-Router, Styled-Components, Netlify Lambda Functions, Airtable, TravisCI, Codecov, Jest
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+##### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

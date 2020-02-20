@@ -1,23 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import * as SC from "../styles/Text.style";
 import PropTypes from "prop-types";
 
-const MuseumInfo = props => {
-  const [museumInfo, setMuseumInfo] = useState(null);
-  useEffect(() => {
-    setMuseumInfo(props.location.partnerProps);
-  }, [props.location.partnerProps]);
+const MuseumInfo = ({ match, museumData }) => {
+  const id = match.params.id;
+  if (!museumData) return <h1>Loading...</h1>;
+  const filteredMuseumData = museumData.records.filter(museum => {
+    return museum.fields.museum_id === Number(id);
+  });
+
   return (
     <>
-      {!museumInfo ? (
+      {!id ? (
         <h1>Loading...</h1>
       ) : (
-        <SC.CenteredText key={museumInfo.museum_id}>
-          <h2>{museumInfo.name}</h2>
-          <img alt={museumInfo.name} src={museumInfo.image} />
-          <p>Description: {museumInfo.description}</p>
+        <SC.CenteredText key={filteredMuseumData[0].fields.museum_id}>
+          <h2>{filteredMuseumData[0].fields.name}</h2>
+          <img
+            alt={filteredMuseumData[0].fields.name}
+            src={filteredMuseumData[0].fields.museum_image}
+          />
+          <p>Description: {filteredMuseumData[0].fields.description}</p>
           <p>
-            Website: <a href={museumInfo.website}>{museumInfo.website}</a>
+            Website:{" "}
+            <a href={filteredMuseumData[0].fields.website}>
+              {filteredMuseumData[0].fields.website}
+            </a>
           </p>
         </SC.CenteredText>
       )}
@@ -26,6 +34,6 @@ const MuseumInfo = props => {
 };
 
 MuseumInfo.propTypes = {
-  location: PropTypes.object
+  chosenMuseum: PropTypes.object
 };
 export default MuseumInfo;

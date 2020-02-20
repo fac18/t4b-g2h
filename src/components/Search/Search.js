@@ -1,36 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as SC from "./Search.style.js";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Filter from "../Filter/Filter";
 
 const SearchPage = ({
   searchResult,
-  setSearchResult,
   filteredResult,
-  setFilteredResult
+  setFilteredResult,
+  keyword,
+  setKeyword,
+  location
 }) => {
   const [filteredRecords, setFilteredRecords] = useState(null);
   const [showFilter, setShowFilter] = useState(false);
 
+  // console.trace("search result in search.js is ", searchResult);
+
   useEffect(() => {
     if (!filteredResult) {
       setFilteredRecords(null);
+      // console.log("filteredRecords = ", filteredRecords);
     } else {
       setFilteredRecords(filteredResult.records);
+      // console.log(filteredResult.records);
     }
   }, [filteredResult]);
 
-  if (!searchResult) return <h1>No data yet</h1>;
-  const searchRecords = searchResult.records;
+  if (!searchResult) return <h1>Loading images...</h1>;
+  setKeyword(location.search.split("=")[1]);
+  const searchRecords = searchResult.records; //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
 
-  //shows records in grid view through mapping on each one and displaying it in 3 columns by X rows to as many as needed
   return (
     <>
       <button onClick={() => setShowFilter(!showFilter)}>Filter options</button>
       {showFilter ? (
         <Filter
           searchResult={searchResult}
-          setSearchResult={setSearchResult}
           filteredResult={filteredResult}
           setFilteredResult={setFilteredResult}
         />
@@ -39,7 +45,7 @@ const SearchPage = ({
         <SC.SearchStyle>
           {filteredRecords.map(record => (
             <SC.ContentContainer key={record.fields.image_id}>
-              {console.log("record in map function = ", record)}
+              {/* {console.log("record in filter map function = ", record)} */}
               <SC.ImgContainer>
                 <SC.ImgInContainer src={record.fields.url} />
               </SC.ImgContainer>
@@ -50,12 +56,18 @@ const SearchPage = ({
       ) : (
         <SC.SearchStyle>
           {searchRecords.map(record => (
-            <SC.ContentContainer key={record.fields.image_id}>
-              <SC.ImgContainer>
-                <SC.ImgInContainer src={record.fields.url} />
-              </SC.ImgContainer>
-              <p data-testid="first">{record.fields.caption}</p>
-            </SC.ContentContainer>
+            <Link
+              to={`/previewpage?${keyword}=${record.fields.image_id}`}
+              key={record.fields.image_id}
+            >
+              <SC.ContentContainer key={record.fields.image_id}>
+                {/* {console.log("record in searchrecords map function = ", record)} */}
+                <SC.ImgContainer>
+                  <SC.ImgInContainer src={record.fields.url} />
+                </SC.ImgContainer>
+                <p data-testid="first">{record.fields.caption}</p>
+              </SC.ContentContainer>
+            </Link>
           ))}
         </SC.SearchStyle>
       )}
@@ -65,7 +77,6 @@ const SearchPage = ({
 
 SearchPage.propTypes = {
   searchResult: PropTypes.object,
-  setSearchResult: PropTypes.func,
   filteredResult: PropTypes.object,
   setFilteredResult: PropTypes.func
 };

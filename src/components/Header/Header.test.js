@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, cleanup, fireEvent, act } from "@testing-library/react";
 import Header from "./Header";
 import App from "../App/App";
 import Search from "../Search/Search";
@@ -28,7 +28,7 @@ global.fetch = jest.fn().mockImplementation(() =>
 );
 
 it("mocks a returns of expected data", () => {
-  const { getByPlaceholderText, getByText, getByTestId } = render(
+  const { getByPlaceholderText, getByTestId } = render(
     <Router history={history}>
       <App />
     </Router>
@@ -42,10 +42,10 @@ it("mocks a returns of expected data", () => {
   const input = getByPlaceholderText("Search");
   fireEvent.change(input, { target: { value: "Collection name" } });
 
-  const searchButton = getByText("SEARCH");
+  const searchButton = getByTestId("SEARCH");
   fireEvent.click(searchButton);
 
-  expect(global.fetch).toHaveBeenCalledTimes(2);
+  expect(global.fetch).toHaveBeenCalledTimes(4);
 
   // return waitForElement(() => findByTestId("first")).then(para =>
   //   expect(para.innerHTML).toEqual(mockResponse)

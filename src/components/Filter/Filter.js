@@ -135,7 +135,6 @@ const Filter = ({ searchResult, setFilteredResult }) => {
 
 Filter.propTypes = {
   searchResult: PropTypes.object,
-  setSearchResult: PropTypes.func,
   filteredResult: PropTypes.object,
   setFilteredResult: PropTypes.func
 };

@@ -11,18 +11,10 @@ const Search = styled.div`
   }
   article {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-evenly;
   }
 
-  @media only screen and (max-width: 800px) {
-    article {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0px;
-    }
-  }
 `;
 
 const ContentContainer = styled.div`

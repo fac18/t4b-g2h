@@ -18,6 +18,9 @@ import Basket from "../Basket/Basket";
 import Partners from "../Partners/Partners";
 import MuseumInfo from "../MuseumInfo/MuseumInfo";
 import Payment from "../Payment/Payment";
+import PreviewPage from "../PreviewPage/PreviewPage";
+import Error from "../Error/Error";
+
 import "../../index.css";
 
 const App = () => {
@@ -26,8 +29,7 @@ const App = () => {
   const [museumData, setMuseumData] = useState(null);
   const [filteredResult, setFilteredResult] = useState(null);
 
-  //Fetching keywords data
-  const dataCall = async () => {
+  const dataCall = async keyword => {
     await (
       await fetch(
         `/.netlify/functions/getKeyword/getKeyword.js?keywords=${keyword}`
@@ -46,14 +48,19 @@ const App = () => {
       .then(data => setMuseumData(data))
       .catch(console.error);
   };
+  const [chosenMuseum, setChosenMuseum] = useState(null);
 
   React.useEffect(() => {
     museumDataCall();
   }, []);
 
+  React.useEffect(() => {
+    dataCall(keyword);
+  }, [keyword]);
+
   return (
     <BrowserRouter>
-      <Header dataCall={dataCall} setKeyword={setKeyword} />
+      <Header dataCall={dataCall} setKeyword={setKeyword} keyword={keyword} />
       <Switch>
         <Route path="/" component={LandingPage} exact />
         <Route path="/about" component={About} />
@@ -61,12 +68,25 @@ const App = () => {
         <Route path="/privacypolicy" component={PrivacyPolicy} />
         <Route
           path="/search"
-          render={() => (
+          render={props => (
             <Search
+              {...props}
               searchResult={searchResult}
               setSearchResult={setSearchResult}
               filteredResult={filteredResult}
               setFilteredResult={setFilteredResult}
+              keyword={keyword}
+              setKeyword={setKeyword}
+            />
+          )}
+        />
+        <Route
+          path="/previewpage"
+          render={props => (
+            <PreviewPage
+              {...props}
+              searchResult={searchResult}
+              setKeyword={setKeyword}
             />
           )}
         />
@@ -82,8 +102,13 @@ const App = () => {
           path="/partners"
           render={() => <Partners museumData={museumData} />}
         />
-        <Route path="/museuminfo" component={MuseumInfo} />
+        <Route
+          path="/museuminfo/:id"
+          render={props => <MuseumInfo {...props} museumData={museumData} />}
+        />
         <Route path="/payment" render={() => <Payment />} />
+        <Route path="/previewpage" component={PreviewPage} />
+        <Route component={Error} />
       </Switch>
       <Footer />
     </BrowserRouter>

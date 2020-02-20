@@ -2,6 +2,7 @@ import React from "react";
 import Social from "../Social/Social";
 import * as SC from "./Footer.style";
 import { Link } from "react-router-dom";
+import MuseumAreaLink from "../MuseumAreaLink/MuseumAreaLink";
 
 const Footer = () => {
   return (
@@ -20,17 +21,18 @@ const Footer = () => {
       </SC.FooterTextBox>
       <SC.FooterTextBox>
         <ul>
-            <Link to="/about">
-              <li>About Us</li>
-            </Link>
-            <Link to="/termsandconditions">
-              <li>Terms and Conditions</li>
-            </Link>
-            <Link to="/privacypolicy">
-              <li>Privacy Policy</li>
-            </Link>
+          <Link to="/about">
+            <li>About Us</li>
+          </Link>
+          <Link to="/termsandconditions">
+            <li>Terms and Conditions</li>
+          </Link>
+          <Link to="/privacypolicy">
+            <li>Privacy Policy</li>
+          </Link>
         </ul>
       </SC.FooterTextBox>
+      {1===1 ? <MuseumAreaLink /> : null}
     </SC.FooterBox>
   );
 };
