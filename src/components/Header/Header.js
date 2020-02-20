@@ -4,34 +4,45 @@ import logo from "../../assets/g2h-logo.svg";
 import { NavLink, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import NavMenu from "../NavMenu/NavMenu";
-import basket from "../../assets/basket.svg";
 import searchGlass from "../../assets/magnifying-glass.svg";
+import AppBar from "@material-ui/core/AppBar";
+import { makeStyles } from "@material-ui/core/styles";
 
-const Header = ({ dataCall, keyword, setKeyword }) => {
-  const [navMenu, setNavMenu] = useState(false);
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  appbar: {
+    maxWidth: "100vw",
+    backgroundColor: "#eb5a61",
+    position: "sticky"
+  },
+  title: {
+    flexGrow: 1,
+    alignSelf: "center"
+  }
+}));
 
-  const toggleNav = () => {
-    setNavMenu(!navMenu);
-  };
+export default function Header({ dataCall, keyword, setKeyword }) {
+  const classes = useStyles();
 
   return (
-    <>
-      <SC.HeaderBox>
-        <SC.LogoBox>
-          <Link to="/">
-            <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
-          </Link>
-        </SC.LogoBox>
-        <SC.Middle>
-          <SC.TitleBox>
+    <div className={classes.root}>
+      <AppBar className={classes.appbar} position="sticky" top="0" left="0">
+        <SC.HeaderBox>
+          <SC.LogoBox>
             <Link to="/">
-              <h1>Gateway2Heritage</h1>
+              <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
             </Link>
-          </SC.TitleBox>
+          </SC.LogoBox>
           <SC.SearchBox>
             <SC.SearchBarForm>
               <SC.SearchBar
                 type="text"
+                aria-label="Search for a keyword"
                 placeholder="Search"
                 onChange={event => setKeyword(event.target.value)}
               />
@@ -42,24 +53,42 @@ const Header = ({ dataCall, keyword, setKeyword }) => {
               </NavLink>
             </SC.SearchBarForm>
           </SC.SearchBox>
-        </SC.Middle>
-        <SC.MenuArea>
-          <SC.Basket>
-            <Link to="/basket">
-              <SC.MenuButton>View basket</SC.MenuButton>
+          <SC.MenuArea>
+            {/* {1 === 1 ? (
+              <SC.Basket>
+                <Link to="/basket">
+                  <SC.MenuButton>View basket</SC.MenuButton>
+                </Link>
+                <Link to="/basket">
+                  {" "}
+                  <SC.BasketIcon src={basket} alt="checkout basket" />
+                </Link>
+              </SC.Basket>
+            ) : (
+              <SC.LoginSignup>
+                <Link to="/memberlogin">
+                  <p>Login</p>
+                </Link>
+                <Link to="membersignup">
+                  <p>Sign up</p>
+                </Link>
+              </SC.LoginSignup>
+            )} */}
+            <NavMenu />
+          </SC.MenuArea>
+        </SC.HeaderBox>
+        <SC.TitleBar>
+          <SC.TitleBox>
+            <Link to="/">
+              <h1>Gateway2Heritage</h1>
+              <SC.Tagline>A living history of Britain</SC.Tagline>
             </Link>
-            <Link to="/basket">
-              {" "}
-              <SC.BasketIcon src={basket} alt="checkout basket" />
-            </Link>
-          </SC.Basket>
-          <SC.MenuButton onClick={toggleNav}>MENU &#9776;</SC.MenuButton>
-        </SC.MenuArea>
-      </SC.HeaderBox>
-      {navMenu && <NavMenu navMenu={navMenu} setnavMenu={setNavMenu} />}
-    </>
+          </SC.TitleBox>
+        </SC.TitleBar>
+      </AppBar>
+    </div>
   );
-};
+}
 
 Header.propTypes = {
   dataCall: PropTypes.func,
@@ -67,5 +96,3 @@ Header.propTypes = {
   navMenu: PropTypes.bool,
   setNavMenu: PropTypes.object
 };
-
-export default Header;

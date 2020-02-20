@@ -1,18 +1,23 @@
 import styled from "styled-components";
 
 const FooterBox = styled.footer`
-box-sizing: border-box;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
   width: 100vw;
   height: 20vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
   justify-content: space-evenly;
   align-items: start;
   background-color: #4e535f;
   padding: 1rem;
+  flex-shrink: 0;
 
   @media (max-width: 768px) {
-    flex-flow: column wrap;
+    flex-flow: column;
+    height: auto;
+    align-items: center;
   }
 
   p {
