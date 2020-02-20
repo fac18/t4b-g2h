@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const SearchStyle = styled.section`
+  margin-top: 16rem;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);

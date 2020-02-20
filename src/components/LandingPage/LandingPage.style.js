@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Landing = styled.div`
+  margin-top: 20rem;
   h2 {
     margin: 4.236rem;
   }
@@ -22,16 +23,15 @@ const Landing = styled.div`
       padding: 0px;
     }
 
-      h2 {
-        font-size: 1rem;
-        width: 80vw;
-        margin-top: 1.618rem;
-        margin-bottom: 1.618rem;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: justify;
-      }
-    
+    h2 {
+      font-size: 1rem;
+      width: 80vw;
+      margin-top: 1.618rem;
+      margin-bottom: 1.618rem;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
   }
 `;
 

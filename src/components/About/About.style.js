@@ -3,6 +3,7 @@ import styled from "styled-components";
 const AboutBox = styled.section`
   text-align: center;
   margin: 4.236rem;
+  margin-top: 20rem;
 
   @media (max-width: 768px) {
     h2 {

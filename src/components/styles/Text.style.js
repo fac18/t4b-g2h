@@ -7,6 +7,8 @@ const Margin = styled.div`
 const CenteredText = styled.div`
   text-align: center;
   margin: 4.236rem;
+  margin-top: 20rem;
+  margin-bottom: 4.236rem;
 `;
 
 const JustifiedText = styled.div`
