@@ -1,5 +1,6 @@
 import React from "react";
 import * as SC from "../styles/Text.style";
+import * as Btn from "../styles/Buttons.style";
 
 const Basket = () => {
   //   const [basketData, setBasketData] = React.useState(null);
@@ -18,13 +19,15 @@ const Basket = () => {
         })}
       </ul> */}
         {/* Also... do we need to add a remove option from the basket? */}
-        <h3>YOUR TOTAL: £ </h3>
+        <SC.BoldText>
+          <h3>YOUR TOTAL: £ </h3>
+        </SC.BoldText>
         <p></p>
         <p>
           I confirm I have read and agree to all owners rights
           <input type="checkbox"></input>
         </p>
-        <button>Checkout</button>
+        <Btn.PrimaryBtn>Checkout</Btn.PrimaryBtn>
       </SC.JustifiedText>
     </SC.Margin>
   );
