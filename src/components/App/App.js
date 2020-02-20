@@ -26,6 +26,8 @@ import "../../index.css";
 const App = () => {
   const [keyword, setKeyword] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
+  const [museumData, setMuseumData] = useState(null);
+  const [filteredResult, setFilteredResult] = useState(null);
 
   const dataCall = async keyword => {
     await (
@@ -39,8 +41,7 @@ const App = () => {
       .catch(console.error);
   };
 
-  const [museumData, setMuseumData] = useState(null);
-
+  //Fetching museum data
   const museumDataCall = async () => {
     await (await fetch("/.netlify/functions/getMuseumData/getMuseumData.js"))
       .json()
@@ -57,7 +58,6 @@ const App = () => {
     dataCall(keyword);
   }, [keyword]);
 
-  console.log("why are you there", searchResult);
   return (
     <BrowserRouter>
       <Header dataCall={dataCall} setKeyword={setKeyword} keyword={keyword} />
@@ -72,6 +72,9 @@ const App = () => {
             <Search
               {...props}
               searchResult={searchResult}
+              setSearchResult={setSearchResult}
+              filteredResult={filteredResult}
+              setFilteredResult={setFilteredResult}
               keyword={keyword}
               setKeyword={setKeyword}
             />
