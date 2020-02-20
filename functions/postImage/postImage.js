@@ -7,13 +7,15 @@ exports.handler = (event, context, callback) => {
     endpointUrl: API_URL,
     apiKey: API_KEY
   });
+  const record = JSON.parse(event.body);
 
+  console.log(record);
   const base = Airtable.base(API_TEST_CLIENT_ID);
 
   base("images").create([
     {
       fields: {
-        museum_record_id: museumRecordId
+        museum_record_id: record
       }
     }
   ]);

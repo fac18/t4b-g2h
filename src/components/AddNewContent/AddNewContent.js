@@ -8,7 +8,7 @@ const AddNewContent = () => {
     event.preventDefault();
     fetch("/.netlify/functions/postImage/postImage.js", {
       method: "POST",
-      body: museumRecordId
+      body: JSON.stringify(museumRecordId)
     });
   };
   console.log(museumRecordId);
@@ -16,7 +16,7 @@ const AddNewContent = () => {
     <>
       <h2>Add New Content</h2>
       {/* <p>{museum.id here from db}</p> */}
-      <SC.FormBox onSubmit={() => handleSubmit} method="POST">
+      <SC.FormBox onSubmit={handleSubmit}>
         <label htmlFor="title">Museum Id:</label>
         <input
           name="title"
@@ -71,7 +71,7 @@ const AddNewContent = () => {
           aria-label="Add your content's creation date"
         />
 
-        <button>Submit</button>
+        <input type="submit" />
       </SC.FormBox>
     </>
   );
