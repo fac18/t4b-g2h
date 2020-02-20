@@ -47,11 +47,7 @@ export default function Header({ dataCall, keyword, setKeyword }) {
                 onChange={event => setKeyword(event.target.value)}
               />
               <NavLink to={`/search?keyword=${keyword}`}>
-                <SC.SearchButton
-                  type="submit"
-                  onClick={dataCall}
-                  data-testid="SEARCH"
-                >
+                <SC.SearchButton type="submit" data-testid="SEARCH">
                   <img src={searchGlass} alt={"click to search"} />
                 </SC.SearchButton>
               </NavLink>
