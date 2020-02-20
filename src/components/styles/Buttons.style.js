@@ -30,6 +30,24 @@ const SecondaryBtn = styled.button`
   }
 `;
 
+const RefineBtn = styled.button`
+  width: 154px;
+  height: 54px;
+  margin: 0.3rem;
+  padding: 1rem;
+  text-align: left;
+  background-color: #4e535f;
+  color: #ffffff;
+  font-size: 1rem;
+  /* position: fixed; */
+  position: sticky;
+  top: 13vh;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
 const PrimaryBtnS = styled.button`
   width: 80px;
   height: 30px;
@@ -108,6 +126,7 @@ const DangerBtn = styled.button`
 export {
   PrimaryBtn,
   SecondaryBtn,
+  RefineBtn,
   PrimaryBtnS,
   SecondaryBtnS,
   WarningBtnL,
