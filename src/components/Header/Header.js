@@ -17,8 +17,17 @@ const useStyles = makeStyles(theme => ({
   menuButton: {
     marginRight: theme.spacing(2)
   },
-  toolbar: {
-    backgroundColor: "#EB5A61"
+  appbar: {
+    maxWidth: "100vw",
+    // height: "auto",
+    // display: "flex",
+    // flexFlow: "row wrap",
+    // justifyContent: "center",
+    backgroundColor: "#eb5a61",
+    // alignItems: "end",
+    position: "sticky"
+    // top: "-20vh",
+    // overflow: "auto"
   },
   title: {
     flexGrow: 1,
@@ -27,72 +36,70 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Header({ dataCall, keyword, setKeyword }) {
-  // const [navMenu, setNavMenu] = useState(false);
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar>
-        <Toolbar className={classes.toolbar}>
-          <SC.HeaderBox>
-            <SC.LogoBox>
-              <Link to="/">
-                <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
-              </Link>
-            </SC.LogoBox>
-            <SC.Middle>
-              <SC.TitleBox className={classes.title} variant="h5" noWrap>
-                <Link to="/">
-                  <h1>Gateway2Heritage</h1>
-                  <SC.Tagline>A living history of Britain</SC.Tagline>
+      <AppBar className={classes.appbar} position="sticky" top="0" left="0">
+        {/* <Toolbar> */}
+        <SC.HeaderBox>
+          <SC.LogoBox>
+            <Link to="/">
+              <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
+            </Link>
+          </SC.LogoBox>
+          <SC.SearchBox>
+            <SC.SearchBarForm>
+              <SC.SearchBar
+                type="text"
+                placeholder="Search"
+                onChange={event => setKeyword(event.target.value)}
+              />
+              <NavLink to={`/search?keyword=${keyword}`}>
+                <SC.SearchButton
+                  type="submit"
+                  onClick={dataCall}
+                  data-testid="SEARCH"
+                >
+                  <img src={searchGlass} alt={"click to search"} />
+                </SC.SearchButton>
+              </NavLink>
+            </SC.SearchBarForm>
+          </SC.SearchBox>
+          <SC.MenuArea>
+            {1 === 2 ? (
+              <SC.Basket>
+                <Link to="/basket">
+                  <SC.MenuButton>View basket</SC.MenuButton>
                 </Link>
-              </SC.TitleBox>
-              <SC.SearchBox>
-                <SC.SearchBarForm>
-                  <SC.SearchBar
-                    type="text"
-                    placeholder="Search"
-                    onChange={event => setKeyword(event.target.value)}
-                  />
-                  <NavLink to={`/search?keyword=${keyword}`}>
-                    <SC.SearchButton
-                      type="submit"
-                      onClick={dataCall}
-                      data-testid="SEARCH"
-                    >
-                      <img src={searchGlass} alt={"click to search"} />
-                    </SC.SearchButton>
-                  </NavLink>
-                </SC.SearchBarForm>
-              </SC.SearchBox>
-            </SC.Middle>
-            <SC.MenuArea>
-              {1 === 2 ? (
-                <SC.Basket>
-                  <Link to="/basket">
-                    <SC.MenuButton>View basket</SC.MenuButton>
-                  </Link>
-                  <Link to="/basket">
-                    {" "}
-                    <SC.BasketIcon src={basket} alt="checkout basket" />
-                  </Link>
-                </SC.Basket>
-              ) : (
-                <SC.LoginSignup>
-                  <Link to="/memberlogin">
-                    <p>Login</p>
-                  </Link>
-                  <Link to="membersignup">
-                    <p>Sign up</p>
-                  </Link>
-                </SC.LoginSignup>
-              )}
-              <NavMenu />
-            </SC.MenuArea>
-          </SC.HeaderBox>
-        </Toolbar>
+                <Link to="/basket">
+                  {" "}
+                  <SC.BasketIcon src={basket} alt="checkout basket" />
+                </Link>
+              </SC.Basket>
+            ) : (
+              <SC.LoginSignup>
+                <Link to="/memberlogin">
+                  <p>Login</p>
+                </Link>
+                <Link to="membersignup">
+                  <p>Sign up</p>
+                </Link>
+              </SC.LoginSignup>
+            )}
+            <NavMenu />
+          </SC.MenuArea>
+        </SC.HeaderBox>
+        <SC.TitleBar>
+          <SC.TitleBox>
+            <Link to="/">
+              <h1>Gateway2Heritage</h1>
+              <SC.Tagline>A living history of Britain</SC.Tagline>
+            </Link>
+          </SC.TitleBox>
+        </SC.TitleBar>
+        {/* </Toolbar> */}
       </AppBar>
-      {/* {navMenu && <NavMenu navMenu={navMenu} setnavMenu={setNavMenu} />} */}
     </div>
   );
 }

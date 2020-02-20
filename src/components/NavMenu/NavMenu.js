@@ -130,7 +130,11 @@ export default function NavMenu() {
         <p>MENU</p>
         <MenuIcon />
       </Button>
-      <Drawer open={state.right} onClose={toggleDrawer("right", false)}>
+      <Drawer
+        anchor="right"
+        open={state.right}
+        onClose={toggleDrawer("right", false)}
+      >
         {sideList("right")}
       </Drawer>
     </div>
