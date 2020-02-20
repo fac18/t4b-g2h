@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
 const SearchStyle = styled.section`
-  margin-top: 16rem;
+  margin-bottom: 4.236rem;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(3, 1fr);
+  @media only screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-left: 5rem;
+  }
   a {
     text-decoration: none;
     color: #2b2b31;

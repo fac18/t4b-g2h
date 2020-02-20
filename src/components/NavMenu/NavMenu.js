@@ -125,7 +125,7 @@ export default function NavMenu() {
     <div>
       <Button
         onClick={toggleDrawer("right", true)}
-        style={{ color: "#2b2b31" }}
+        style={{ color: "#1c1d1f" }}
       >
         <p>MENU</p>
         <MenuIcon />

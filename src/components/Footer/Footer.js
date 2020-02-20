@@ -21,15 +21,15 @@ const Footer = () => {
       </SC.FooterTextBox>
       <SC.FooterTextBox>
         <ul>
-          <Link to="/about">
-            <li>About Us</li>
-          </Link>
-          <Link to="/termsandconditions">
-            <li>Terms and Conditions</li>
-          </Link>
-          <Link to="/privacypolicy">
-            <li>Privacy Policy</li>
-          </Link>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/termsandconditions">Terms and Conditions</Link>
+          </li>
+          <li>
+            <Link to="/privacypolicy">Privacy Policy</Link>
+          </li>
         </ul>
       </SC.FooterTextBox>
       {1 === 1 ? <MuseumAreaLink /> : null}

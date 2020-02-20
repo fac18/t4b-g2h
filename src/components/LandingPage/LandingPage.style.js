@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Landing = styled.div`
-  margin-top: 20rem;
+  margin-top: 12.18rem;
   h2 {
     margin: 4.236rem;
   }

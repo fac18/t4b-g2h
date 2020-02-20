@@ -20,7 +20,7 @@ const HeaderBox = styled.header`
   }
 
   h1 {
-    color: #2b2b31;
+    color: #ffffff;
     margin-bottom: 0;
     @media (max-width: 768px) {
       font-size: 1.618rem;
@@ -28,7 +28,7 @@ const HeaderBox = styled.header`
   }
 
   a {
-    color: #2b2b31;
+    color: #ffffff;
     text-decoration: none;
   }
 `;
@@ -51,7 +51,7 @@ const TitleBox = styled.div`
 
 const SearchBox = styled.div`
   width: 80vw;
-  height: 15vh;
+  height: 8.09rem;
   background-color: #eb5a61;
   position: sticky;
   top: 0;
@@ -71,10 +71,10 @@ const LogoBox = styled.div`
   margin-left: 1rem;
   z-index: 5;
 
-  @media (max-width: 885px) {
+  @media (max-width: 768px) {
     /* position: inherit; */
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
     display: none;
   }
 `;
@@ -93,7 +93,7 @@ const MenuArea = styled.div`
 
   @media (max-width: 768px) {
     /* position: sticky; */
-    top: 8.09rem;
+    top: 9.09rem;
     align-items: center;
     justify-content: space-between;
   }
@@ -111,15 +111,19 @@ const TitleBar = styled.div`
   background-color: #eb5a61;
   align-items: end;
   overflow: auto;
-  position: absolute;
+  position: relative;
   top: 8.09rem;
   z-index: -5;
   @media (max-width: 768px) {
-    top: 11.08rem;
+    top: 8rem;
+  }
+
+  @media (max-width: 510px) {
+    top: 10rem;
   }
 
   h1 {
-    color: #2b2b31;
+    color: #1c1d1f;
     margin-bottom: 0;
     @media (max-width: 768px) {
       font-size: 1.618rem;
@@ -127,7 +131,7 @@ const TitleBar = styled.div`
   }
 
   a {
-    color: #2b2b31;
+    color: #1c1d1f;
     text-decoration: none;
   }
 `;
@@ -182,6 +186,9 @@ const SearchBarForm = styled.form`
   padding-right: 1rem;
   /* border-radius: 10px; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  button {
+    cursor: pointer;
+  }
   @media (max-width: 768px) {
     margin-left: 0;
   }

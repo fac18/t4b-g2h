@@ -16,8 +16,11 @@ const Partners = ({ museumData }) => {
       </Style.CenteredText>
       <SC.SearchStyle>
         {museumRecord.map(record => (
-          <SC.ContentContainer key={record.fields.museum_id}>
-            <Link to={`/museuminfo/${record.fields.museum_id}`}>
+          <Link
+            to={`/museuminfo/${record.fields.museum_id}`}
+            key={record.fields.museum_id}
+          >
+            <SC.ContentContainer key={record.fields.museum_image}>
               <SC.ImgContainer>
                 <SC.ImgInContainer
                   alt={record.fields.name}
@@ -25,8 +28,8 @@ const Partners = ({ museumData }) => {
                 />
               </SC.ImgContainer>
               <Style.TextDeco>{record.fields.name}</Style.TextDeco>
-            </Link>
-          </SC.ContentContainer>
+            </SC.ContentContainer>
+          </Link>
         ))}
       </SC.SearchStyle>
     </>

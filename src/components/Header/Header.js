@@ -4,10 +4,8 @@ import logo from "../../assets/g2h-logo.svg";
 import { NavLink, Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import NavMenu from "../NavMenu/NavMenu";
-import basket from "../../assets/basket.svg";
 import searchGlass from "../../assets/magnifying-glass.svg";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
@@ -19,15 +17,8 @@ const useStyles = makeStyles(theme => ({
   },
   appbar: {
     maxWidth: "100vw",
-    // height: "auto",
-    // display: "flex",
-    // flexFlow: "row wrap",
-    // justifyContent: "center",
     backgroundColor: "#eb5a61",
-    // alignItems: "end",
     position: "sticky"
-    // top: "-20vh",
-    // overflow: "auto"
   },
   title: {
     flexGrow: 1,
@@ -41,7 +32,6 @@ export default function Header({ dataCall, keyword, setKeyword }) {
   return (
     <div className={classes.root}>
       <AppBar className={classes.appbar} position="sticky" top="0" left="0">
-        {/* <Toolbar> */}
         <SC.HeaderBox>
           <SC.LogoBox>
             <Link to="/">
@@ -52,6 +42,7 @@ export default function Header({ dataCall, keyword, setKeyword }) {
             <SC.SearchBarForm>
               <SC.SearchBar
                 type="text"
+                aria-label="Search for a keyword"
                 placeholder="Search"
                 onChange={event => setKeyword(event.target.value)}
               />
@@ -67,7 +58,7 @@ export default function Header({ dataCall, keyword, setKeyword }) {
             </SC.SearchBarForm>
           </SC.SearchBox>
           <SC.MenuArea>
-            {1 === 2 ? (
+            {/* {1 === 1 ? (
               <SC.Basket>
                 <Link to="/basket">
                   <SC.MenuButton>View basket</SC.MenuButton>
@@ -86,7 +77,7 @@ export default function Header({ dataCall, keyword, setKeyword }) {
                   <p>Sign up</p>
                 </Link>
               </SC.LoginSignup>
-            )}
+            )} */}
             <NavMenu />
           </SC.MenuArea>
         </SC.HeaderBox>
@@ -98,7 +89,6 @@ export default function Header({ dataCall, keyword, setKeyword }) {
             </Link>
           </SC.TitleBox>
         </SC.TitleBar>
-        {/* </Toolbar> */}
       </AppBar>
     </div>
   );
