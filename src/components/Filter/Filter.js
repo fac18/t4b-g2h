@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import filterAll from "../../utils/filterFunctions";
+import { filterAll } from "../../utils/filterFunctions";
 import PropTypes from "prop-types";
 
 const Filter = ({ searchResult, setFilteredResult }) => {
