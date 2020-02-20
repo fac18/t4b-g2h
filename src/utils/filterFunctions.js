@@ -130,4 +130,5 @@ const byColour = (searchResults, colourValue) => {
   return null;
 };
 
-export default filterAll;
+// export default byCollection;
+export { byCollection, filterAll };
