@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import * as SC from "../styles/Form.style";
 
 const AddNewContent = () => {
+  const [museumRecordId, setMuseumRecordId] = useState("");
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    fetch("/.netlify/functions/postImage/postImage.js", {
+      method: "POST",
+      body: museumRecordId
+    });
+  };
+  console.log(museumRecordId);
   return (
     <>
       <h2>Add New Content</h2>
       {/* <p>{museum.id here from db}</p> */}
-      <SC.FormBox action="/" method="POST">
-        <label htmlFor="title">Title:</label>
+      <SC.FormBox onSubmit={() => handleSubmit} method="POST">
+        <label htmlFor="title">Museum Id:</label>
         <input
           name="title"
           type="text"
           id="title"
           aria-label="Add a title"
-          required
+          value={museumRecordId}
+          onChange={event => setMuseumRecordId(event.target.value)}
         />
         <label htmlFor="description">Description:</label>
         <input
@@ -21,7 +32,6 @@ const AddNewContent = () => {
           type="text"
           id="description"
           aria-label="Add a description"
-          required
         />
         <p className="image-link">
           Photo URLs: please provide a link to the content that is hosted
@@ -38,7 +48,6 @@ const AddNewContent = () => {
           id="imageLink"
           type="text"
           aria-label="Add an image link"
-          required
         />
         <label htmlFor="author">Author/Creator:</label>
         <input
@@ -46,7 +55,6 @@ const AddNewContent = () => {
           type="text"
           id="author"
           aria-label="Add the author's name"
-          required
         />
         <label htmlFor="keywords">Keywords:</label>
         <input
@@ -54,7 +62,6 @@ const AddNewContent = () => {
           type="text"
           id="keywords"
           aria-label="Add all the relevant keywords to your content"
-          required
         />
         <label htmlFor="creationData">Creation Date:</label>
         <input
@@ -62,7 +69,6 @@ const AddNewContent = () => {
           type="text"
           id="creationData"
           aria-label="Add your content's creation date"
-          required
         />
 
         <button>Submit</button>
