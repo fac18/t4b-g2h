@@ -27,7 +27,7 @@ const AddNewContent = () => {
     caption: caption,
     description: description,
     colour: colour,
-    copyrightStatus: copyrightStatus,
+    copyrightStatus: [copyrightStatus],
     copyrightHolder: copyrightHolder,
     creator: creator,
     credit: credit,
@@ -112,7 +112,7 @@ const AddNewContent = () => {
           onChange={event => setColour(event.target.value)}
         />
 
-        <label htmlFor="copyrightStatus">Museum Id:</label>
+        <label htmlFor="copyrightStatus">Copyright Status:</label>
         <input
           name="copyrightStatus"
           type="text"
