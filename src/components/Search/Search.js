@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as Text from "../styles/Text.style";
 import * as SC from "./Search.style.js";
 import PropTypes from "prop-types";
