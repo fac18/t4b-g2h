@@ -32,59 +32,41 @@ export default function Header({ dataCall, keyword, setKeyword }) {
   return (
     <div className={classes.root}>
       <AppBar className={classes.appbar} position="sticky" top="0" left="0">
-        <SC.HeaderBox>
-          <SC.LogoBox>
-            <Link to="/">
-              <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
-            </Link>
-          </SC.LogoBox>
-          <SC.SearchBox>
-            <SC.SearchBarForm>
-              <SC.SearchBar
-                type="text"
-                aria-label="Search for a keyword"
-                placeholder="Search"
-                onChange={event => setKeyword(event.target.value)}
-              />
-              <NavLink to={`/search?keyword=${keyword}`}>
-                <SC.SearchButton type="submit" data-testid="SEARCH">
-                  <img src={searchGlass} alt={"click to search"} />
-                </SC.SearchButton>
-              </NavLink>
-            </SC.SearchBarForm>
-          </SC.SearchBox>
-          <SC.MenuArea>
-            {/* {1 === 1 ? (
-              <SC.Basket>
-                <Link to="/basket">
-                  <SC.MenuButton>View basket</SC.MenuButton>
-                </Link>
-                <Link to="/basket">
-                  {" "}
-                  <SC.BasketIcon src={basket} alt="checkout basket" />
-                </Link>
-              </SC.Basket>
-            ) : (
-              <SC.LoginSignup>
-                <Link to="/memberlogin">
-                  <p>Login</p>
-                </Link>
-                <Link to="membersignup">
-                  <p>Sign up</p>
-                </Link>
-              </SC.LoginSignup>
-            )} */}
-            <NavMenu />
-          </SC.MenuArea>
-        </SC.HeaderBox>
-        <SC.TitleBar>
-          <SC.TitleBox>
-            <Link to="/">
-              <h1>Gateway2Heritage</h1>
-              <SC.Tagline>A living history of Britain</SC.Tagline>
-            </Link>
-          </SC.TitleBox>
-        </SC.TitleBar>
+        <SC.FullHeaderContainer>
+          <SC.HeaderBox>
+            <SC.LogoBox>
+              <Link to="/">
+                <SC.G2hLogo src={logo} alt="Gateway2Heritage logo" />
+              </Link>
+            </SC.LogoBox>
+            <SC.SearchBox>
+              <SC.SearchBarForm>
+                <SC.SearchBar
+                  type="text"
+                  aria-label="Search for a keyword"
+                  placeholder="Search"
+                  onChange={event => setKeyword(event.target.value)}
+                />
+                <NavLink to={`/search?keyword=${keyword}`}>
+                  <SC.SearchButton type="submit" data-testid="SEARCH">
+                    <img src={searchGlass} alt={"click to search"} />
+                  </SC.SearchButton>
+                </NavLink>
+              </SC.SearchBarForm>
+            </SC.SearchBox>
+            <SC.MenuArea>
+              <NavMenu />
+            </SC.MenuArea>
+          </SC.HeaderBox>
+          <SC.TitleBar>
+            <SC.TitleBox>
+              <Link to="/">
+                <h1>Gateway2Heritage</h1>
+                <SC.Tagline>A living history of Britain</SC.Tagline>
+              </Link>
+            </SC.TitleBox>
+          </SC.TitleBar>
+        </SC.FullHeaderContainer>
       </AppBar>
     </div>
   );

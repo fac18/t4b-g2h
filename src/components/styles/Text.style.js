@@ -8,6 +8,11 @@ const MarginTop = styled.div`
   margin-top: 12.18rem;
 `;
 
+const SearchBtnMargin = styled.div`
+  margin-top: 7.7rem;
+  margin-left: 4.236rem;
+`;
+
 const CenteredText = styled.div`
   text-align: center;
   margin-top: 12.18rem;
@@ -30,4 +35,12 @@ const TextDeco = styled.a`
   }
 `;
 
-export { Margin, CenteredText, JustifiedText, BoldText, TextDeco, MarginTop };
+export {
+  Margin,
+  CenteredText,
+  JustifiedText,
+  BoldText,
+  TextDeco,
+  MarginTop,
+  SearchBtnMargin
+};

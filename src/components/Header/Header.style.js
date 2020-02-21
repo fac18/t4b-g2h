@@ -229,6 +229,10 @@ const LoginSignup = styled.div`
   }
 `;
 
+const FullHeaderContainer = styled.div`
+  height: auto;
+`;
+
 export {
   HeaderBox,
   SearchBox,
@@ -244,5 +248,6 @@ export {
   Basket,
   BasketIcon,
   Tagline,
-  LoginSignup
+  LoginSignup,
+  FullHeaderContainer
 };
