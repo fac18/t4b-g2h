@@ -27,9 +27,9 @@ const Search = styled.div`
 
 const ContentContainer = styled.div`
   width: 250px;
-  height: 300px;
+  height: 200px;
   text-align: center;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 0 5rem 0;
 `;
 
 const ImgContainer = styled.div`

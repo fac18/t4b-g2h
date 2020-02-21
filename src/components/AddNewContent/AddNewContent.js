@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import * as SC from "../styles/Form.style";
+import * as Form from "../styles/Form.style";
+import * as Text from "../styles/Text.style";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -92,9 +93,9 @@ const AddNewContent = () => {
   };
 
   return (
-    <>
+    <Text.CenteredText>
       <h2>Submit a new image:</h2>
-      <SC.FormBox onSubmit={handleSubmit}>
+      <Form.FormBox onSubmit={handleSubmit}>
         <label htmlFor="museumRecordId">Museum Record ID:</label>
         <input
           name="museumRecordId"
@@ -387,7 +388,7 @@ const AddNewContent = () => {
         </Select>
 
         <input type="submit" />
-      </SC.FormBox>
+      </Form.FormBox>
       {/* inline styling below, to be refactored! */}
 
       {submitMessage ? (
@@ -414,7 +415,7 @@ const AddNewContent = () => {
           </Btn.SecondaryBtn>
         </div>
       ) : null}
-    </>
+    </Text.CenteredText>
   );
 };
 

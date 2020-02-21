@@ -2,14 +2,14 @@ const Airtable = require("airtable");
 
 exports.handler = (event, context, callback) => {
   const searchTerm = event.queryStringParameters.keywords.toLowerCase();
-  const { API_URL, API_TEST_CLIENT_ID, API_KEY } = process.env;
+  const { API_URL, API_CLIENT_ID, API_KEY } = process.env;
 
   Airtable.configure({
     endpointUrl: API_URL,
     apiKey: API_KEY
   });
 
-  const base = Airtable.base(API_TEST_CLIENT_ID);
+  const base = Airtable.base(API_CLIENT_ID);
   const data = [];
 
   base("images")
