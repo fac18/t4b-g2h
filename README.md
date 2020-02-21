@@ -13,7 +13,7 @@ An image licensing platform for small heritage and cultural museums in the UK. M
 - [Team](#team)
 - [Overview](#overview)
 - [Installation Guide](#installation-guide)
-- [PO's Guide](#po-guide)
+- [PO's Guide](#pos-guide)
 - [User Stories & Journey](#user-journey)
 - [Design Process](#design-process)
 - [First Build Sprint](#first-build-sprint)
@@ -24,7 +24,7 @@ An image licensing platform for small heritage and cultural museums in the UK. M
 
 ### Team
 
-Product Owners: Andrea Stern & Mary Egan
+Product Owners: Andrea Stern & Mary Egan\
 Scrum master: [Reggie](https://github.com/reginaldjbeili)\
 UX/UI lead: [Renata](https://github.com/renatadev) \
 DevOps lead: [Kin](https://github.com/kin-au)\
@@ -44,7 +44,7 @@ Gateway2Heritage is a platform that offers the heritage sector the opportunity t
 4. Start the server with `npm start` and go to `localhost:3000` 
 
 
-### Product Owners' Guide
+### PO's Guide
 
 #### Wondering where to find what?
 
@@ -70,7 +70,8 @@ To see the user stories, refer to our project [kanban board](https://github.com/
 #### Link to our [figma board](https://www.figma.com/file/RtDCsFDAGVLn09I4nAg9ZI/gateway2heritage?node-id=321%3A2)
 
 
-### First Build Sprint - Features
+### First Build Sprint 
+##### features:
 
 * Test database with dummy data
 * Navigation bar
@@ -80,6 +81,7 @@ To see the user stories, refer to our project [kanban board](https://github.com/
 ![](https://i.imgur.com/ow03qCF.png)
 
 ### Second Build Sprint
+##### features:
 
 * Refine search/filtering options
 * Breadcrumbs (In progress)
@@ -98,7 +100,8 @@ To see the user stories, refer to our project [kanban board](https://github.com/
 
 ![](https://i.imgur.com/afQHzU7.png)
 
-### Presentation [link](https://www.canva.com/design/DAD0ZIcqS0A/wN_eTRezZOqqbjdD6xA84A/view)
+### Presentation 
+Link to our [presentation](https://www.canva.com/design/DAD0ZIcqS0A/wN_eTRezZOqqbjdD6xA84A/view) 
 
 ![](https://i.imgur.com/HH5bqFw.jpg)
 
