@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import * as Btn from "../styles/Buttons.style";
 
 const AddNewContent = () => {
   const [museumRecordId, setMuseumRecordId] = useState("");
@@ -23,6 +24,7 @@ const AddNewContent = () => {
   const [medium, setMedium] = useState("");
   const [period, setPeriod] = useState("");
   const [people, setPeople] = useState("");
+  const [submitMessage, setSubmitMessage] = useState(false);
 
   const useStyles = makeStyles(() => ({
     formLabel: {
@@ -53,18 +55,41 @@ const AddNewContent = () => {
     period: period,
     people: people
   };
+
   const handleSubmit = event => {
     event.preventDefault();
+    setSubmitMessage(!submitMessage);
     fetch("/.netlify/functions/postImage/postImage.js", {
       method: "POST",
       body: JSON.stringify(fullData)
     });
   };
 
+  const closeSubmitMessage = event => {
+    event.preventDefault();
+    setSubmitMessage(!submitMessage);
+    setMuseumRecordId("");
+    setName("");
+    setUrl("");
+    setCaption("");
+    setDescription("");
+    setColour("");
+    setCopyrightStatus("");
+    setCopyrightHolder("");
+    setCreator("");
+    setCredit("");
+    setOrientation("");
+    setCreateDate("");
+    setCollection("");
+    setKeywords("");
+    setMedium("");
+    setPeriod("");
+    setPeople("");
+  };
+
   return (
     <>
       <h2>Submit a new image:</h2>
-
       <SC.FormBox onSubmit={handleSubmit}>
         <label htmlFor="museumRecordId">Museum Record ID:</label>
         <input
@@ -354,6 +379,32 @@ const AddNewContent = () => {
 
         <input type="submit" />
       </SC.FormBox>
+      {/* inline styling below, to be refactored! */}
+      {console.log(keywords)}
+      {submitMessage ? (
+        <div
+          style={{
+            textAlign: "center",
+            verticalAlign: "center",
+            fontWeight: "700",
+            backgroundColor: "#ffffff",
+            position: "fixed",
+            height: "15rem",
+            width: "30rem",
+            borderRadius: "10px",
+            top: "25%",
+            left: "35%"
+          }}
+        >
+          Thank you for submitting a new image!
+          <Btn.SecondaryBtn
+            style={{ bottom: "25%" }}
+            onClick={event => closeSubmitMessage(event)}
+          >
+            Close
+          </Btn.SecondaryBtn>
+        </div>
+      ) : null}
     </>
   );
 };
