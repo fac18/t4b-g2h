@@ -1,6 +1,6 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
-import { BrowserRouter, NavLink } from "react-router-dom";
+import { BrowserRouter, NavLink, Link } from "react-router-dom";
 import * as S from "../styles/Text.style";
 import * as Btn from "../styles/Buttons.style";
 

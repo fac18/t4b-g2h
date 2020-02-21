@@ -31,7 +31,11 @@ const AddNewContent = () => {
       fontSize: "1.5rem",
       fontFamily: "Gotham Light",
       color: "#1c1d1f",
-      textAlign: "center"
+      textAlign: "center",
+      marginTop: "1rem"
+    },
+    select: {
+      marginBottom: "1rem"
     }
   }));
   const classes = useStyles();
@@ -169,6 +173,7 @@ const AddNewContent = () => {
           type="select"
           value={colour}
           displayEmpty
+          className={classes.select}
           onChange={event => setColour(event.target.value)}
           required
         >
@@ -197,6 +202,7 @@ const AddNewContent = () => {
           type="select"
           value={copyrightStatus}
           displayEmpty
+          className={classes.select}
           onChange={event => setCopyrightStatus(event.target.value)}
           required
         >
@@ -265,6 +271,7 @@ const AddNewContent = () => {
           type="select"
           value={orientation}
           displayEmpty
+          className={classes.select}
           onChange={event => setOrientation(event.target.value)}
           required
         >
@@ -328,6 +335,7 @@ const AddNewContent = () => {
           type="select"
           value={medium}
           displayEmpty
+          className={classes.select}
           onChange={event => setMedium(event.target.value)}
           required
         >
@@ -367,6 +375,7 @@ const AddNewContent = () => {
           type="select"
           value={people}
           displayEmpty
+          className={classes.select}
           onChange={event => setPeople(event.target.value)}
           required
         >
