@@ -55,4 +55,22 @@ const ImgInContainer = styled.img`
   max-height: 100%;
 `;
 
-export { Search, ContentContainer, ImgContainer, ImgInContainer, SearchStyle };
+const FilterOptions = styled.div`
+  width: 12vw;
+  height: auto;
+  margin-left: 4.236rem;
+  /* padding: 1rem; */
+  text-align: left;
+  background-color: #4e535f;
+  color: #ffffff;
+  font-size: 1rem;
+`;
+
+export {
+  Search,
+  ContentContainer,
+  ImgContainer,
+  ImgInContainer,
+  SearchStyle,
+  FilterOptions
+};

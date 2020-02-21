@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import * as Text from "../styles/Text.style";
 import * as SC from "./Search.style.js";
+import * as Btn from "../styles/Buttons.style";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Filter from "../Filter/Filter";
 
-const SearchPage = ({
+export default function SearchPage({
   searchResult,
   filteredResult,
   setFilteredResult,
   keyword,
   setKeyword,
   location
-}) => {
+}) {
   const [filteredRecords, setFilteredRecords] = useState(null);
   const [showFilter, setShowFilter] = useState(false);
 
@@ -34,14 +35,23 @@ const SearchPage = ({
 
   return (
     <>
-      <button onClick={() => setShowFilter(!showFilter)}>Filter options</button>
-      {showFilter ? (
-        <Filter
-          searchResult={searchResult}
-          filteredResult={filteredResult}
-          setFilteredResult={setFilteredResult}
-        />
-      ) : null}
+      {/* <Text.SearchBtnMargin>
+        <Btn.RefineBtn onClick={() => setShowFilter(!showFilter)}>
+          Refine Search
+        </Btn.RefineBtn>
+      </Text.SearchBtnMargin>
+      {showFilter ? ( */}
+      <Text.SearchBtnMargin>
+        <SC.FilterOptions>
+          <Filter
+            searchResult={searchResult}
+            filteredResult={filteredResult}
+            setFilteredResult={setFilteredResult}
+            onClick={() => setShowFilter(!showFilter)}
+          />
+        </SC.FilterOptions>
+      </Text.SearchBtnMargin>
+      {/* ) : null} */}
       {filteredRecords ? (
         <SC.SearchStyle>
           {filteredRecords.map(record => (
@@ -74,11 +84,10 @@ const SearchPage = ({
       )}
     </>
   );
-};
+}
 
 SearchPage.propTypes = {
   searchResult: PropTypes.object,
   filteredResult: PropTypes.object,
   setFilteredResult: PropTypes.func
 };
-export default SearchPage;
