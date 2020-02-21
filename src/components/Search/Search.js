@@ -55,13 +55,18 @@ export default function SearchPage({
       {filteredRecords ? (
         <SC.SearchStyle>
           {filteredRecords.map(record => (
-            <SC.ContentContainer key={record.fields.image_id}>
-              {/* {console.log("record in filter map function = ", record)} */}
-              <SC.ImgContainer>
-                <SC.ImgInContainer src={record.fields.url} />
-              </SC.ImgContainer>
-              <p data-testid="first">{record.fields.caption}</p>
-            </SC.ContentContainer>
+            <Link
+              to={`/previewpage?${keyword}=${record.fields.image_id}`}
+              key={record.fields.image_id}
+            >
+              <SC.ContentContainer key={record.fields.image_id}>
+                {/* {console.log("record in filter map function = ", record)} */}
+                <SC.ImgContainer>
+                  <SC.ImgInContainer src={record.fields.url} />
+                </SC.ImgContainer>
+                <p data-testid="first">{record.fields.caption}</p>
+              </SC.ContentContainer>
+            </Link>
           ))}
         </SC.SearchStyle>
       ) : (
