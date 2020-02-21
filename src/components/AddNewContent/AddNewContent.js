@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import * as SC from "../styles/Form.style";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
 
 const AddNewContent = () => {
   const [museumRecordId, setMuseumRecordId] = useState("");
@@ -19,6 +23,15 @@ const AddNewContent = () => {
   const [medium, setMedium] = useState("");
   const [period, setPeriod] = useState("");
   const [people, setPeople] = useState("");
+
+  const useStyles = makeStyles(() => ({
+    formLabel: {
+      fontSize: "1.5rem",
+      fontFamily: "Gotham Light",
+      color: "#1c1d1f"
+    }
+  }));
+  const classes = useStyles();
 
   // console.log(colour);
 
@@ -125,43 +138,65 @@ const AddNewContent = () => {
         <input type="radio" name="colour" id="colour" value="Colour" />
         <label htmlFor="colour">Colour</label> */}
 
-        <label htmlFor="colour">Colour:</label>
-        <select
+        <InputLabel
+          shrink
+          id="demo-simple-select-placeholder-label-label"
+          className={classes.formLabel}
           htmlFor="colour"
-          aria-label="Add a colour type"
+        >
+          Colour:
+        </InputLabel>
+        <Select
+          htmlFor="colour"
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          aria-label="Select a colour type"
+          type="select"
           value={colour}
+          displayEmpty
           onChange={event => setColour(event.target.value)}
           required
         >
-          <option value="" disabled selected>
+          <MenuItem value="" disabled selected>
             Select an option
-          </option>
-          <option value="B&W">Black and White</option>
-          <option value="Colour">Colour</option>
-        </select>
+          </MenuItem>
+          <MenuItem value="Colour">Colour</MenuItem>
+          <MenuItem value="B&W">Black & White</MenuItem>
+        </Select>
 
         {/* To change copyright status to checkbox multi-select (format to be array) */}
 
-        <label htmlFor="copyrightStatus">Copyright Status:</label>
-        <select
+        <InputLabel
+          shrink
+          id="demo-simple-select-placeholder-label-label"
+          className={classes.formLabel}
           htmlFor="copyrightStatus"
-          aria-label="Add a copyright status"
+        >
+          Copyright Status:
+        </InputLabel>
+        <Select
+          htmlFor="copyrightStatus"
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          aria-label="Select a copyright status"
+          type="select"
           value={copyrightStatus}
+          displayEmpty
           onChange={event => setCopyrightStatus(event.target.value)}
           required
         >
-          <option value="" disabled selected>
+          <MenuItem value="" disabled selected>
             Select an option
-          </option>
-          <option value="Full licensing">Full licensing</option>
-          <option value="Editorial">Editorial</option>
-          <option value="Special permission">Special permission</option>
-          <option value="Public domain">Public domain</option>
-          <option value="Universal">Universal</option>
-          <option value="Editorial">Editorial</option>
-          <option value="Restricted">Restricted</option>
-          <option value="Social media">Social media</option>
-        </select>
+          </MenuItem>
+          <MenuItem value="Full licensing">Full licensing</MenuItem>
+          <MenuItem value="Editorial">Editorial</MenuItem>
+          <MenuItem value="Special permission">Special permission</MenuItem>
+          <MenuItem value="Public domain">Public domain</MenuItem>
+          <MenuItem value="Universal">Universal</MenuItem>
+          <MenuItem value="Editorial">Editorial</MenuItem>
+          <MenuItem value="Restricted">Restricted</MenuItem>
+          <MenuItem value="Social media">Social media</MenuItem>
+        </Select>
 
         <label htmlFor="copyrightHolder">Copyright Holder:</label>
         <input
@@ -196,21 +231,32 @@ const AddNewContent = () => {
           required
         />
 
-        <label htmlFor="orientation">Orientation:</label>
-        <select
+        <InputLabel
+          shrink
+          id="demo-simple-select-placeholder-label-label"
+          className={classes.formLabel}
           htmlFor="orientation"
-          aria-label="Add an orientation"
+        >
+          Orientation:
+        </InputLabel>
+        <Select
+          htmlFor="orientation"
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          aria-label="Select an image orientation"
+          type="select"
           value={orientation}
+          displayEmpty
           onChange={event => setOrientation(event.target.value)}
           required
         >
-          <option value="" disabled selected>
+          <MenuItem value="" disabled selected>
             Select an option
-          </option>
-          <option value="Portrait">Portrait</option>
-          <option value="Landscape">Landscape</option>
-          <option value="Square">Square</option>
-        </select>
+          </MenuItem>
+          <MenuItem value="Portrait">Portrait</MenuItem>
+          <MenuItem value="Landscape">Landscape</MenuItem>
+          <MenuItem value="Square">Square</MenuItem>
+        </Select>
 
         <label htmlFor="createDate">Create Date:</label>
         <input
@@ -245,7 +291,36 @@ const AddNewContent = () => {
           required
         />
 
-        <label htmlFor="medium">Medium:</label>
+        <InputLabel
+          shrink
+          id="demo-simple-select-placeholder-label-label"
+          className={classes.formLabel}
+          htmlFor="medium"
+        >
+          Medium:
+        </InputLabel>
+        <Select
+          htmlFor="medium"
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          aria-label="Select a medium type"
+          type="select"
+          value={medium}
+          displayEmpty
+          onChange={event => setMedium(event.target.value)}
+          required
+        >
+          <MenuItem value="" disabled selected>
+            Select an option
+          </MenuItem>
+          <MenuItem value="Illustration">Illustration</MenuItem>
+          <MenuItem value="Painting">Painting</MenuItem>
+          <MenuItem value="Photograph">Photograph</MenuItem>
+        </Select>
+
+        {console.log(medium)}
+
+        {/* <label htmlFor="medium">Medium:</label>
         <select
           htmlFor="medium"
           aria-label="Add a medium type"
@@ -259,7 +334,7 @@ const AddNewContent = () => {
           <option value="Illustration">Illustration</option>
           <option value="Painting">Painting</option>
           <option value="Photograph">Photograph</option>
-        </select>
+        </select> */}
 
         <label htmlFor="period">Period:</label>
         <input
@@ -272,20 +347,33 @@ const AddNewContent = () => {
           required
         />
 
-        <label htmlFor="people">People:</label>
-        <select
+        <InputLabel
+          shrink
+          id="demo-simple-select-placeholder-label-label"
+          className={classes.formLabel}
           htmlFor="people"
-          aria-label="Specify whether people are present"
+        >
+          People:
+        </InputLabel>
+        <Select
+          htmlFor="people"
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          aria-label="Select a people type"
+          type="select"
           value={people}
+          displayEmpty
           onChange={event => setPeople(event.target.value)}
           required
         >
-          <option value="" disabled selected>
+          <MenuItem value="" disabled selected>
             Select an option
-          </option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
+          </MenuItem>
+          <MenuItem value="Yes">Yes</MenuItem>
+          <MenuItem value="No">No</MenuItem>
+        </Select>
+
+        {console.log(orientation)}
 
         <input type="submit" />
       </SC.FormBox>
