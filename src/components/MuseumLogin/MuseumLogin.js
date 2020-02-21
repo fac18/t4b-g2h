@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import * as SC from "../styles/Form.style";
 import * as S from "../styles/Text.style";
 import * as Btn from "../styles/Buttons.style";
@@ -7,7 +8,7 @@ const MuseumLogin = () => {
   return (
     <S.CenteredText>
       <h2>Museum Login</h2>
-      <SC.FormBox action="/" method="POST">
+      <SC.FormBox action="/">
         <label htmlFor="username">Username:</label>
         <input
           aria-label="Enter username"
@@ -25,7 +26,9 @@ const MuseumLogin = () => {
           title="Password must contain at least eight characters, including one letter and one number"
           required
         />
-        <Btn.PrimaryBtnS>Login</Btn.PrimaryBtnS>
+        <NavLink to="/museumprofile">
+          <Btn.PrimaryBtnS>Login</Btn.PrimaryBtnS>
+        </NavLink>
         <Btn.SecondaryBtnS>Sign-up</Btn.SecondaryBtnS>
       </SC.FormBox>
     </S.CenteredText>

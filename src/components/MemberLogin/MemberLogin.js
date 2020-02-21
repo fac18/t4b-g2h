@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import * as SC from "../styles/Form.style";
 import * as S from "../styles/Text.style";
 import * as Btn from "../styles/Buttons.style";
@@ -7,7 +8,7 @@ const MemberLogin = () => {
   return (
     <S.CenteredText>
       <h2>Member Login</h2>
-      <SC.FormBox action="/" method="POST">
+      <SC.FormBox action="/">
         <label htmlFor="username">Username:</label>
         <input
           aria-label="Enter username"
@@ -26,6 +27,7 @@ const MemberLogin = () => {
           required
         />
         <Btn.PrimaryBtnS>Login</Btn.PrimaryBtnS>
+
         <Btn.SecondaryBtnS>Sign-up</Btn.SecondaryBtnS>
       </SC.FormBox>
     </S.CenteredText>

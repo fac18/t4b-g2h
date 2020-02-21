@@ -1,6 +1,6 @@
 import React from "react";
 import * as SC from "../styles/Form.style";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, NavLink, Link } from "react-router-dom";
 import * as S from "../styles/Text.style";
 import * as Btn from "../styles/Buttons.style";
 
@@ -29,11 +29,9 @@ const MuseumProfile = () => {
         <Btn.WarningBtnL>Change Password</Btn.WarningBtnL>
       </SC.FormBox>
       <h2>Your content history:</h2>
-      <BrowserRouter>
-        <Link to="/addnewcontent">
-          <Btn.PrimaryBtn>Add new content</Btn.PrimaryBtn>
-        </Link>
-      </BrowserRouter>
+      <NavLink to="/addnewcontent">
+        <Btn.PrimaryBtn>Add new content</Btn.PrimaryBtn>
+      </NavLink>
       {/* Display content history/uploads from db */}
     </S.CenteredText>
   );

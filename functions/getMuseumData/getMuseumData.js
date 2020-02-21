@@ -1,14 +1,14 @@
 const Airtable = require("airtable");
 
 exports.handler = (event, context, callback) => {
-  const { API_URL, API_TEST_CLIENT_ID, API_KEY } = process.env;
+  const { API_URL, API_CLIENT_ID, API_KEY } = process.env;
 
   Airtable.configure({
     endpointUrl: API_URL,
     apiKey: API_KEY
   });
 
-  const base = Airtable.base(API_TEST_CLIENT_ID);
+  const base = Airtable.base(API_CLIENT_ID);
   const data = [];
 
   base("museums")
@@ -22,7 +22,6 @@ exports.handler = (event, context, callback) => {
         // This function (`page`) will get called for each page of records.
 
         records.forEach(function(record) {
-          // console.log("Retrieved", record.get("image_id"));
           data.push(record);
         });
 

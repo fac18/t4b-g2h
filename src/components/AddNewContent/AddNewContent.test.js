@@ -9,6 +9,6 @@ it("renders the AddNewContent page", () => {
       <AddNewContent />
     </BrowserRouter>
   );
-  const title = getByText(/Add New Content/i);
-  expect(title).toBeInTheDocument();
+  const creator = getByText(/creator/i);
+  expect(creator).toBeInTheDocument();
 });

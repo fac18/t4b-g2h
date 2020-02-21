@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Partners = ({ museumData }) => {
-  console.log("this is museumData", museumData);
-
   if (!museumData) return <h1>Loading...</h1>;
   const museumRecord = museumData.records;
   return (
