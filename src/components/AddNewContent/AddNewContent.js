@@ -28,12 +28,11 @@ const AddNewContent = () => {
     formLabel: {
       fontSize: "1.5rem",
       fontFamily: "Gotham Light",
-      color: "#1c1d1f"
+      color: "#1c1d1f",
+      textAlign: "center"
     }
   }));
   const classes = useStyles();
-
-  // console.log(colour);
 
   const fullData = {
     museumRecordId: museumRecordId,
@@ -70,6 +69,7 @@ const AddNewContent = () => {
         <label htmlFor="museumRecordId">Museum Record ID:</label>
         <input
           name="museumRecordId"
+          placeholder="Add your image's unique record ID"
           type="text"
           id="museumRecordId"
           aria-label="Add a Museum Record ID"
@@ -82,6 +82,7 @@ const AddNewContent = () => {
         <input
           name="url"
           type="url"
+          placeholder="Specify a link to hosted image"
           id="url"
           aria-label="Add an image URL"
           value={url}
@@ -93,6 +94,7 @@ const AddNewContent = () => {
         <input
           name="name"
           type="text"
+          placeholder="Name of the image"
           id="name"
           aria-label="Add a name"
           value={name}
@@ -104,6 +106,7 @@ const AddNewContent = () => {
         <input
           name="caption"
           type="text"
+          placeholder="Caption for the image"
           id="caption"
           aria-label="Add a caption"
           value={caption}
@@ -115,6 +118,7 @@ const AddNewContent = () => {
         <input
           name="description"
           type="text"
+          placeholder="Description of the image"
           id="description"
           aria-label="Add a description"
           value={description}
@@ -122,21 +126,7 @@ const AddNewContent = () => {
           required
         />
 
-        {/* attempted radio button for colour select */}
-        {/* {console.log(colour)}
-        <p>Select a colour type:</p>
-        <input
-          type="radio"
-          name="colour"
-          id="b&w"
-          value={colour}
-          onChange={event => setColour(event.target.value)}
-        />
-        <label htmlFor="b&w" value="b&w">
-          Black and White
-        </label>
-        <input type="radio" name="colour" id="colour" value="Colour" />
-        <label htmlFor="colour">Colour</label> */}
+        {/* To change colour to radio button */}
 
         <InputLabel
           shrink
@@ -164,7 +154,7 @@ const AddNewContent = () => {
           <MenuItem value="B&W">Black & White</MenuItem>
         </Select>
 
-        {/* To change copyright status to checkbox multi-select (format to be array) */}
+        {/* To change copyright to checkbox multi-select (format to be array) */}
 
         <InputLabel
           shrink
@@ -202,6 +192,7 @@ const AddNewContent = () => {
         <input
           name="copyrightHolder"
           type="text"
+          placeholder="Name of the image's copyright holder"
           id="copyrightHolder"
           aria-label="Add a copyright holder"
           value={copyrightHolder}
@@ -213,6 +204,7 @@ const AddNewContent = () => {
         <input
           name="creator"
           type="text"
+          placeholder="Name of the image's creator"
           id="creator"
           aria-label="Add a creator"
           value={creator}
@@ -224,6 +216,7 @@ const AddNewContent = () => {
         <input
           name="credit"
           type="text"
+          placeholder="Credit for the image"
           id="credit"
           aria-label="Add an image credit"
           value={credit}
@@ -262,6 +255,7 @@ const AddNewContent = () => {
         <input
           name="createDate"
           type="text"
+          placeholder="Create date of the image"
           id="createDate"
           aria-label="Add a create date"
           value={createDate}
@@ -273,6 +267,7 @@ const AddNewContent = () => {
         <input
           name="collection"
           type="text"
+          placeholder="The collection name of the image"
           id="collection"
           aria-label="Add a collection name"
           value={collection}
@@ -284,6 +279,7 @@ const AddNewContent = () => {
         <input
           name="keywords"
           type="text"
+          placeholder="All keywords, separated by commas"
           id="keywords"
           aria-label="Add keywords"
           value={keywords}
@@ -318,28 +314,11 @@ const AddNewContent = () => {
           <MenuItem value="Photograph">Photograph</MenuItem>
         </Select>
 
-        {console.log(medium)}
-
-        {/* <label htmlFor="medium">Medium:</label>
-        <select
-          htmlFor="medium"
-          aria-label="Add a medium type"
-          value={medium}
-          onChange={event => setMedium(event.target.value)}
-          required
-        >
-          <option value="" disabled selected>
-            Select an option
-          </option>
-          <option value="Illustration">Illustration</option>
-          <option value="Painting">Painting</option>
-          <option value="Photograph">Photograph</option>
-        </select> */}
-
         <label htmlFor="period">Period:</label>
         <input
           name="period"
           type="text"
+          placeholder="The period of the image or subject"
           id="period"
           aria-label="Add a period"
           value={period}
@@ -372,8 +351,6 @@ const AddNewContent = () => {
           <MenuItem value="Yes">Yes</MenuItem>
           <MenuItem value="No">No</MenuItem>
         </Select>
-
-        {console.log(orientation)}
 
         <input type="submit" />
       </SC.FormBox>

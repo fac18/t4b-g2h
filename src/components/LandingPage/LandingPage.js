@@ -6,10 +6,9 @@ const LandingPage = () => {
   return (
     <SC.Landing>
       <h2>
-        “Gateway 2 Heritage dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat.”
+        “Protecting Britain's cultural institutions, the guardians of our local
+        history. Showcasing our cultures, traditions and history by preserving
+        and narrating their stories online.”
       </h2>
       <section>
         <article>
