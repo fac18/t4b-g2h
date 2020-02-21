@@ -22,7 +22,6 @@ const PreviewPage = ({ location }) => {
   useEffect(() => imageCall(id), [id]);
 
   if (!previewData) return <h1>Loading...</h1>;
-  console.log(previewData);
 
   // if (!searchResult) return <h1>Loading...</h1>;
   // const keyword = location.search.split("?")[1].split("=")[0];

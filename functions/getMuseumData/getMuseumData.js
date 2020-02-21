@@ -22,7 +22,6 @@ exports.handler = (event, context, callback) => {
         // This function (`page`) will get called for each page of records.
 
         records.forEach(function(record) {
-          // console.log("Retrieved", record.get("image_id"));
           data.push(record);
         });
 

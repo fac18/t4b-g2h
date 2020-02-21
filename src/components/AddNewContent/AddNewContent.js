@@ -380,7 +380,7 @@ const AddNewContent = () => {
         <input type="submit" />
       </SC.FormBox>
       {/* inline styling below, to be refactored! */}
-      {console.log(keywords)}
+
       {submitMessage ? (
         <div
           style={{
