@@ -140,6 +140,8 @@ const AddNewContent = () => {
           <option value="Colour">Colour</option>
         </select>
 
+        {/* To change copyright status to checkbox multi-select (format to be array) */}
+
         <label htmlFor="copyrightStatus">Copyright Status:</label>
         <select
           htmlFor="copyrightStatus"
