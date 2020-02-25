@@ -8,14 +8,12 @@ const About = () => {
       <h2>About us</h2>
       <SC.AboutLogo src={logo} alt="Gateway2Heritage logo" />
       <p>
-        The aim of The Gateway is to provide a business opportunity for small
-        and medium-sized cultural heritage institutions (SMIs) which will
-        sustain and grow commercial value over the next decade. Focusing on
-        creating a platform for the aggregated digitised visual content found in
-        small and medium-sized cultural institutions, this project, initiated by
-        Andrea, offers the heritage sector the opportunity to promote their
-        collections to a wider audience for commercial licensing whilst
-        providing a space for intra-sector communication.
+        The Gateway brings together the image collections of numerous cultural
+        and heritage organisations across Britain. Together their images tell
+        stories of the British Isles from pre-historic times to the present
+        through the different media of art, photography, design and
+        architecture, and narrate the growth and development of the country,
+        region by region, community by community across the centuries.
       </p>
     </SC.AboutBox>
   );
