@@ -27,7 +27,7 @@ it("renders routes/navigation", () => {
     </Router>
   );
 
-  expect(container.innerHTML).toMatch("Collection name");
+  expect(container.innerHTML).toMatch("Gallery name");
   act(() => {
     fireEvent.click(getByText(/About Us/i));
   });

@@ -97,6 +97,6 @@ SearchPage.propTypes = {
   filteredResult: PropTypes.object,
   setFilteredResult: PropTypes.func,
   location:PropTypes.object,
-  keyword: PropTypes.string,
+  keyword: PropTypes.object,
   setKeyword: PropTypes.func
 };

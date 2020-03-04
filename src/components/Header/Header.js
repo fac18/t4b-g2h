@@ -75,7 +75,7 @@ export default function Header({ keyword, setKeyword }) {
 Header.propTypes = {
   dataCall: PropTypes.func,
   setKeyword: PropTypes.func,
-  keyword: PropTypes.string,
+  keyword: PropTypes.object,
   navMenu: PropTypes.bool,
   setNavMenu: PropTypes.object
 };

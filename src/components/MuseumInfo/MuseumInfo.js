@@ -37,6 +37,8 @@ const MuseumInfo = ({ match, museumData }) => {
 };
 
 MuseumInfo.propTypes = {
-  chosenMuseum: PropTypes.object
+  chosenMuseum: PropTypes.object,
+  museumData: PropTypes.object,
+  match: PropTypes.object
 };
 export default MuseumInfo;
