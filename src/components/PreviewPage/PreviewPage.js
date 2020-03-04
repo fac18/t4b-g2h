@@ -7,35 +7,22 @@ import { BoldText } from "../styles/Text.style";
 const PreviewPage = ({ location }) => {
   const id = location.search.split("=")[1];
   const [previewData, setPreviewData] = useState(null);
-  const imageCall = async id => {
-    await (
-      await fetch(`/.netlify/functions/getImage/getImage.js?keywords=${id}`)
-    )
-      .json()
-      .then(data => setPreviewData(data))
-      .catch(console.error);
-  };
 
-  useEffect(() => imageCall(id), [id]);
+  useEffect(() => {
+    const imageCall = async id => {
+      await (
+        await fetch(`/.netlify/functions/getImage/getImage.js?keywords=${id}`)
+      )
+        .json()
+        .then(data => setPreviewData(data))
+        .catch(console.error);
+    };
+    imageCall(id)
+  }, [id]);
 
-  if (!previewData) return <h1>Loading...</h1>;
+  if (!previewData) return <h1 style={{marginTop:"10rem"}}>Loading...</h1>;
 
   const keywords = previewData.records[0].fields.keywords;
-
-  // if (!searchResult) return <h1>Loading...</h1>;
-  // const keyword = location.search.split("?")[1].split("=")[0];
-  // console.log("the keyword is", keyword);
-
-  // const id = location.search.split("=")[1];
-  // console.log(id);
-  // console.log(searchResult);
-  // const filteredSearchResult = searchResult.records.filter(image => {
-  //   return image.fields.image_id === Number(id);
-  // });
-
-  // setKeyword(keyword);
-  // console.log(filteredSearchResult[0]);
-  // if (!filteredSearchResult) return <h1>Loading...</h1>;
 
   return (
     <SC.PreviewContainer>

@@ -6,6 +6,7 @@ import * as Btn from "../styles/Buttons.style";
 
 const MuseumLogin = () => {
   return (
+    <SC.GrowBox>
     <S.CenteredText>
       <h2>Museum Login</h2>
       <SC.FormBox action="/">
@@ -32,6 +33,7 @@ const MuseumLogin = () => {
         <Btn.SecondaryBtnS>Sign-up</Btn.SecondaryBtnS>
       </SC.FormBox>
     </S.CenteredText>
+    </SC.GrowBox>
   );
 };
 

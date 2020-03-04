@@ -18,7 +18,7 @@ const LandingPage = () => {
                 src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg"
               />
             </SC.ImgContainer>
-            <p>Collection name</p>
+            <p>Gallery name</p>
           </SC.MuseumContainer>
           <SC.MuseumContainer>
             <SC.ImgContainer>
@@ -27,27 +27,7 @@ const LandingPage = () => {
                 src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg"
               />
             </SC.ImgContainer>
-            <p>Collection name</p>
-          </SC.MuseumContainer>
-        </article>
-        <article>
-          <SC.MuseumContainer>
-            <SC.ImgContainer>
-              <Img
-                alt="Collection image"
-                src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg"
-              />
-            </SC.ImgContainer>
-            <p>Collection name</p>
-          </SC.MuseumContainer>
-          <SC.MuseumContainer>
-            <SC.ImgContainer>
-              <Img
-                alt="Collection image"
-                src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg"
-              />
-            </SC.ImgContainer>
-            <p>Collection name</p>
+            <p>Gallery name</p>
           </SC.MuseumContainer>
         </article>
         <article>
@@ -58,7 +38,27 @@ const LandingPage = () => {
                 src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg"
               />
             </SC.ImgContainer>
-            <p>Collection name</p>
+            <p>Gallery name</p>
+          </SC.MuseumContainer>
+          <SC.MuseumContainer>
+            <SC.ImgContainer>
+              <Img
+                alt="Collection image"
+                src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg"
+              />
+            </SC.ImgContainer>
+            <p>Gallery name</p>
+          </SC.MuseumContainer>
+        </article>
+        <article>
+          <SC.MuseumContainer>
+            <SC.ImgContainer>
+              <Img
+                alt="Collection image"
+                src="https://cdn.londonandpartners.com/asset/victoria-and-albert-museum_the-john-madejski-garden-photo-james-medcraft-image-courtesy-of-the-victoria-and-albert-museum_339851f982d07c0a80cee498b4366062.jpg"
+              />
+            </SC.ImgContainer>
+            <p>Gallery name</p>
           </SC.MuseumContainer>
           <SC.MuseumContainer>
             <SC.ImgContainer>
@@ -67,7 +67,7 @@ const LandingPage = () => {
                 src="https://cdn.getyourguide.com/img/tour_img-2462135-146.jpg"
               />
             </SC.ImgContainer>
-            <p>Collection name</p>
+            <p>Gallery name</p>
           </SC.MuseumContainer>
         </article>
       </section>

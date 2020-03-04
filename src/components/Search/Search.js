@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as Text from "../styles/Text.style";
 import * as SC from "./Search.style.js";
-import * as Btn from "../styles/Buttons.style";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Filter from "../Filter/Filter";
@@ -94,5 +93,8 @@ export default function SearchPage({
 SearchPage.propTypes = {
   searchResult: PropTypes.object,
   filteredResult: PropTypes.object,
-  setFilteredResult: PropTypes.func
+  setFilteredResult: PropTypes.func,
+  location:PropTypes.object,
+  keyword: PropTypes.string,
+  setKeyword: PropTypes.func
 };

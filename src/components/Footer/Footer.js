@@ -32,7 +32,7 @@ const Footer = () => {
           </li>
         </ul>
       </SC.FooterTextBox>
-      {1 === 1 ? <MuseumAreaLink /> : null}
+      <MuseumAreaLink />
     </SC.FooterBox>
   );
 };
