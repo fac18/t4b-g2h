@@ -4,6 +4,6 @@ import About from "./About";
 
 test("renders learn react link", () => {
   const { getByText } = render(<About />);
-  const aboutText = getByText(/The aim of The Gateway /i);
+  const aboutText = getByText(/The Gateway brings together /i);
   expect(aboutText).toBeInTheDocument();
 });

@@ -32,7 +32,7 @@ it("renders routes/navigation", () => {
   act(() => {
     fireEvent.click(getByText(/About Us/i));
   });
-  expect(container.innerHTML).toMatch("The aim of The Gateway");
+  expect(container.innerHTML).toMatch("The Gateway brings together");
 
   fireEvent.click(getByText(/Terms and Conditions/i));
 
