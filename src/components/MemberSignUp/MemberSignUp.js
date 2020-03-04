@@ -6,7 +6,7 @@ import * as Btn from "../styles/Buttons.style";
 const MemberSignUp = () => {
   return (
     <S.CenteredText>
-      <h2>Member Sign-up</h2>
+      <h2>User Sign-up</h2>
       <SC.FormBox action="/" method="POST">
         <label htmlFor="username">Username:</label>
         <input
