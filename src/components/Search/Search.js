@@ -63,7 +63,8 @@ export default function SearchPage({
                 <SC.ImgContainer>
                   <SC.ImgInContainer src={record.fields.url} />
                 </SC.ImgContainer>
-                <p data-testid="first">{record.fields.caption}</p>
+                <Text.SearchCardText data-testid="first">{record.fields.caption}</Text.SearchCardText>
+                <Text.SearchCardText>{record.fields.gh_id}</Text.SearchCardText>
               </SC.ContentContainer>
             </Link>
           ))}
@@ -80,7 +81,8 @@ export default function SearchPage({
                 <SC.ImgContainer>
                   <SC.ImgInContainer src={record.fields.url} />
                 </SC.ImgContainer>
-                <p data-testid="first">{record.fields.caption}</p>
+                <Text.SearchCardText data-testid="first">{record.fields.caption}</Text.SearchCardText>
+                <Text.SearchCardText>{record.fields.gh_id}</Text.SearchCardText>
               </SC.ContentContainer>
             </Link>
           ))}

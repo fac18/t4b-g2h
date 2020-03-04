@@ -3,7 +3,9 @@ import styled from "styled-components";
 const Landing = styled.div`
   margin-top: 12.18rem;
   h2 {
-    margin: 4.236rem;
+    margin-top: 4.236rem;
+    margin-bottom: 4.236rem;
+    text-align: center;
   }
   p {
     text-align: center;

@@ -1,14 +1,15 @@
 import React from "react";
 import Img from "../styles/Img.style";
 import * as SC from "./LandingPage.style.js";
+import * as Text from "../styles/Text.style";
 
 const LandingPage = () => {
   return (
     <SC.Landing>
-      <h2>
+      <Text.GatewayBlurb>
         “Gateway – your space to Uncover exceptional cultural heritage stories –
         our place to deliver the images. Be inspired to discover and create!”
-      </h2>
+      </Text.GatewayBlurb>
       <section>
         <article>
           <SC.MuseumContainer>
