@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import * as SC from "./PreviewPage.style";
 import * as Btn from "../styles/Buttons.style";
 import { BoldText } from "../styles/Text.style";
-//import { Link } from "react-router-dom";
-//import dataCall from "../App/App";
 
 const PreviewPage = ({ location }) => {
   const id = location.search.split("=")[1];
@@ -13,7 +11,6 @@ const PreviewPage = ({ location }) => {
     await (
       await fetch(`/.netlify/functions/getImage/getImage.js?keywords=${id}`)
     )
-
       .json()
       .then(data => setPreviewData(data))
       .catch(console.error);
@@ -22,6 +19,8 @@ const PreviewPage = ({ location }) => {
   useEffect(() => imageCall(id), [id]);
 
   if (!previewData) return <h1>Loading...</h1>;
+
+  const keywords = previewData.records[0].fields.keywords;
 
   // if (!searchResult) return <h1>Loading...</h1>;
   // const keyword = location.search.split("?")[1].split("=")[0];
@@ -37,6 +36,7 @@ const PreviewPage = ({ location }) => {
   // setKeyword(keyword);
   // console.log(filteredSearchResult[0]);
   // if (!filteredSearchResult) return <h1>Loading...</h1>;
+
   return (
     <SC.PreviewContainer>
       <SC.LeftPreviewColumn>
@@ -44,18 +44,13 @@ const PreviewPage = ({ location }) => {
           src={previewData.records[0].fields.url}
           alt={previewData.records[0].fields.caption}
         />
-        {/* <SC.KeywordsContainer>
-          {keywords.map(keyword => (
-            <Link to="/search" key={keyword}>
-              <SC.Keywords onclick={dataCall}>{keyword}/ </SC.Keywords>
-            </Link>
-          ))}
-        </SC.KeywordsContainer> */}
+        <SC.KeywordsContainer>
+          <SC.Keywords>{keywords}</SC.Keywords>
+        </SC.KeywordsContainer>
       </SC.LeftPreviewColumn>
       <SC.RightPreviewColumn>
         <p>
-          <BoldText>Image ID:</BoldText>{" "}
-          {previewData.records[0].fields.image_id}
+          <BoldText>Image ID:</BoldText> {previewData.records[0].fields.gh_id}
         </p>
         <p>
           <BoldText>Caption:</BoldText> {previewData.records[0].fields.caption}
@@ -104,7 +99,8 @@ const PreviewPage = ({ location }) => {
 };
 
 PreviewPage.propTypes = {
-  searchResult: PropTypes.array
+  searchResult: PropTypes.object,
+  location: PropTypes.object
 };
 
 export default PreviewPage;

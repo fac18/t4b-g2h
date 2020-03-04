@@ -3,7 +3,6 @@ import {
   render,
   fireEvent,
   cleanup,
-  getByRole,
   act
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";

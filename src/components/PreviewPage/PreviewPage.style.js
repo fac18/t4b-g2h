@@ -70,6 +70,7 @@ const KeywordsContainer = styled.div`
   flex-flow: row wrap;
   justify-content: flex-end;
   width: 30vw;
+  margin-top: 0.618rem;
   @media (max-width: 768px) {
     width: auto;
   }
@@ -77,6 +78,7 @@ const KeywordsContainer = styled.div`
 
 const Keywords = styled.a`
   line-height: 1.5;
+  text-align: right; 
 `;
 
 export {
