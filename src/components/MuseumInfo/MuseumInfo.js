@@ -1,5 +1,6 @@
 import React from "react";
 import * as SC from "../styles/Text.style";
+import * as Text from "../styles/Text.style";
 import PropTypes from "prop-types";
 
 const MuseumInfo = ({ match, museumData }) => {
@@ -20,7 +21,9 @@ const MuseumInfo = ({ match, museumData }) => {
             alt={filteredMuseumData[0].fields.name}
             src={filteredMuseumData[0].fields.museum_image}
           />
-          <p>Description: {filteredMuseumData[0].fields.description}</p>
+          <Text.AboutPara>
+            Description: {filteredMuseumData[0].fields.description}
+          </Text.AboutPara>
           <p>
             Website:{" "}
             <SC.TextDeco href={filteredMuseumData[0].fields.website}>
@@ -34,6 +37,8 @@ const MuseumInfo = ({ match, museumData }) => {
 };
 
 MuseumInfo.propTypes = {
-  chosenMuseum: PropTypes.object
+  chosenMuseum: PropTypes.object,
+  museumData: PropTypes.object,
+  match: PropTypes.object
 };
 export default MuseumInfo;

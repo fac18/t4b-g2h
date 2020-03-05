@@ -5,7 +5,7 @@ import TermsConditions from "./TermsConditions";
 it("renders terms and conditions text", () => {
   const { getByText } = render(<TermsConditions />);
   const tcText = getByText(
-    /These Conditions together with the Licence Confirmation constitute an agreement /i
+    /in the preceding two sentences of this clause 16.5./i
   );
   expect(tcText).toBeInTheDocument();
 });

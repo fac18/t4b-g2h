@@ -35,6 +35,32 @@ const TextDeco = styled.a`
   }
 `;
 
+const SearchCardText = styled.p`
+  font-size: 0.618rem;
+`;
+
+const AboutPara = styled.p`
+  width: 60vw;
+  margin: auto;
+  padding: 1.618rem;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    margin: auto;
+    padding: 1.618rem;
+  }
+`;
+
+const GatewayBlurb = styled.h2`
+  width: 60vw;
+  margin: auto;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    margin: auto;
+  }
+`;
+
 export {
   Margin,
   CenteredText,
@@ -42,5 +68,8 @@ export {
   BoldText,
   TextDeco,
   MarginTop,
-  SearchBtnMargin
+  SearchBtnMargin,
+  SearchCardText,
+  AboutPara,
+  GatewayBlurb
 };

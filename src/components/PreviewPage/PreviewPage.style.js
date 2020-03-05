@@ -10,6 +10,7 @@ const PreviewContainer = styled.section`
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
+  flex-grow: 1;
 
   button {
     margin-right: 1rem;
@@ -19,11 +20,17 @@ const PreviewContainer = styled.section`
     text-decoration: none;
     color: #2b2b31;
   }
+
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 `;
 
 const LeftPreviewColumn = styled.div`
@@ -70,6 +77,7 @@ const KeywordsContainer = styled.div`
   flex-flow: row wrap;
   justify-content: flex-end;
   width: 30vw;
+  margin-top: 0.618rem;
   @media (max-width: 768px) {
     width: auto;
   }
@@ -77,6 +85,12 @@ const KeywordsContainer = styled.div`
 
 const Keywords = styled.a`
   line-height: 1.5;
+  text-align: right; 
+
+  @media (max-width: 768px) {
+    text-align: left;
+    margin-bottom: 1rem; 
+  }
 `;
 
 export {

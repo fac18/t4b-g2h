@@ -5,7 +5,7 @@ import PrivacyPolicy from "./PrivacyPolicy";
 it("renders terms and conditions text", () => {
   const { getByText } = render(<PrivacyPolicy />);
   const ppText = getByText(
-    /All materials on this website are subject to the laws of copyright/i
+    /information has infringed the Regulation/i
   );
   expect(ppText).toBeInTheDocument();
 });

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as Text from "../styles/Text.style";
 import * as SC from "./Search.style.js";
-import * as Btn from "../styles/Buttons.style";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Filter from "../Filter/Filter";
@@ -64,7 +63,8 @@ export default function SearchPage({
                 <SC.ImgContainer>
                   <SC.ImgInContainer src={record.fields.url} />
                 </SC.ImgContainer>
-                <p data-testid="first">{record.fields.caption}</p>
+                <Text.SearchCardText data-testid="first">{record.fields.caption}</Text.SearchCardText>
+                <Text.SearchCardText>{record.fields.gh_id}</Text.SearchCardText>
               </SC.ContentContainer>
             </Link>
           ))}
@@ -81,7 +81,8 @@ export default function SearchPage({
                 <SC.ImgContainer>
                   <SC.ImgInContainer src={record.fields.url} />
                 </SC.ImgContainer>
-                <p data-testid="first">{record.fields.caption}</p>
+                <Text.SearchCardText data-testid="first">{record.fields.caption}</Text.SearchCardText>
+                <Text.SearchCardText>{record.fields.gh_id}</Text.SearchCardText>
               </SC.ContentContainer>
             </Link>
           ))}
@@ -94,5 +95,8 @@ export default function SearchPage({
 SearchPage.propTypes = {
   searchResult: PropTypes.object,
   filteredResult: PropTypes.object,
-  setFilteredResult: PropTypes.func
+  setFilteredResult: PropTypes.func,
+  location:PropTypes.object,
+  keyword: PropTypes.object,
+  setKeyword: PropTypes.func
 };

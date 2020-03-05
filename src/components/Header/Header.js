@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import * as SC from "./Header.style";
 import logo from "../../assets/g2h-logo.svg";
 import { NavLink, Link } from "react-router-dom";
@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Header({ dataCall, keyword, setKeyword }) {
+export default function Header({ keyword, setKeyword }) {
   const classes = useStyles();
 
   return (
@@ -75,6 +75,7 @@ export default function Header({ dataCall, keyword, setKeyword }) {
 Header.propTypes = {
   dataCall: PropTypes.func,
   setKeyword: PropTypes.func,
+  keyword: PropTypes.object,
   navMenu: PropTypes.bool,
   setNavMenu: PropTypes.object
 };

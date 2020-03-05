@@ -3,7 +3,6 @@ import {
   render,
   fireEvent,
   cleanup,
-  getByRole,
   act
 } from "@testing-library/react";
 import { createMemoryHistory } from "history";
@@ -28,11 +27,11 @@ it("renders routes/navigation", () => {
     </Router>
   );
 
-  expect(container.innerHTML).toMatch("Collection name");
+  expect(container.innerHTML).toMatch("Gallery name");
   act(() => {
     fireEvent.click(getByText(/About Us/i));
   });
-  expect(container.innerHTML).toMatch("The aim of The Gateway");
+  expect(container.innerHTML).toMatch("The Gateway brings together");
 
   fireEvent.click(getByText(/Terms and Conditions/i));
 

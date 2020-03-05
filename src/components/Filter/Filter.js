@@ -5,14 +5,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
+//import Divider from "@material-ui/core/Divider";
+//import ListItem from "@material-ui/core/ListItem";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import * as Btn from "../styles/Buttons.style";
 import * as SC from "./Filter.style";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
+//import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
@@ -71,6 +71,7 @@ export default function Filter({ searchResult, setFilteredResult }) {
 
   useEffect(() => {
     setFilteredResult(filteredAllData);
+    // eslint-disable-next-line
   }, [
     collectionValue,
     artistValue,
@@ -78,7 +79,7 @@ export default function Filter({ searchResult, setFilteredResult }) {
     mediumValue,
     orientationValue,
     peopleValue,
-    colourValue
+    colourValue,
   ]);
 
   const classes = useStyles();
@@ -97,7 +98,7 @@ export default function Filter({ searchResult, setFilteredResult }) {
     setState({ ...state, [side]: open });
   };
 
-  const sideList = side => (
+  const sideList = () => (
     <div
       className={classes.list}
       role="presentation"

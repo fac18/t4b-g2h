@@ -48,7 +48,6 @@ const App = () => {
       .then(data => setMuseumData(data))
       .catch(console.error);
   };
-  const [chosenMuseum, setChosenMuseum] = useState(null);
 
   React.useEffect(() => {
     museumDataCall();
@@ -107,7 +106,6 @@ const App = () => {
           render={props => <MuseumInfo {...props} museumData={museumData} />}
         />
         <Route path="/payment" render={() => <Payment />} />
-        <Route path="/previewpage" component={PreviewPage} />
         <Route component={Error} />
       </Switch>
       <Footer />
