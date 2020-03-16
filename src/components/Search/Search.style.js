@@ -56,14 +56,16 @@ const ImgInContainer = styled.img`
 `;
 
 const FilterOptions = styled.div`
-  width: 12vw;
+
+  width: 8.09rem;
   height: auto;
-  margin-left: 4.236rem;
-  /* padding: 1rem; */
+  padding: 0.618rem;
   text-align: left;
   background-color: #4e535f;
   color: #ffffff;
   font-size: 1rem;
+  top: 8.09rem;
+  margin-bottom: 1rem;
 `;
 
 export {

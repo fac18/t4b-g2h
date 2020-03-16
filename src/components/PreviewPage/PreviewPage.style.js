@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-const PreviewContainer = styled.section`
+const PreviewContainer = styled.div`
+margin-top: 12.18rem;
+`;
+
+const PreviewColumnContainer = styled.section`
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 12.18rem;
   margin-bottom: 4.236rem;
   display: flex;
   flex-flow: row wrap;
@@ -85,7 +88,8 @@ const KeywordsContainer = styled.div`
 
 const Keywords = styled.a`
   line-height: 1.5;
-  text-align: right; 
+  text-align: right;
+  cursor: pointer; 
 
   @media (max-width: 768px) {
     text-align: left;
@@ -95,6 +99,7 @@ const Keywords = styled.a`
 
 export {
   PreviewContainer,
+  PreviewColumnContainer,
   ButtonContainer,
   LeftPreviewColumn,
   RightPreviewColumn,

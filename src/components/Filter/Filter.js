@@ -157,9 +157,9 @@ export default function Filter({ searchResult, setFilteredResult }) {
           displayEmpty
           onChange={event => setColourValue(event.target.value)}
         >
-          <MenuItem value="">
+          {/* <MenuItem value="">
             <em>None</em>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem value="Colour">Colour</MenuItem>
           <MenuItem value="B&W">Black & White</MenuItem>
         </Select>
@@ -176,9 +176,9 @@ export default function Filter({ searchResult, setFilteredResult }) {
           value={orientationValue}
           onChange={event => setOrientationValue(event.target.value)}
         >
-          <MenuItem value="">
+          {/* <MenuItem value="">
             <em>None</em>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem value="Landscape">Landscape</MenuItem>
           <MenuItem value="Portrait">Portrait</MenuItem>
           <MenuItem value="Square">Square</MenuItem>
@@ -196,9 +196,9 @@ export default function Filter({ searchResult, setFilteredResult }) {
           value={peopleValue}
           onChange={event => setPeopleValue(event.target.value)}
         >
-          <MenuItem value="">
+          {/* <MenuItem value="">
             <em>None</em>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem value="Yes">Yes</MenuItem>
           <MenuItem value="No">No</MenuItem>
         </Select>
@@ -213,7 +213,7 @@ export default function Filter({ searchResult, setFilteredResult }) {
 
   return (
     <SC.Sticky>
-      <Button onClick={toggleDrawer("top", true)} style={{ color: "#1c1d1f" }}>
+      <Button onClick={toggleDrawer("top", true)} style={{ color: "#ffffff" }}>
         <p>Refine Search</p>
         <ExpandMoreIcon />
       </Button>
