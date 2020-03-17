@@ -3,13 +3,18 @@ import * as SC from "../Search/Search.style";
 import * as Style from "../styles/Text.style";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Breadcrumbs } from "../styles/Breadcrumbs.style";
 
 const Partners = ({ museumData }) => {
   if (!museumData) return <h1>Loading...</h1>;
   const museumRecord = museumData.records;
   return (
     <>
-      <Style.CenteredText>
+      <Breadcrumbs>
+        <p>Home</p>
+        <p>Partners</p>
+      </Breadcrumbs>
+      <Style.CenteredText style={{marginTop: 0}}>
         <h2>Our Partners</h2>
       </Style.CenteredText>
       <SC.SearchStyle>

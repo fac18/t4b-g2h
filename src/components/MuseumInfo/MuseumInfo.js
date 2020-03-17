@@ -2,6 +2,7 @@ import React from "react";
 import * as SC from "../styles/Text.style";
 import * as Text from "../styles/Text.style";
 import PropTypes from "prop-types";
+import { Breadcrumbs } from "../styles/Breadcrumbs.style";
 
 const MuseumInfo = ({ match, museumData }) => {
   const id = match.params.id;
@@ -12,10 +13,15 @@ const MuseumInfo = ({ match, museumData }) => {
 
   return (
     <>
+      <Breadcrumbs>
+        <p>Home</p>
+        <p>Partners</p>
+        <p>{filteredMuseumData[0].fields.name}</p>
+      </Breadcrumbs>
       {!id ? (
         <h1>Loading...</h1>
       ) : (
-        <SC.CenteredText key={filteredMuseumData[0].fields.museum_id}>
+        <SC.CenteredText style={{marginTop: 0}} key={filteredMuseumData[0].fields.museum_id}>
           <h2>{filteredMuseumData[0].fields.name}</h2>
           <img
             alt={filteredMuseumData[0].fields.name}

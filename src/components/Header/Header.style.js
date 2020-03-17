@@ -10,12 +10,11 @@ const HeaderBox = styled.header`
   align-items: end;
   position: fixed;
   top: 0vh;
-  overflow: auto;
 
   @media (max-width: 768px) {
     position: fixed;
     top: 0;
-    height: auto;
+    height: 10rem;
     justify-content: center;
   }
 
@@ -34,16 +33,13 @@ const HeaderBox = styled.header`
 `;
 
 const TitleBox = styled.div`
-  /* margin: 2rem 0 0 5rem; */
   width: 80vw;
-  /* height: 20vh; */
   background-color: #eb5a61;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 768px) {
-    /* display: none; */
     height: 2.236rem;
     margin-left: 0;
   }

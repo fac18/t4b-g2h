@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as Text from "../styles/Text.style";
 import * as SC from "./Search.style.js";
+import { Breadcrumbs } from "../styles/Breadcrumbs.style";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Filter from "../Filter/Filter";
@@ -50,6 +51,12 @@ export default function SearchPage({
           />
         </SC.FilterOptions>
       </Text.SearchBtnMargin>
+      {/* <Breadcrumbs style={{ marginTop: 0 }}> */}
+      <Breadcrumbs style={{marginTop: 0}}>
+        <p>Home</p>
+        <p>Search</p>
+      </Breadcrumbs>
+
       {/* ) : null} */}
       {filteredRecords ? (
         <SC.SearchStyle>
@@ -63,7 +70,9 @@ export default function SearchPage({
                 <SC.ImgContainer>
                   <SC.ImgInContainer src={record.fields.url} />
                 </SC.ImgContainer>
-                <Text.SearchCardText data-testid="first">{record.fields.caption}</Text.SearchCardText>
+                <Text.SearchCardText data-testid="first">
+                  {record.fields.caption}
+                </Text.SearchCardText>
                 <Text.SearchCardText>{record.fields.gh_id}</Text.SearchCardText>
               </SC.ContentContainer>
             </Link>
@@ -81,7 +90,9 @@ export default function SearchPage({
                 <SC.ImgContainer>
                   <SC.ImgInContainer src={record.fields.url} />
                 </SC.ImgContainer>
-                <Text.SearchCardText data-testid="first">{record.fields.caption}</Text.SearchCardText>
+                <Text.SearchCardText data-testid="first">
+                  {record.fields.caption}
+                </Text.SearchCardText>
                 <Text.SearchCardText>{record.fields.gh_id}</Text.SearchCardText>
               </SC.ContentContainer>
             </Link>
@@ -96,7 +107,7 @@ SearchPage.propTypes = {
   searchResult: PropTypes.object,
   filteredResult: PropTypes.object,
   setFilteredResult: PropTypes.func,
-  location:PropTypes.object,
+  location: PropTypes.object,
   keyword: PropTypes.object,
   setKeyword: PropTypes.func
 };

@@ -10,7 +10,15 @@ const MarginTop = styled.div`
 
 const SearchBtnMargin = styled.div`
   margin-top: 7.7rem;
-  margin-left: 4.236rem;
+  margin-left: 8.09rem;
+  position: sticky;
+  top: 8.09rem;
+
+  @media (max-width: 768px) {
+    top: 10rem;
+    margin-top: 10rem;
+    margin-left: 0;
+  }
 `;
 
 const CenteredText = styled.div`

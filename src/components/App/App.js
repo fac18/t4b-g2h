@@ -19,6 +19,7 @@ import Partners from "../Partners/Partners";
 import MuseumInfo from "../MuseumInfo/MuseumInfo";
 import Payment from "../Payment/Payment";
 import PreviewPage from "../PreviewPage/PreviewPage";
+import LicensePage from "../LicensePage/LicensePage";
 import Error from "../Error/Error";
 
 import "../../index.css";
@@ -83,6 +84,16 @@ const App = () => {
           path="/previewpage"
           render={props => (
             <PreviewPage
+              {...props}
+              searchResult={searchResult}
+              setKeyword={setKeyword}
+            />
+          )}
+        />
+        <Route
+          path="/licensepage"
+          render={props => (
+            <LicensePage
               {...props}
               searchResult={searchResult}
               setKeyword={setKeyword}
